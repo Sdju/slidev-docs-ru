@@ -5,19 +5,19 @@ defineProps<{ type: 'node' | 'client' | 'both' }>()
 <template>
   <details class="p4 mt-4 rounded-lg bg-gray-400 bg-opacity-10">
     <summary class="outline-none !m0 select-none">
-      Environment:
+      Окружение:
       <span class="capitalize font-bold" :class="type === 'node' ? 'text-orange-400' : 'text-green-400'">{{ type }}</span>
     </summary>
 
     <div class="pt2 opacity-75">
       <span v-if="type === 'both'">
-        This setup function will run on <b>both</b> Node.js and client side. Avoid using either Node's or DOM API to avoid runtime errors.
+        Данная setup-функция будет запущена <b>в обоих случаях</b>: на Node.js и клиентской стороне. Избегайте использования API Node или DOM, дабы избежать ошибок во время выполнения.
       </span>
       <span v-else-if="type === 'node'">
-        This setup function will only run on Node.js environment, you can have access to Node's API.
+        Эта setup-функция будет работать только в среде Node.js, и вы сможете получить доступ к API Node.
       </span>
       <span v-else>
-        This setup function will only run on client side. Make sure the browser compatibility when importing packages.
+        Эта setup-функция будет выполняться только на стороне клиента. Убедитесь в совместимости c браузером при импорте пакетов.
       </span>
     </div>
   </details>
