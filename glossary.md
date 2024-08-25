@@ -85,3 +85,14 @@
 | Steps | Шаги | |
 | Redirects | Перенаправления | |
 | Rewrites | Перезаписи | |
+| Addon | Аддон | |
+| Capability | Возможности | |
+| Custom Layouts | Пользовательские макеты | |
+| Custom Components | Пользовательские компоненты | |
+| Extend | Расширение | |
+| Configuration | Конфигурация | |
+| Initialization | Инициализация | |
+| Testing | Тестирование | |
+| Publish | Публикация | |
+| Metadata | Метаданные | |
+| Engines | Движки | |
