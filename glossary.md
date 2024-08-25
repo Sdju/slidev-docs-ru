@@ -53,3 +53,11 @@
 | CI | CI (непрерывная интеграция) | |
 | Chromium | Chromium | Не переводится |
 | timeout | ограничение по времени | |
+| Integrated Editor | Встроенный редактор | |
+| VS Code Extension | Расширение для VS Code | |
+| Preview | Предварительный просмотр | |
+| Tree View | Древовидное представление | |
+| Command Palette | Палитра команд | |
+| Project | Проект | |
+| Slide | Слайд | |
+| Markdown File | Файл Markdown | |

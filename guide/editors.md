@@ -1,18 +1,18 @@
-# Editor Support
+# Поддержка редакторов
 
-Since Slidev uses Markdown as the source entry, you can use any editor you prefer to create your slides.
+Поскольку Slidev использует Markdown в качестве исходного формата, вы можете использовать любой редактор по вашему выбору для создания слайдов.
 
-If you want some high-level management to your slides, we have provided the following editor integrations for you!
+Если вам нужно высокоуровневое управление вашими слайдами, мы предоставили следующие интеграции с редакторами!
 
-## Integrated Editor
+## Встроенный редактор
 
-Slidev comes with an integrated editor that will instantly reload and save the changes to your file.
+Slidev поставляется со встроенным редактором, который мгновенно перезагружает и сохраняет изменения в вашем файле.
 
-Click the <carbon-edit class="inline-icon-btn"/> button to open it.
+Нажмите кнопку <carbon-edit class="inline-icon-btn"/> для его открытия.
 
 ![](/screenshots/integrated-editor.png)
 
-## VS Code Extension
+## Расширение для VS Code
 
 <p align="center">
     <a href="https://github.com/slidevjs/slidev" target="_blank">
@@ -20,24 +20,24 @@ Click the <carbon-edit class="inline-icon-btn"/> button to open it.
     </a>
     <br>
     <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev" target="__blank">
-        <img src="https://img.shields.io/visual-studio-marketplace/v/antfu.slidev.svg?color=4EC5D4&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" />
+        <img src="https://img.shields.io/visual-studio-marketplace/v/antfu.slidev.svg?color=4EC5D4&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Версия в Visual Studio Marketplace" />
     </a>
     &nbsp;
     <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev" target="__blank">
-        <img src="https://img.shields.io/visual-studio-marketplace/d/antfu.slidev.svg?color=2B90B6" alt="Visual Studio Marketplace Downloads" />
+        <img src="https://img.shields.io/visual-studio-marketplace/d/antfu.slidev.svg?color=2B90B6" alt="Загрузки в Visual Studio Marketplace" />
     </a>
 </p>
 
-The VS Code extension provides some features to help you better organize your slides and have a quick overview of them.
+Расширение для VS Code предоставляет некоторые функции, которые помогут вам лучше организовать ваши слайды и получить быстрый обзор.
 
-### Features
+### Функции
 
-- Preview slides in the side panel
-- Slides tree view
-- Re-ordering slides
-- Folding for slide blocks
-- Multiple slides project support
-- Start the dev server with one click
+- Предварительный просмотр слайдов в боковой панели
+- Древовидное представление слайдов
+- Изменение порядка слайдов
+- Сворачивание блоков слайдов
+- Поддержка нескольких проектов слайдов
+- Запуск dev сервера одним кликом
 
 ![](https://github.com/slidevjs/slidev/assets/63178754/2c9ba01a-d21f-4b33-b6b6-4e249873f865)
 
@@ -49,23 +49,23 @@ The VS Code extension provides some features to help you better organize your sl
 
 :::
 
-### Installation
+### Установка
 
-You can install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev).
+Вы можете установить расширение из [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev).
 
-### Usage
+### Использование
 
-Click the `Slidev` icon in the activity bar to open the **Slidev panel**. In the Slidev panel, you can see the projects tree view, slides tree view, and the preview webview.
+Нажмите на значок `Slidev` на панели активности, чтобы открыть **панель Slidev**. В панели Slidev вы можете увидеть древовидное представление проектов, древовидное представление слайдов и веб-представление предварительного просмотра.
 
-In the **projects tree view**, you can see all the Slidev projects in your workspace. You can dlick the item to open the corresponding file, and click the <codicon-eye /> icon over it to switch the active project. The <codicon-add /> icon allows you to load a slides project that wasn't scanned automatically.
+В **древовидном представлении проектов** вы можете увидеть все проекты Slidev в вашем рабочем пространстве. Вы можете нажать на элемент, чтобы открыть соответствующий файл, и нажать на значок <codicon-eye /> для переключения активного проекта. Значок <codicon-add /> позволяет загрузить проект слайдов, который не был отсканирован автоматически.
 
-In the **slides tree view**, you can see all the slides in the active project. You can click the item to move you cursor to the slide in the editor, and drag and drop to reorder the slides.
+В **древовидном представлении слайдов** вы можете увидеть все слайды в активном проекте. Вы можете нажать на элемент, чтобы переместить курсор к слайду в редакторе, и перетаскивать элементы для изменения порядка слайдов.
 
-In the **preview webview**, you can click the <codicon-run-all /> icon to start the dev server and click the <codicon-globe /> icon to open the slides in the browser. Toggle <codicon-lock /> icon to sync/unsync the preview navigation with the editor cursor.
+В **веб-представлении предварительного просмотра** вы можете нажать на значок <codicon-run-all /> для запуска сервера разработки и нажать на значок <codicon-globe /> для открытия слайдов в браузере. Переключите значок <codicon-lock />, чтобы синхронизировать/рассинхронизировать навигацию предварительного просмотра с курсором редактора.
 
-There are also some **commands** you can use. Type `Slidev` in the command palette to see them.
+Также есть некоторые **команды**, которые вы можете использовать. Введите `Slidev` в палитре команд, чтобы увидеть их.
 
-You can add glob patterns to the `slidev.include` configuration to include files as Slidev entries. The default value is `["**/*.md"]`. Example:
+Вы можете добавить шаблоны glob в конфигурацию `slidev.include`, чтобы включить файлы в качестве входных данных Slidev. Значение по умолчанию - `["**/*.md"]`. Пример:
 
 ```json
 {
@@ -73,6 +73,6 @@ You can add glob patterns to the `slidev.include` configuration to include files
 }
 ```
 
-## Prettier Plugin
+## Плагин Prettier
 
-Slidev also provides a Prettier plugin to format your slides. You can use it with your favorite editor that supports Prettier. Docs for the plugin can be found [here](https://github.com/slidevjs/prettier-plugin).
+Slidev также предоставляет плагин Prettier для форматирования ваших слайдов. Вы можете использовать его с вашим любимым редактором, который поддерживает Prettier. Документацию по плагину можно найти [здесь](https://github.com/slidevjs/prettier-plugin).
