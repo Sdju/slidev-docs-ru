@@ -1,14 +1,14 @@
-# Configure Shortcuts
+# Настройка сочетаний клавиш
 
-> Available since v0.20
+> Доступно с версии v0.20
 
-> Since v0.35.6 (excluded), you decide which base shortcuts to keep (see `...base,` below).
+> Начиная с версии v0.35.6 (исключительно), вы решаете, какие базовые сочетания клавиш оставить (см. `...base,` ниже).
 
 <Environment type="client" />
 
-## Getting started
+## Начало работы
 
-Create `./setup/shortcuts.ts` with the following content:
+Создайте `./setup/shortcuts.ts` со следующим содержимым:
 
 ```ts
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
@@ -16,7 +16,7 @@ import { defineShortcutsSetup } from '@slidev/types'
 
 export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]) => {
   return [
-    ...base, // keep the existing shortcuts
+    ...base, // сохранить существующие сочетания клавиш
     {
       key: 'enter',
       fn: () => nav.next(),
@@ -31,13 +31,13 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-With the setup, you can provide the custom setting for shortcuts mentioned in [Navigation](/guide/navigation#navigation-bar). The above configuration binds next animation or slide to <kbd>enter</kbd> and previous animation or slide to <kbd>backspace</kbd>.
+С помощью этой настройки вы можете предоставить пользовательские параметры для сочетаний клавиш, упомянутых в [Навигации](/guide/navigation#navigation-bar). Вышеуказанная конфигурация связывает анимацию или слайд следующего элемента с <kbd>enter</kbd> и предыдущий элемент с <kbd>backspace</kbd>.
 
-The configuration function receives an object with some navigation methods, and returns an array containing some shortcut configuration. Refer to the type definitions for more details.
+Функция конфигурации получает объект с некоторыми методами навигации и возвращает массив, содержащий конфигурацию сочетаний клавиш. Обратитесь к определениям типов для получения дополнительных сведений.
 
-## Advanced key binding
+## Продвинутая привязка клавиш
 
-The `key` type only allows for strings, but you can still bind multiple keys by using following convention:
+Тип `key` допускает только строки, но вы все равно можете привязать несколько клавиш, используя следующую нотацию:
 
 ```ts
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
@@ -55,9 +55,9 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-## Advanced navigation features
+## Продвинутые функции навигации
 
-The `nav` navigation operations allows you to access some functionalities than basic _next slide_ or _previous slide_. See the following for use-cases:
+Операции навигации `nav` позволяют вам получить доступ к некоторым функциям, отличным от базовых _следующего слайда_ или _предыдущего слайда_. Смотрите следующие примеры использования:
 
 ```ts
 import { NavOperations, defineShortcutsSetup } from '@slidev/types'
@@ -67,9 +67,9 @@ export default defineShortcutsSetup((nav: NavOperations) => {
     {
       key: 'e',
 
-      // Set the `e` keyboard shortcut to be used as a bookmark
-      // or quick-access of sorts, to navigate specifically to
-      // slide number 42
+      // Установите сочетание клавиш `e` для использования в качестве закладки
+      // или быстрого доступа, чтобы перейти конкретно к
+      // слайду номер 42
       fn: () => nav.go(42),
       autoRepeat: true,
     }
@@ -77,4 +77,4 @@ export default defineShortcutsSetup((nav: NavOperations) => {
 })
 ```
 
-Refer to [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) for more details about key pressed event.
+Обратитесь к [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) для получения дополнительных сведений о событиях нажатия клавиш.
