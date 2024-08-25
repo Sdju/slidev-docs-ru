@@ -1,101 +1,99 @@
-# Vue Global Context
+# Глобальный контекст Vue
 
-Slidev injected a [global Vue context](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev` for advanced conditions or navigation controls.
+Slidev внедряет `$slidev` в [глобальный контекст Vue](https://v3.vuejs.org/api/application-config.html#globalproperties) для сложных условий или элементов управления навигацией.
 
-## Usage
+## Использование
 
-You can access it anywhere in your markdown and Vue template, with the ["Mustache" syntax](https://v3.vuejs.org/guide/template-syntax.html#interpolations).
+Вы можете получить доступ к нему в любом месте вашего markdown и шаблона Vue, используя ["Синтаксис фигурных скобок"](https://v3.vuejs.org/guide/template-syntax.html#interpolations).
 
 ```md
 <!-- slides.md -->
 
-# Page 1
+# Страница 1
 
-Current page is: {{ $slidev.nav.currentPage }}
+Текущая страница: {{ $slidev.nav.currentPage }}
 ```
 
 ```html
 <!-- Foo.vue -->
 
 <template>
-  <div>Title: {{ $slidev.configs.title }}</div>
-  <button @click="$slidev.nav.next">Next Page</button>
+  <div>Заголовок: {{ $slidev.configs.title }}</div>
+  <button @click="$slidev.nav.next">Следующая страница</button>
 </template>
 ```
 
-## Properties
+## Свойства
 
 ### `$clicks`
 
-`$clicks` hold a number of clicks on the current slide. Can be used conditionally to show different content on clicks.
+`$clicks` хранит количество кликов на текущем слайде. Может использоваться условно для отображения различного контента при кликах.
 
 ```html
-<div v-if="$clicks > 3">Content</div>
+<div v-if="$clicks > 3">Контент</div>
 ```
 
 ### `$page`
 
-`$page` holds the number of the current page, 1-indexed.
+`$page` хранит номер текущей страницы, начиная с 1.
 
 ```md
-Page: {{ $page }}
-
-Is current page active: {{ $page === $slidev.nav.currentPage }}
+Страница: {{ $page }}
 ```
 
 ### `$renderContext`
 
-`$renderContext` holds the current render context, can be `slide`, `overview`, `presenter` or `previewNext`
+`$renderContext` хранит текущий контекст рендеринга, может быть `slide`, `overview`, `presenter` или `previewNext`
 
 ```md
 <div v-if="$renderContext === 'slide'">
-  This content will only be rendered in slides view
+  Это содержимое будет отображаться только в представлении слайдов
 </div>
 ```
 
 ### `$slidev.nav`
 
-A reactive object holding the properties and controls of the slides navigation. For examples:
+Реактивный объект, хранящий свойства и элементы управления навигацией слайдов. Например:
 
 ```js
-$slidev.nav.next() // go next step
+$slidev.nav.next() // перейти на следующий шаг
 
-$slidev.nav.nextSlide() // go next slide (skip v-clicks)
+$slidev.nav.nextSlide() // перейти на следующий слайд (пропустить v-клики)
 
-$slidev.nav.go(10) // go slide #10
+$slidev.nav.go(10) // перейти на слайд #10
 ```
 
 ```js
-$slidev.nav.currentPage // current slide number
+$slidev.nav.currentPage // текущий номер слайда
 
-$slidev.nav.currentLayout // current layout id
+$slidev.nav.currentLayout // текущий идентификатор макета
 ```
 
-For more properties available, refer to the [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts) exports.
+Для получения информации о других доступных свойствах см. [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts).
 
-> Note: `$slidev.nav.clicks` is a global state while `$clicks` is local to each slide. It's recommended to **use `$clicks` over `$slidev.nav.clicks`** to avoid clicks changed been triggered on page transitions.
+> Примечание: `$slidev.nav.clicks` - это глобальное состояние, а `$clicks` - локальное для каждого слайда. Рекомендуется **использовать `$clicks` вместо `$slidev.nav.clicks`**, чтобы избежать срабатывания кликов при переходе между страницами.
 
 ### `$slidev.configs`
 
-A reactive object holding the parsed [configurations in the first frontmatter](/custom/#frontmatter-configures) of your `slides.md`. For example
+Реактивный объект, хранящий конфигурации, определенные в первой frontmatter вашего `slides.md`. Например
 
 ```yaml
 ---
-title: My First Slidev!
+title: Мой первый Slidev!
 ---
 ```
 
 ```
-{{ $slidev.configs.title }} // 'My First Slidev!'
+{{ $slidev.configs.title }} // 'Мой первый Slidev!'
 ```
 
 ### `$slidev.themeConfigs`
 
-A reactive object holding the parsed theme configurations.
+Реактивный объект, хранящий конфигурации темы.
 
 ```yaml
 ---
-title: My First Slidev!
+title: Мой первый Slidev!
 themeConfig:
   primary: # 213435
 ---
@@ -107,17 +105,17 @@ themeConfig:
 
 ### `$nav`
 
-> Available since v0.43.0
+> Доступно с версии v0.43.0
 
-A shorthand of `$slidev.nav`.
+Сокращение для `$slidev.nav`.
 
-## Composable Usage
+## Использование композаблов
 
-> Available since v0.48.0
+> Доступно с версии v0.48.0
 
-### Context
+### Контекст
 
-If you want to get the context programmatically (also type-safely), you can import composables from `@slidev/client`:
+Если вы хотите получить контекст программно (и безопасно для типов), вы можете импортировать композиции из `@slidev/client`:
 
 ```vue
 <script setup>
@@ -133,12 +131,12 @@ onSlideLeave(() => { /* ... */ })
 </script>
 ```
 
-> [!NOTE]
-> Previously, you might see the usage of importing nested modules like `import { isDark } from '@slidev/client/logic/dark.ts'`, this is **NOT RECOMMENDED** as they are internal implementation details and might be broken in the future. Try always to use the public API from `@slidev/client` whenever possible.
+> [!Примечание]
+> Ранее вы могли видеть использование импорта вложенных модулей, таких как `import { isDark } from '@slidev/client/logic/dark.ts'`, это **НЕ РЕКОМЕНДУЕТСЯ**, так как они являются внутренними деталями реализации и могут быть нарушены в будущем. Старайтесь всегда использовать публичный API из `@slidev/client`, если это возможно.
 
-### Types
+### Типы
 
-If you want to get a type programmatically, you can import types like `TocItem` from `@slidev/types`:
+Если вы хотите получить тип программно, вы можете импортировать типы, такие как `TocItem`, из `@slidev/types`:
 
 ```vue
 <script setup>
