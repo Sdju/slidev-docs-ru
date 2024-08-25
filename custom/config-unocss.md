@@ -1,46 +1,46 @@
-# Configure UnoCSS
+# Настройка UnoCSS
 
 <Environment type="node" />
 
-[UnoCSS](https://unocss.dev) is now the default CSS framework for Slidev since v0.42.0. UnoCSS is an fast atomic CSS engine that has full flexibility and extensibility.
+[UnoCSS](https://unocss.dev) теперь является основным CSS-фреймворком для Slidev с версии v0.42.0. UnoCSS — это быстрый Atomic CSS движок, который обладает полной гибкостью и расширяемостью.
 
-By default, Slidev enables the following presets out-of-box:
+По умолчанию Slidev включает следующие пресеты из коробки:
 
-- [@unocss/preset-uno](https://unocss.dev/presets/uno) - Tailwind / Windi CSS compatible utilities
-- [@unocss/preset-attributify](https://unocss.dev/presets/attributify) - Attributify mode
-- [@unocss/preset-icons](https://unocss.dev/presets/icons) - Use any icons as class
-- [@unocss/preset-web-fonts](https://unocss.dev/presets/web-fonts) - Use web fonts at ease
-- [@unocss/transformer-directives](https://unocss.dev/transformers/directives) - Use `@apply` in CSS
+- [@unocss/preset-uno](https://unocss.dev/presets/uno) - утилиты, совместимые с Tailwind / Windi CSS
+- [@unocss/preset-attributify](https://unocss.dev/presets/attributify) - режим Attributify
+- [@unocss/preset-icons](https://unocss.dev/presets/icons) - используйте любые иконки с помощью классов
+- [@unocss/preset-web-fonts](https://unocss.dev/presets/web-fonts) - используйте с легкостью веб-шрифты 
+- [@unocss/transformer-directives](https://unocss.dev/transformers/directives) - используйте `@apply` в CSS
 
-Slidev also adds shortcuts as can be seen in its [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/uno.config.ts).
+Slidev также добавляет сокращения, их можно увидеть в его [исходном коде](https://github.com/slidevjs/slidev/blob/main/packages/client/uno.config.ts).
 
-You can therefore style your content the way you want. For example:
+Таким образом, вы можете стилизовать свой контент так, как вам нужно. Например:
 
 ```html
 <div class="grid pt-4 gap-4 grid-cols-[100px,1fr]">
 
-### Name
+### Имя
 
-- Item 1
-- Item 2
+- Элемент 1
+- Элемент 2
 
 </div>
 ```
 
-## Configurations
+## Конфигурации
 
-You can create `uno.config.ts` under the root of your project to extend the builtin configurations
+Вы можете создать `uno.config.ts` в корне вашего проекта, чтобы расширить встроенные конфигурации:
 
 ```ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
   shortcuts: {
-    // custom the default background
+    // пользовательский основной фон
     'bg-main': 'bg-white text-[#181818] dark:(bg-[#121212] text-[#ddd])',
   },
   // ...
 })
 ```
 
-Learn more about [UnoCSS configurations](https://unocss.dev/guide/config-file)
+Узнайте больше о [конфигурациях UnoCSS](https://unocss.dev/guide/config-file).
