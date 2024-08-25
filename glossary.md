@@ -49,3 +49,7 @@
 | SPA | SPA (одностраничное приложение) | |
 | PPTX | PPTX | Не переводится |
 | View Transitions | View Transitions | Не переводится |
+| Playwright | Playwright | Не переводится |
+| CI | CI (непрерывная интеграция) | |
+| Chromium | Chromium | Не переводится |
+| timeout | ограничение по времени | |
