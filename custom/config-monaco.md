@@ -1,22 +1,22 @@
-# Configure Monaco
+# Настройка Monaco
 
 <Environment type="client" />
 
-Create `./setup/monaco.ts` with the following content:
+Создайте `./setup/monaco.ts` со следующим содержимым:
 
 ```ts
 import { defineMonacoSetup } from '@slidev/types'
 
 export default defineMonacoSetup(async (monaco) => {
-  // use `monaco` to configure
+  // используйте `monaco` для настройки
 })
 ```
 
-Learn more about [configuring Monaco](https://github.com/Microsoft/monaco-editor).
+Узнайте больше о [настройке Monaco](https://github.com/Microsoft/monaco-editor).
 
-## Usage
+## Использование
 
-To use Monaco in your slides, simply append `{monaco}` to your code snippets:
+Чтобы использовать Monaco в ваших слайдах, просто добавьте `{monaco}` к вашим фрагментам кода:
 
 ````md
 ```js {monaco} // [!code ++]
@@ -25,13 +25,13 @@ const plusOne = computed(() => count.value + 1)
 
 console.log(plusOne.value) // 2
 
-plusOne.value++ // error
+plusOne.value++ // ошибка
 ```
 ````
 
-## TypeScript Types
+## Типы TypeScript
 
-When use TypeScript with Monaco, types for dependencies will be installed to the client-side automatically.
+Когда вы используете TypeScript с Monaco, типы для зависимостей будут автоматически установлены на стороне клиента.
 
 ````md
 ```ts {monaco}
@@ -42,11 +42,11 @@ const counter = ref(0)
 ```
 ````
 
-In the example above, make sure `vue` and `@vueuse/core` are installed locally as dependencies / devDependencies, Slidev will handle the rest to get the types working for the editor automatically. When deploy as SPA, those types will also be bundled for static hosting.
+В приведенном выше примере убедитесь, что `vue` и `@vueuse/core` установлены локально как зависимости / devDependencies, Slidev позаботится о том, чтобы типы работали для редактора автоматически. При развертывании как SPA эти типы также будут упакованы для статического хостинга.
 
-### Additional Types
+### Дополнительные типы
 
-Slidev will scan all the monaco codeblocks in your slides and import the types for those used libraries for you. In case it missed some, you can explicitly specify extra packages to import the types for:
+Slidev просканирует все блоки кода monaco в ваших слайдах и импортирует типы для используемых библиотек за вас. Если он пропустит некоторые, вы можете явно указать дополнительные пакеты для импорта типов:
 
 ```md
 ---
@@ -56,9 +56,9 @@ monacoTypesAdditionalPackages:
 ---
 ```
 
-### Auto Type Acquisition
+### Автоматическое получение типов
 
-You can optionally switch to load types from CDN by setting the following headmatter:
+Вы можете по желанию переключиться на загрузку типов из CDN, установив следующий frontmatter:
 
 ```md
 ---
@@ -66,17 +66,17 @@ monacoTypesSource: ata
 ---
 ```
 
-This feature is powered by [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) and runs completely on the client-side.
+Эта функция работает на основе [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) и полностью выполняется на стороне клиента.
 
-## Configure Themes
+## Настройка тем
 
-Since v0.48.0, Monaco will reuse the Shiki theme you configured in [Shiki's setup file](/custom/highlighters#configure-shiki), powered by [`@shikijs/monaco`](https://shiki.style/packages/monaco). You don't need to worry about it anymore and it will have a consistent style with the rest of your code blocks.
+С версии v0.48.0 Monaco будет повторно использовать тему Shiki, которую вы настроили в [файле настройки Shiki](/custom/highlighters#configure-shiki), с помощью [`@shikijs/monaco`](https://shiki.style/packages/monaco). Вам больше не нужно беспокоиться об этом, и она будет иметь согласованный стиль с остальными вашими блоками кода.
 
-## Configure the Editor
+## Настройка редактора
 
-> Available since v0.43.0
+> Доступно с версии v0.43.0
 
-If you would like to customize the Monaco editor you may pass an `editorOptions` object that matches the [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) definition.
+Если вы хотите настроить редактор Monaco, вы можете передать объект `editorOptions`, который соответствует определению [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html).
 
 ````md
 ```ts {monaco} { editorOptions: { wordWrap:'on'} }
@@ -84,7 +84,7 @@ console.log('HelloWorld')
 ```
 ````
 
-Alternatively if you would like these options to be applied to every Monaco instance, you can return them in the `defineMonacoSetup` function
+Или, если вы хотите, чтобы эти параметры применялись ко всем экземплярам Monaco, вы можете вернуть их в функции `defineMonacoSetup`:
 
 ```ts
 // ./setup/monaco.ts
@@ -99,12 +99,12 @@ export default defineMonacoSetup(() => {
 })
 ```
 
-## Disabling
+## Отключение
 
-Since v0.48.0, Monaco editor is enabled by default and only be bundled when you use it. If you want to disable it, you can set `monaco` to `false` in the frontmatter of your slide:
+С версии v0.48.0 редактор Monaco включен по умолчанию и будет упакован только при его использовании. Если вы хотите отключить его, вы можете установить `monaco` в `false` в frontmatter вашего слайда:
 
 ```yaml
 ---
-monaco: false # can also be `dev` or `build` tp conditionally enable it
+monaco: false # также может быть `dev` или `build` для включения по условию
 ---
 ```
