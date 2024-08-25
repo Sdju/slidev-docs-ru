@@ -2,41 +2,41 @@
 outline: deep
 ---
 
-# Markdown Syntax
+# Синтаксис Markdown
 
-Slides are written within **a single markdown file** (by default `./slides.md`).
+Слайды пишутся в **одном markdown файле** (по умолчанию `./slides.md`).
 
-You can use [the Markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) as you normally would, with the additional support of inlined HTML and Vue Components. Styling using [UnoCSS](/custom/config-unocss) is also supported. Use `---` padded with a new line to separate your slides.
+Вы можете использовать [возможности Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) как обычно, с дополнительной поддержкой встроенного HTML и Vue компонентов. Также поддерживается стилизация с использованием [UnoCSS](/custom/config-unocss). Используйте `---` с новой строки до и после для разделения слайдов.
 
 ````md
 # Slidev
 
-Hello, World!
+Привет, мир!
 
 ---
 
-# Page 2
+# Страница 2
 
-Directly use code blocks for highlighting
+Используйте блоки кода напрямую для подсветки синтаксиса
 
 ```ts
-console.log('Hello, World!')
+console.log('Привет, мир!')
 ```
 
 ---
 
-# Page 3
+# Страница 3
 
-You can directly use Windi CSS and Vue components to style and enrich your slides.
+Вы можете напрямую использовать Windi CSS и Vue компоненты для стилизации и обогащения ваших слайдов.
 
 <div class="p-3">
   <Tweet id="20" />
 </div>
 ````
 
-## Frontmatter & Layouts
+## Frontmatter и макеты
 
-Specify layouts and other metadata for each slide by converting the separators into [frontmatter blocks](https://jekyllrb.com/docs/front-matter/). Each frontmatter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+Укажите макеты и другие метаданные для каждого слайда, преобразовав разделители в [блоки frontmatter](https://jekyllrb.com/docs/front-matter/). Каждый frontmatter начинается с тройного тире и заканчивается другим. Текст между ними - это объекты данных в формате [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/). Например:
 
 <!-- eslint-skip -->
 
@@ -47,7 +47,7 @@ layout: cover
 
 # Slidev
 
-This is the cover page.
+Это титульная страница.
 
 ---
 layout: center
@@ -55,25 +55,25 @@ background: /background-1.png
 class: 'text-white'
 ---
 
-# Page 2
+# Страница 2
 
-This is a page with the layout `center` and a background image.
+Это страница с макетом `center` и фоновым изображением.
 
 ---
 
-# Page 3
+# Страница 3
 
-This is a default page without any additional metadata.
+Это страница по умолчанию без дополнительных метаданных.
 ```
 
-Refer to [customization](/custom/) for more details.
+Обратитесь к разделу [настройка](/custom/) для получения дополнительной информации.
 
-### Prettier Support
+### Поддержка Prettier
 
-> Available since v0.44
+> Доступно с версии v0.44
 
-The custom syntax might not be compactible with some formatters like Prettier.
-You can either install the [Prettier Plugin](/guide/editors#prettier-plugin) or use a direct `yaml` code block to define the frontmatter instead:
+Пользовательский синтаксис может быть несовместим с некоторыми форматтерами, такими как Prettier.
+Вы можете либо установить [Prettier Plugin](/guide/editors#prettier-plugin), либо использовать прямой блок кода `yaml` для определения frontmatter:
 
 ````md
 ---
@@ -82,37 +82,37 @@ layout: cover
 
 # Slidev
 
-This is the cover page.
+Это титульная страница.
 
 ---
 
 ```yaml
-# The first yaml block will be treated as the frontmatter of that slide
+# Первый yaml блок будет рассматриваться как frontmatter этого слайда
 layout: center
 background: /background-1.png
 class: 'text-white'
 ```
 
-# Page 2
+# Страница 2
 
-This is a page with the layout `center` and a background image.
+Это страница с макетом `center` и фоновым изображением.
 ````
 
-## Code Blocks
+## Блоки кода
 
-One big reason that led to the creation of Slidev was the need to perfectly display code in slides. Consequently, you can use Markdown-flavored code blocks to highlight your code.
+Одной из главных причин создания Slidev была необходимость идеального отображения кода на слайдах. Следовательно, вы можете использовать блоки кода в стиле Markdown для подсветки вашего кода.
 
 ````md
 ```ts
-console.log('Hello, World!')
+console.log('Привет, мир!')
 ```
 ````
 
-Slidev has [Shiki](https://github.com/shikijs/shiki) built in as the syntax highlighter. Refer to [the highlighters section](/custom/highlighters) for more details.
+Slidev имеет встроенный [Shiki](https://github.com/shikijs/shiki) в качестве подсветки синтаксиса. Обратитесь к [разделу о подсветке синтаксиса](/custom/highlighters) для получения дополнительной информации.
 
-### Line Highlighting
+### Подсветка строк
 
-To highlight specific lines, simply add line numbers within brackets `{}`. Line numbers start counting from 1 by default.
+Чтобы подсветить определенные строки, просто добавьте номера строк в фигурных скобках `{}`. Нумерация строк по умолчанию начинается с 1.
 
 ````md
 ```ts {2,3}
@@ -125,7 +125,7 @@ function add(
 ```
 ````
 
-To change what's highlighted with multiple clicks, you can use `|` to separate each stage:
+Чтобы изменить подсветку при нескольких кликах, вы можете использовать `|` для разделения каждого этапа:
 
 ````md
 ```ts {2-3|5|all}
@@ -138,9 +138,9 @@ function add(
 ```
 ````
 
-This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block.
+Это сначала подсветит `a: Ref<number> | number` и `b: Ref<number> | number`, затем `return computed(() => unref(a) + unref(b))` после одного клика, и наконец, весь блок.
 
-You can set the line number to `hide` to hide the code block or `none` to not highlight any line:
+Вы можете установить номер строки на `hide`, чтобы скрыть блок кода, или `none`, чтобы не подсвечивать ни одну строку:
 
 ````md
 ```ts {hide|none}
@@ -154,12 +154,12 @@ function add(
 ````
 
 ::: tip
-Learn more in the [click animations guide](./animations#positioning).
+Узнайте больше в [руководстве по анимации кликов](./animations#positioning).
 :::
 
-### Line Numbers
+### Нумерация строк
 
-You can enable line numbering for all slides by setting `lineNumbers: true` in the global config or enable each code block individually by setting `lines: true`. You can also set the starting line for each code block and highlight the lines accordingly; it defaults to 1:
+Вы можете включить нумерацию строк для всех слайдов, установив `lineNumbers: true` в глобальной конфигурации, или включить каждый блок кода индивидуально, установив `lines: true`. Вы также можете установить начальную строку для каждого блока кода и подсветить строки соответственно; по умолчанию начинается с 1:
 
 ````md
 ```ts {6,7}{lines:true,startLine:5}
@@ -172,9 +172,9 @@ function add(
 ```
 ````
 
-### Max Height
+### Максимальная высота
 
-If the code doesn't fit into one slide, you use the `maxHeight` to set fixed height and enable scrolling:
+Если код не помещается на один слайд, вы можете использовать `maxHeight` для установки фиксированной высоты и включения прокрутки:
 
 ````md
 ```ts {2|3|7|12}{maxHeight:'100px'}
@@ -184,20 +184,20 @@ function add(
 ) {
   return computed(() => unref(a) + unref(b))
 }
-/// ...as many lines as you want
+/// ...столько строк, сколько вы хотите
 const c = add(1, 2)
 ```
 ````
 
-### TwoSlash Integration
+### Интеграция TwoSlash
 
-> Available since v0.46
+> Доступно с версии v0.46
 
-This feature is only available when you [set `highlighter` to `shiki`](/custom/highlighters)
+Эта функция доступна только когда вы [устанавливаете `highlighter` в `shiki`](/custom/highlighters)
 
-[TwoSlash](https://twoslash.netlify.app/) is a powerful tool for rendering TypeScript code blocks with type information on hover or inlined. It's quite useful for preparing slides for JavaScript/TypeScript-related topics.
+[TwoSlash](https://twoslash.netlify.app/) - это мощный инструмент для рендеринга блоков кода TypeScript с информацией о типах при наведении курсора или встроенной. Это очень полезно при подготовке слайдов для тем, связанных с JavaScript/TypeScript.
 
-To use it, you can add `twoslash` to the code block's language identifier:
+Чтобы использовать его, вы можете добавить `twoslash` к идентификатору языка блока кода:
 
 ````md
 ```ts twoslash
@@ -208,7 +208,7 @@ const count = ref(0)
 ```
 ````
 
-It will be rendered as:
+Это будет отображено как:
 
 ```ts twoslash
 import { ref } from 'vue'
@@ -217,34 +217,34 @@ const count = ref(0)
 //            ^?
 ```
 
-<!-- For the popup to not to overlap the content below -->
+<!-- Чтобы всплывающее окно не перекрывало содержимое ниже -->
 <div class="py-20" />
 
 ### Shiki Magic Move
 
-> Available since v0.48
+> Доступно с версии v0.48
 
-[Shiki Magic Move](https://github.com/shikijs/shiki-magic-move) enables you to have granular transition between code changes, similar to Keynote's Magic Move. You can check [the playground](https://shiki-magic-move.netlify.app/) to see how it works.
+[Shiki Magic Move](https://github.com/shikijs/shiki-magic-move) позволяет вам иметь детальный переход между изменениями кода, подобно Magic Move в Keynote. Вы можете проверить [playground](https://shiki-magic-move.netlify.app/), чтобы увидеть, как это работает.
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/79927794-27ba-4342-9911-9996cec889d6" controls rounded shadow w-full></video>
 
-In Slidev, we bind the magic-move to the [clicks system](/guide/animations#click-animations). The syntax is to wrap multiple code blocks representing each step with <code>````md magic-move</code> (mind it's **4** backticks), this will be transformed into one code block, that morphs to each step as you click.
+В Slidev мы привязываем magic-move к [системе кликов](/guide/animations#click-animations). Синтаксис заключается в обертывании нескольких блоков кода, представляющих каждый шаг, с помощью <code>````md magic-move</code> (обратите внимание, это **4** обратных апострофа), это будет преобразовано в один блок кода, который морфируется в каждый шаг при клике.
 
 `````md
 ````md magic-move
 ```js
-console.log(`Step ${1}`)
+console.log(`Шаг ${1}`)
 ```
 ```js
-console.log(`Step ${1 + 1}`)
+console.log(`Шаг ${1 + 1}`)
 ```
 ```ts
-console.log(`Step ${3}` as string)
+console.log(`Шаг ${3}` as string)
 ```
 ````
 `````
 
-It's also possible to mix Magic Move with [line highlighting](#line-highlighting) and [line numbers](#line-numbers), for example:
+Также возможно комбинировать Magic Move с [подсветкой строк](#подсветка-строк) и [нумерацией строк](#нумерация-строк), например:
 
 `````md
 ````md magic-move {at:4, lines: true} // [!code hl]
@@ -255,7 +255,7 @@ function add() {
 }
 ```
 
-Non-code blocks in between as ignored, you can put some comments.
+Не-кодовые блоки между ними игнорируются, вы можете добавить некоторые комментарии.
 
 ```js {*}{lines: false} // [!code hl]
 let count = 1
@@ -264,78 +264,78 @@ const add = () => count += 1
 ````
 `````
 
-<!-- TODO: add an inline demo -->
+<!-- TODO: добавить встроенную демонстрацию -->
 
-### Monaco Editor
+### Редактор Monaco
 
-Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
+Когда вы хотите внести некоторые изменения в презентацию, просто добавьте `{monaco}` после идентификатора языка — это превращает блок в полнофункциональный редактор Monaco!
 
 ````md
 ```ts {monaco}
-console.log('HelloWorld')
+console.log('ПриветМир')
 ```
 ````
 
-Learn more about [configuring Monaco](/custom/config-monaco).
+Узнайте больше о [настройке Monaco](/custom/config-monaco).
 
 #### Monaco Diff
 
-Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [diff Monaco editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate both original and modified version of the code!
+Monaco также может генерировать разницу между двумя блоками кода. Используйте `{monaco-diff}`, чтобы превратить блок в [diff Monaco редактор](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) и используйте `~~~` для разделения оригинальной и измененной версий кода!
 
 ````md
 ```ts {monaco-diff}
-This line is removed on the right.
-just some text
+Эта строка удалена справа.
+просто некоторый текст
 abcd
 efgh
-Some more text
+Еще немного текста
 ~~~
-just some text
+просто некоторый текст
 abcz
 zzzzefgh
-Some more text.
-This line is removed on the left.
+Еще немного текста.
+Эта строка удалена слева.
 ```
 ````
 
-It provides the editor with a "Run" button, and shows the result of the code execution right below the code block. You may also modify the code and the result will be re-evaluated on the fly.
+Он предоставляет редактор с кнопкой "Запустить" и показывает результат выполнения кода прямо под блоком кода. Вы также можете изменить код, и результат будет пересчитан на лету.
 
-By default it will automatically run the code when the slide is loaded; if you want to instead explicitly trigger the run, you can set `{autorun:false}`.
+По умолчанию он автоматически запускает код при загрузке слайда; если вы хотите вместо этого явно запускать выполнение, вы можете установить `{autorun:false}`.
 
 ````md
 ```ts {monaco-run} {autorun:false}
-console.log('Click the play button to run me')
+console.log('Нажмите кнопку воспроизведения, чтобы запустить меня')
 ```
 ````
 
-If you want to only show the output in certain clicks, you can use the `showOutputAt` prop. The value is the same as `v-click`.
+Если вы хотите показывать вывод только при определенных кликах, вы можете использовать свойство `showOutputAt`. Значение такое же, как у `v-click`.
 
 ````md
 ```ts {monaco-run} {showOutputAt:'+1'}
-console.log('Shown after 1 click')
+console.log('Показано после 1 клика')
 ```
 ````
 
-Currently Slidev supports running JavaScript and TypeScript code out-of-box. Refer to [Custom Code Runners](/custom/config-code-runners) for custom languages support.
+В настоящее время Slidev поддерживает выполнение кода JavaScript и TypeScript из коробки. Обратитесь к [Пользовательским исполнителям кода](/custom/config-code-runners) для поддержки пользовательских языков.
 
-#### Writable Monaco Editor
+#### Редактируемый редактор Monaco
 
-> Available since v0.49.5
+> Доступно с версии v0.49.5
 
-You can also use the [Import Code Snippets](#import-code-snippets) syntax combining with the `{monaco-write}` directive, to link your Monaco Editor with a file on your filesystem. This will allow you to edit the code directly in the editor and save the changes back to the file.
+Вы также можете использовать синтаксис [Импорт фрагментов кода](#импорт-фрагментов-кода) в сочетании с директивой `{monaco-write}`, чтобы связать ваш редактор Monaco с файлом в вашей файловой системе. Это позволит вам редактировать код непосредственно в редакторе и сохранять изменения обратно в файл.
 
 ```md
 <<< ./some-file.ts {monaco-write}
 ```
 
-When using this, be sure to back up your files beforehand, as the changes will be saved directly to the file.
+При использовании этого обязательно сделайте резервную копию ваших файлов, так как изменения будут сохранены непосредственно в файл.
 
-## Embedded Styles
+## Встроенные стили
 
-You can use `<style>` tag in your Markdown directly to override styles for the **current slide**.
+Вы можете использовать тег `<style>` в вашем Markdown напрямую для переопределения стилей для **текущего слайда**.
 
 ```md
-# This is Red
+# Это красный
 
 <style>
 h1 {
@@ -345,17 +345,17 @@ h1 {
 
 ---
 
-# Next slide is not affected
+# Следующий слайд не затронут
 ```
 
-The `<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As a result, a selector with a child combinator (`.a > .b`) is unusable as such; see the previous link. To have global style overrides, check out the [customization section](/custom/directory-structure#style).
+Тег `<style>` в Markdown всегда [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). В результате селектор с дочерним комбинатором (`.a > .b`) не может быть использован как таковой; см. предыдущую ссылку. Чтобы иметь глобальные переопределения стилей, ознакомьтесь с [разделом настройки](/custom/directory-structure#style).
 
-Powered by [UnoCSS](/custom/config-unocss), you can directly use nested css and [directives](https://unocss.dev/transformers/directives) (e.g. `--uno:` or `@apply`)
+Благодаря [UnoCSS](/custom/config-unocss), вы можете напрямую использовать вложенный css и [директивы](https://unocss.dev/transformers/directives) (например, `--uno:` или `@apply`)
 
 ```md
 # Slidev
 
-> Hello `world`
+> Привет `мир`
 
 <style>
 blockquote {
@@ -366,102 +366,102 @@ blockquote {
 </style>
 ```
 
-## Static Assets
+## Статические ресурсы
 
-Just like you would do in markdown, you can use images pointing to a remote or local url.
+Как и в обычном markdown, вы можете использовать изображения, указывая на удаленный или локальный URL.
 
-For remote assets, the built-in [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) will cache them onto the disk at first run, ensuring instant loading even for large images later on.
-
-```md
-![Remote Image](https://sli.dev/favicon.png)
-```
-
-For local assets, put them into the [`public` folder](/custom/directory-structure.html#public) and reference them with **leading slash**.
+Для удаленных ресурсов встроенный [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) будет кэшировать их на диск при первом запуске, обеспечивая мгновенную загрузку даже для крупных изображений позже.
 
 ```md
-![Local Image](/pic.png)
+![Удаленное изображение](https://sli.dev/favicon.png)
 ```
 
-For you want to apply custom sizes or styles, you can convert them to the `<img>` tag
+Для локальных ресурсов поместите их в [папку `public`](/custom/directory-structure.html#public) и ссылайтесь на них с **ведущим слешем**.
+
+```md
+![Локальное изображение](/pic.png)
+```
+
+Для того, чтобы применить пользовательские размеры или стили, вы можете преобразовать их в тег `<img>`
 
 ```html
 <img src="/pic.png" class="m-40 h-40 rounded shadow" />
 ```
 
-## Notes
+## Заметки
 
-You can also create presenter notes for each slide. They will show up in [Presenter Mode](/guide/presenter-mode) for you to reference during presentations.
+Вы также можете создавать заметки для каждого слайда. Они появятся в [Режиме докладчика](/guide/presenter-mode) для вашего справки во время презентаций.
 
-In Markdown, the last comment block in each slide will be treated as a note.
+В Markdown последний блок комментариев в каждом слайде будет рассматриваться как заметка.
 
 ```md
 ---
 layout: cover
 ---
 
-# Page 1
+# Страница 1
 
-This is the cover page.
+Это титульная страница.
 
-<!-- This is a note -->
+<!-- Это заметка -->
 
 ---
 
-# Page 2
+# Страница 2
 
-<!-- This is NOT a note because it precedes the content of the slide -->
+<!-- Это НЕ заметка, потому что она предшествует содержимому слайда -->
 
-The second page
+Вторая страница
 
 <!--
-This is another note
+Это еще одна заметка
 -->
 ```
 
-Basic Markdown and HTML are also supported in notes when the Presenter renders note content.
+Поддерживается базовый Markdown и HTML в заметках, когда докладчик отображает содержимое заметок.
 
-### Click Markers
+### Маркеры кликов
 
-> Available since v0.48
+> Доступно с версии v0.48
 
-For some slides you might have longer notes that could be hard to find your place. Slidev supports click markers that allow highlighting and auto-scrolling to the section of notes from your corresponding content. Put `[click]` markers at the beginning of any line in your notes for the timing you need to go to another [click](/guide/animations#click-animations). You may skip `n` clicks by using `[click:{n+1}]`. For example:
+Для некоторых слайдов ваши заметки могут быть длинными и сложно найти свое место. Slidev поддерживает маркеры кликов, которые позволяют выделять и автоматически прокручивать раздел заметок в соответствии с вашим содержимым. Поместите маркеры `[click]` в начало любой строки в ваших заметках для времени, которое вам нужно перейти к другому [клику](/guide/animations#click-animations). Вы можете пропустить `n` кликов, используя `[click:{n+1}]`. Например:
 
 ```md
 <!--
-Content before the first click
+Содержимое до первого клика
 
-[click] This will be highlighted after the first click
+[click] Это будет выделено после первого клика
 
-Also highlighted after the first click
+Также выделено после первого клика
 
-- [click] This list element will be highlighted after the second click
+- [click] Этот элемент списка будет выделен после второго клика
 
-[click:3] Last click (skip two clicks)
+[click:3] Последний клик (пропустить два клика)
 -->
 ```
 
-Slidev divides the content between the click markers and highlights it in presenter notes, synchronized with your slide progress.
+Slidev разделяет содержимое между маркерами кликов и выделяет его в заметках докладчика, синхронизируясь с прогрессом вашего слайда.
 
-<!-- TODO: add a video -->
+<!-- TODO: добавить видео -->
 
-## Icons
+## Иконки
 
-Slidev allows you to have access to virtually all open-source icon sets **directly** in your markdown after installing the corresponding package. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+Slidev позволяет вам иметь доступ практически ко всем открытым наборам иконок **напрямую** в вашем markdown после установки соответствующего пакета. Поддерживается [`unplugin-icons`](https://github.com/antfu/unplugin-icons) и [Iconify](https://iconify.design/).
 
-The naming follows [Iconify](https://iconify.design/)'s convention of `{collection-name}-{icon-name}`. For example:
+Именование следует соглашению [Iconify](https://iconify.design/) о `{collection-name}-{icon-name}`. Например:
 
-- `<mdi-account-circle />` - <mdi-account-circle /> from [Material Design Icons](https://github.com/Templarian/MaterialDesign) - [`@iconify-json/mdi`](https://npmjs.com/package/@iconify-json/mdi)
-- `<carbon-badge />` - <carbon-badge /> from [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons) - [`@iconify-json/carbon`](https://npmjs.com/package/@iconify-json/carbon)
-- `<uim-rocket />` - <uim-rocket /> from [Unicons Monochrome](https://github.com/Iconscout/unicons) - [`@iconify-json/uim`](https://npmjs.com/package/@iconify-json/uim)
-- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> from [Twemoji](https://github.com/twitter/twemoji) - [`@iconify-json/twemoji`](https://npmjs.com/package/@iconify-json/twemoji)
-- `<logos-vue />` - <logos-vue /> from [SVG Logos](https://github.com/gilbarbara/logos) - [`@iconify-json/logos`](https://npmjs.com/package/@iconify-json/logos)
-- And much more...
+- `<mdi-account-circle />` - <mdi-account-circle /> из [Material Design Icons](https://github.com/Templarian/MaterialDesign) - [`@iconify-json/mdi`](https://npmjs.com/package/@iconify-json/mdi)
+- `<carbon-badge />` - <carbon-badge /> из [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons) - [`@iconify-json/carbon`](https://npmjs.com/package/@iconify-json/carbon)
+- `<uim-rocket />` - <uim-rocket /> из [Unicons Monochrome](https://github.com/Iconscout/unicons) - [`@iconify-json/uim`](https://npmjs.com/package/@iconify-json/uim)
+- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> из [Twemoji](https://github.com/twitter/twemoji) - [`@iconify-json/twemoji`](https://npmjs.com/package/@iconify-json/twemoji)
+- `<logos-vue />` - <logos-vue /> из [SVG Logos](https://github.com/gilbarbara/logos) - [`@iconify-json/logos`](https://npmjs.com/package/@iconify-json/logos)
+- И многое другое...
 
-Browse and search for all the icons available with [Icônes](https://icones.js.org/).
+Обзор и поиск всех доступных иконок можно выполнить с помощью [Icônes](https://icones.js.org/).
 
-### Styling Icons
+### Стилизация иконок
 
-You can style the icons just like other HTML elements. For example:
+Вы можете стилизовать иконки так же, как и другие HTML-элементы. Например:
 
 ```html
 <uim-rocket />
@@ -473,13 +473,13 @@ You can style the icons just like other HTML elements. For example:
 <uim-rocket class="text-3xl text-red-400 mx-2" />
 <uim-rocket class="text-3xl text-orange-400 animate-ping ml-2" />
 
-## Slots
+## Слоты
 
-> Available since v0.18
+> Доступно с версии v0.18
 
-Some layouts can provide multiple contributing points using [Vue's named slots](https://v3.vuejs.org/guide/component-slots.html).
+Некоторые макеты могут предоставлять несколько вкладок с помощью [именованных слотов Vue](https://v3.vuejs.org/guide/component-slots.html).
 
-For example, in [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), you can have two columns left (`default` slot) and right (`right` slot) side by side.
+Например, в [`two-cols` макете](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), вы можете иметь две колонки слева (`default` слот) и справа (`right` слот) рядом друг с другом.
 
 ```md
 ---
@@ -488,50 +488,50 @@ layout: two-cols
 
 <template v-slot:default>
 
-# Left
+# Левая
 
-This shows on the left
+Это показывается слева
 
 </template>
 <template v-slot:right>
 
-# Right
+# Правая
 
-This shows on the right
+Это показывается справа
 
 </template>
 ```
 
 <div class="grid grid-cols-2 rounded border border-gray-400 border-opacity-50 px-10 pb-4">
 <div>
-<h3>Left</h3>
-<p>This shows on the left</p>
+<h3>Левая</h3>
+<p>Это показывается слева</p>
 </div>
 <div>
-<h3>Right</h3>
-<p>This shows on the right</p>
+<h3>Правая</h3>
+<p>Это показывается справа</p>
 </div>
 </div>
 
-We also provide a shorthand syntactical sugar `::name::` for slot name. The following works exactly the same as the previous example.
+Мы также предоставляем синтаксический сахар `::name::` для имени слота. Следующий пример работает точно так же, как предыдущий.
 
 ```md
 ---
 layout: two-cols
 ---
 
-# Left
+# Левая
 
-This shows on the left
+Это показывается слева
 
 ::right::
 
-# Right
+# Правая
 
-This shows on the right
+Это показывается справа
 ```
 
-You can also explicitly specify the default slot and provide in the custom order.
+Вы также можете явно указать слот по умолчанию и предоставить его в произвольном порядке.
 
 ```md
 ---
@@ -540,36 +540,36 @@ layout: two-cols
 
 ::right::
 
-# Right
+# Правая
 
-This shows on the right
+Это показывается справа
 
 ::default::
 
-# Left
+# Левая
 
-This shows on the left
+Это показывается слева
 ```
 
-## Import Code Snippets
+## Импорт фрагментов кода
 
-> Available since v0.47.0
+> Доступно с версии v0.47.0
 
-You can import code snippets from existing files via following syntax:
+Вы можете импортировать фрагменты кода из существующих файлов с помощью следующего синтаксиса:
 
 ```md
 <<< @/snippets/snippet.js
 ```
 
 ::: tip
-The value of `@` corresponds to the source root, the directory where the `slides.md` is located.
+Значение `@` соответствует корню источника, каталогу, в котором находится `slides.md`.
 :::
 
-This feature is vendored from VitePress, learn more about it in [VitePress's documentation](https://vitepress.dev/guide/markdown#import-code-snippets).
+Эта функция вендорится из VitePress, узнайте больше о ней в [документации VitePress](https://vitepress.dev/guide/markdown#import-code-snippets).
 
-## Configurations
+## Конфигурации
 
-All configurations can be defined in the Markdown file. For example:
+Все конфигурации могут быть определены в файле Markdown. Например:
 
 ```md
 ---
@@ -580,29 +580,29 @@ background: 'https://source.unsplash.com/1600x900/?nature,water'
 
 # Slidev
 
-This is the cover page.
+Это титульная страница.
 ```
 
-Learn more about [frontmatter configurations](/custom/#frontmatter-configures).
+Узнайте больше о [конфигурациях frontmatter](/custom/#frontmatter-configures).
 
 ## LaTeX
 
-Slidev comes with LaTeX support out-of-box, powered by [KaTeX](https://katex.org/).
+Slidev поставляется с встроенной поддержкой LaTeX, основанной на [KaTeX](https://katex.org/).
 
 <TheTweet id="1392246507793915904" />
 
-### Inline
+### Встроенный
 
-Surround your LaTeX with a single `$` on each side for inline rendering.
+Обрамите ваш LaTeX одним `$` с каждой стороны для встроенного рендеринга.
 
 ```md
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
-### Block
+### Блок
 
-Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
-the result.
+Используйте два (`$$`) для блочного рендеринга. Этот режим использует большие символы и центрирует
+результат.
 
 ```latex
 $$
@@ -619,13 +619,13 @@ $$
 $$
 ```
 
-Learn more: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
+Узнайте больше: [Демо](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
 
-### LaTex line highlighting
+### Подсветка строк LaTeX
 
-> Available since v0.43.1
+> Доступно с версии v0.43.1
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+Чтобы подсветить определенные строки, просто добавьте номера строк в фигурных скобках `{}`. Нумерация строк по умолчанию начинается с 1.
 
 ```latex
 $$ {1|3|all}
@@ -638,69 +638,69 @@ $$ {1|3|all}
 $$
 ```
 
-The `at` and `finally` options of [code blocks](#line-highlighting) are also available for LaTeX blocks.
+Опции `at` и `finally` из [блоков кода](#подсветка-строк) также доступны для блоков LaTeX.
 
-## Diagrams
+## Диаграммы
 
-You can also create diagrams / graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid-js.github.io/mermaid).
+Вы также можете создавать диаграммы / графики из текстовых описаний в вашем Markdown, поддерживаемые [Mermaid](https://mermaid-js.github.io/mermaid).
 
-Code blocks marked as `mermaid` will be converted to diagrams, for example:
+Блоки кода, помеченные как `mermaid`, будут преобразованы в диаграммы, например:
 
 ````md
 ```mermaid
 sequenceDiagram
-  Alice->John: Hello John, how are you?
-  Note over Alice,John: A typical interaction
+  Alice->John: Привет, Джон, как дела?
+  Note over Alice,John: Типичный обмен
 ```
 ````
 
-You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
+Вы также можете передать объект опций в него для указания масштабирования и темы. Синтаксис объекта - это литерал объекта JavaScript, вам потребуется добавлять кавычки (`'`) для строк и использовать запятую (`,`) между ключами.
 
 ````md
 ```mermaid {theme: 'neutral', scale: 0.8}
 graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+B[Текст] --> C{Решение}
+C -->|Один| D[Результат 1]
+C -->|Два| E[Результат 2]
 ```
 ````
 
-Learn more: [Demo](https://sli.dev/demo/starter/9) | [Mermaid](https://mermaid-js.github.io/mermaid)
+Узнайте больше: [Демо](https://sli.dev/demo/starter/9) | [Mermaid](https://mermaid-js.github.io/mermaid)
 
-## Multiple Entries
+## Множественные входы
 
-> Available since v0.15
+> Доступно с версии v0.15
 
-You can split your `slides.md` into multiple files and organize them however you'd like.
+Вы можете разделить ваш `slides.md` на несколько файлов и организовать их как вам удобно.
 
 `slides.md` :
 
 <!-- eslint-skip -->
 
 ```md
-# Page 1
+# Страница 1
 
-This is a normal page
+Это обычная страница
 
 ---
 src: ./subpage2.md
 ---
 
-<!-- this page will be loaded from './subpage2.md' -->
-Inline content will be ignored
+<!-- эта страница будет загружена из './subpage2.md' -->
+Встроенное содержимое будет игнорироваться
 ```
 
 `subpage2.md` :
 
 ```md
-# Page 2
+# Страница 2
 
-This page is from another file
+Эта страница из другого файла
 ```
 
-### Frontmatter Merging
+### Объединение frontmatter
 
-You can provide frontmatter instructions from both your main entry and external markdown pages. If there are duplicate keys in them, the ones from the **main entry have the higher priority**. For example:
+Вы можете предоставлять инструкции frontmatter как из вашего основного входа, так и из внешних markdown-страниц. Если в них есть дублирующиеся ключи, те, которые из **основного входа, имеют более высокий приоритет**. Например:
 
 `slides.md` :
 
@@ -720,12 +720,12 @@ layout: cover
 background: https://sli.dev/foo.png
 ---
 
-# Cover
+# Обложка
 
-Cover Page
+Обложка
 ```
 
-They will end up being equivalent of the following page:
+Они в конечном итоге будут эквивалентны следующей странице:
 
 ```md
 ---
@@ -734,14 +734,14 @@ background: https://sli.dev/bar.png
 class: text-center
 ---
 
-# Cover
+# Обложка
 
-Cover Page
+Обложка
 ```
 
-### Page Reuse
+### Переиспользование страниц
 
-With the multi-entries support, reusing pages could be straightforward. For example:
+С поддержкой множественных входов повторное использование страниц может быть простым. Например:
 
 ```yaml
 ---
@@ -757,31 +757,31 @@ src: ./content.md
 ---
 
 ---
-# reuse
+# повторное использование
 src: ./content.md
 ---
 ```
 
-## MDC Syntax
+## Синтаксис MDC
 
-> Available since v0.43.0
+> Доступно с версии v0.43.0
 
-Slidev supports optional [MDC (Markdown Components) Syntax](https://content.nuxtjs.org/guide/writing/mdc) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
+Slidev поддерживает необязательный [синтаксис MDC (Markdown Components)](https://content.nuxtjs.org/guide/writing/mdc) поддерживаемый [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
 
-You can enable it by adding `mdc: true` to the frontmatter of your markdown file.
+Вы можете включить его, добавив `mdc: true` в frontmatter вашего markdown-файла.
 
 ```mdc
 ---
 mdc: true
 ---
 
-This is a [red text]{style="color:red"} :inline-component{prop="value"}
+Это [красный текст]{style="color:red"} :inline-component{prop="value"}
 
 ![](/image.png){width=500px lazy}
 
 ::block-component{prop="value"}
-The **default** slot
+Слот **по умолчанию**
 ::
 ```
 
-Learn more about [MDC Syntax](https://content.nuxt.com/guide/writing/mdc).
+Узнайте больше о [синтаксисе MDC](https://content.nuxt.com/guide/writing/mdc).
