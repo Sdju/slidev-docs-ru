@@ -1,10 +1,10 @@
-# Draggable Elements
+# Перетаскиваемые элементы
 
-Draggable elements give you the ability to move, resize and rotate elements by dragging them with the mouse. This is useful for creating floating elements in your slides.
+Перетаскиваемые элементы позволяют вам перемещать, изменять размер и вращать элементы, перетаскивая их мышью. Это полезно для создания плавающих элементов в ваших слайдах.
 
-## Directive Usage
+## Использование директивы
 
-### Data from the frontmatter
+### Данные из frontmatter
 
 ```md
 ---
@@ -15,19 +15,19 @@ dragPos:
 <img v-drag="'square'" src="https://sli.dev/logo.png">
 ```
 
-### Data from the directive value
+### Данные из значения директивы
 
 ::: warning
-Slidev use regex to update the position value in the slide content. If you meet problems, please use the frontmatter to define the values instead.
+Slidev использует регулярные выражения для обновления значения позиции в содержимом слайда. Если у вас возникли проблемы, используйте frontmatter для определения значений.
 :::
 
 ```md
 <img v-drag="[Left,Top,Width,Height,Rotate]" src="https://sli.dev/logo.png">
 ```
 
-## Component Usage
+## Использование компонента
 
-### Data from the frontmatter
+### Данные из frontmatter
 
 ```md
 ---
@@ -37,40 +37,40 @@ dragPos:
 
 <v-drag pos="foo" text-3xl>
   <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
+  Используйте компонент `v-drag`, чтобы создать перетаскиваемый контейнер!
 </v-drag>
 ```
 
-### Data from props
+### Данные из props
 
 ```md
 <v-drag pos="Left,Top,Width,Height,Rotate" text-3xl>
   <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
+  Используйте компонент `v-drag`, чтобы создать перетаскиваемый контейнер!
 </v-drag>
 ```
 
-## Automatic Height
+## Автоматическая высота
 
-You can set `Height` to `NaN` (if you use the directive) or `_` (if you use the component) to make the height of the draggable element automatically adjust to its content.
+Вы можете установить `Height` в `NaN` (если используете директиву) или `_` (если используете компонент), чтобы высота перетаскиваемого элемента автоматически подстраивалась под его содержимое.
 
-## Create a Draggable Element
+## Создание перетаскиваемого элемента
 
-When you first create a draggable element, you don't need to specify the position value (but you need to specify the position name if you want to use the frontmatter). Slidev will automatically generate the initial position value for you.
+Когда вы впервые создаете перетаскиваемый элемент, вам не нужно указывать значение позиции (но вам нужно указать имя позиции, если вы хотите использовать frontmatter). Slidev автоматически сгенерирует начальное значение позиции для вас.
 
-## Controls
+## Элементы управления
 
-- Double click the draggable element to start dragging it.
-- You can also use the arrow keys to move the element.
-- Hold `Shift` while dragging to preserve its aspect ratio.
-- Click outside the draggable element to stop dragging it.
+- Дважды щелкните на перетаскиваемом элементе, чтобы начать его перетаскивание.
+- Вы также можете использовать стрелки для перемещения элемента.
+- Удерживайте `Shift` во время перетаскивания, чтобы сохранить его соотношение сторон.
+- Щелкните вне перетаскиваемого элемента, чтобы остановить его перетаскивание.
 
-## Draggable Arrow
+## Перетаскиваемая стрелка
 
-The `<v-drag-arrow>` component creates a draggable arrow element. Simply use it like this:
+Компонент `<v-drag-arrow>` создает перетаскиваемый элемент стрелки. Просто используйте его так:
 
 ```md
 <v-drag-arrow />
 ```
 
-And you will get a draggable arrow element. Other props are the same as [the `Arrow` component](/builtin/components#arrow).
+И вы получите перетаскиваемый элемент стрелки. Другие свойства такие же, как у [компонента `Arrow`](/builtin/components#arrow).
