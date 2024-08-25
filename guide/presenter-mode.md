@@ -1,16 +1,16 @@
-# Presenter Mode
+# Режим докладчика
 
-Click the <carbon-user-speaker class="inline-icon-btn"/> button in the navigation panel, or visit `http://localhost:3030/presenter` manually, to enter the presenter mode. To present, you'll want to open two browser windows, one for the presenter and one for the audience. Generally maximizing the slideshow window on your projector screen, then controlling it from your laptop's screen is how people present with Slidev.
+Нажмите кнопку <carbon-user-speaker class="inline-icon-btn"/> на панели навигации или перейдите по адресу `http://localhost:3030/presenter` вручную, чтобы войти в режим докладчика. Для презентации вам нужно открыть два окна браузера: одно для докладчика и одно для аудитории. Обычно максимизируют окно слайд-шоу на экране проектора, а затем управляют им с экрана своего ноутбука.
 
-Whenever you change slides in the presenter mode, all other page instances will automatically change as well, to stay in sync with the presenter.
+Каждый раз, когда вы меняете слайды в режиме докладчика, все другие экземпляры страниц автоматически изменяются, чтобы оставаться синхронизированными с докладчиком.
 
 ![](/screenshots/presenter-mode.png)
 
-## Disabling
+## Отключение
 
-Presenter mode is enabled by default.
+Режим докладчика включен по умолчанию.
 
-You can disable this feature with the following config:
+Вы можете отключить эту функцию с помощью следующей конфигурации:
 
 ```md
 ---
@@ -18,7 +18,7 @@ presenter: false
 ---
 ```
 
-Alternately you can enable it only for `dev` or `build` modes by setting the mode you want in the config:
+В качестве альтернативы вы можете включить его только для режимов `dev` или `build`, установив нужный режим в конфигурации:
 
 ```md
 ---
@@ -26,12 +26,12 @@ presenter: dev
 ---
 ```
 
-In that case the presenter will only be available when running `slidev` but not when running `slidev build`.
+В этом случае режим докладчика будет доступен только при запуске `slidev`, но не при запуске `slidev build`.
 
-## Remote restricted access
+## Ограниченный удаленный доступ
 
-You can run your presentation with remote access by running `slidev --remote`.
+Вы можете запустить свою презентацию с удаленным доступом, запустив `slidev --remote`.
 
-If you want to share your slides with other people but you don't want them to access the presenter mode (either because you're ashamed of your presenter notes, or because you don't want them to mess up your presentation), you can provide a password to protect the presenter server by running `slidev --remote=your_password`.
+Если вы хотите поделиться своими слайдами с другими людьми, но не хотите, чтобы они имели доступ к режиму докладчика (либо потому, что вам стыдно за ваши заметки докладчика, либо потому, что вы не хотите, чтобы они портили вашу презентацию), вы можете предоставить пароль для защиты сервера докладчика, запустив `slidev --remote=your_password`.
 
-In that case you will need to provide the password when accessing `/presenter/*` routes.
+В этом случае вам нужно будет ввести пароль при доступе к маршрутам `/presenter/*`.
