@@ -1,10 +1,10 @@
-# Configure Context Menu
+# Настройка контекстного меню
 
 <Environment type="client" />
 
-Customize the context menu items in Slidev.
+Настройте элементы контекстного меню в Slidev.
 
-Create `./setup/context-menu.ts` with the following content:
+Создайте `./setup/context-menu.ts` со следующим содержимым:
 
 ```ts
 import { defineContextMenuSetup } from '@slidev/types'
@@ -17,10 +17,10 @@ export default defineContextMenuSetup((items) => {
     ...items.value,
     {
       small: false,
-      icon: Icon3DCursor, // Used as `title` if `small` is `true`
-      label: 'Custom Menu Item', // or a Vue component
+      icon: Icon3DCursor, // Используется как `title`, если `small` равно `true`
+      label: 'Пункт меню', // или компонент Vue
       action() {
-        alert('Custom Menu Item Clicked!')
+        alert('Пункт меню нажат!')
       },
       disabled: isPresenter.value,
     },
@@ -28,6 +28,6 @@ export default defineContextMenuSetup((items) => {
 })
 ```
 
-This will append a new menu item to the context menu.
+Это добавит новый пункт меню в контекстное меню.
 
-To disable context menu globally, set `contextMenu` to `false` in the frontmatter. `contextMenu` can also be set to `dev` or `build` to only enable the context menu in development or build mode.
+Чтобы отключить контекстное меню глобально, установите `contextMenu` в `false` в frontmatter. `contextMenu` также может быть установлен в `dev` или `build`, чтобы включить контекстное меню только в режиме разработки или сборки.
