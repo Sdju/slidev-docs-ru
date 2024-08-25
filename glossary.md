@@ -6,6 +6,7 @@
 | deck | колода слайдов | |
 | presentation | презентация | |
 | presenter | докладчик | |
+| consistency | консистентность | |
 | Markdown | Markdown | Не переводится |
 | theme | тема | |
 | layout | макет | |
@@ -74,3 +75,13 @@
 | Remote Access | Удаленный доступ | |
 | Recording | Запись | |
 | Camera View | Отображение камеры | |
+| Static Hosting | Хостинг статики | |
+| Base Path | Базовый путь | |
+| GitHub Actions | GitHub Actions | Не переводится |
+| Build | Сборка | |
+| Environment | Среда | |
+| Permissions | Разрешения | |
+| Workflow | Рабочий процесс | |
+| Steps | Шаги | |
+| Redirects | Перенаправления | |
+| Rewrites | Перезаписи | |
