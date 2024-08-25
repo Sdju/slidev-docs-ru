@@ -1,10 +1,10 @@
-# Installation
+# Установка
 
-## Starter Template
+## Стартовый шаблон
 
-> Slidev requires [**Node.js >=18.0**](https://nodejs.org/)
+> Slidev требует [**Node.js >=18.0**](https://nodejs.org/)
 
-The best way to get started is by using our official starter template:
+Лучший способ начать работу - использовать наш официальный стартовый шаблон:
 
 ::: code-group
 
@@ -22,13 +22,13 @@ pnpm create slidev
 
 :::
 
-Follow the prompts and it will open the slideshow at `http://localhost:3030/` automatically for you.
+Следуйте подсказкам, и слайд-шоу автоматически откроется для вас по адресу `http://localhost:3030/`.
 
-It also contains a basic setup along with a short demo with instructions on how to get started with Slidev.
+Шаблон также содержит базовую настройку вместе с короткой демонстрацией и инструкциями о том, как начать работу с Slidev.
 
-## Install Manually
+## Ручная установка
 
-If you prefer to install Slidev manually or would like to integrate it into an existing project, you can do:
+Если вы предпочитаете установить Slidev вручную или хотите интегрировать его в существующий проект, вы можете сделать следующее:
 
 ```bash
 npm install @slidev/cli @slidev/theme-default
@@ -42,29 +42,29 @@ touch slides.md
 npx slidev
 ```
 
-## Install Globally
+## Глобальная установка
 
-> Available since v0.14
+> Доступно с версии v0.14
 
-You can install Slidev globally with the following command
+Вы можете установить Slidev глобально с помощью следующей команды
 
 ```bash
 npm i -g @slidev/cli
 ```
 
-And then use `slidev` everywhere without creating a project every time.
+И затем использовать `slidev` везде без необходимости создавать проект каждый раз.
 
 ```bash
 npx slidev
 ```
 
-This command will also try to use local `@slidev/cli` if it has been found in the `node_modules`.
+Эта команда также попытается использовать локальный `@slidev/cli`, если он будет найден в `node_modules`.
 
-## Install on Docker
+## Установка в Docker
 
-If you need a rapid way to run a presentation with containers, you can use the prebuilt [docker](https://hub.docker.com/r/tangramor/slidev) image maintained by [tangramor](https://github.com/tangramor), or build your own.
+Если вам нужен быстрый способ запустить презентацию с помощью контейнеров, вы можете использовать готовый [docker](https://hub.docker.com/r/tangramor/slidev) образ, поддерживаемый [tangramor](https://github.com/tangramor), или создать свой собственный.
 
-Just run following command in your work folder:
+Просто выполните следующую команду в вашей рабочей папке:
 
 ```bash
 docker run --name slidev --rm -it \
@@ -75,15 +75,15 @@ docker run --name slidev --rm -it \
     tangramor/slidev:latest
 ```
 
-**_Note_**: You can use `NPM_MIRROR` to specify a npm mirror to speed up the installation process.
+**_Примечание_**: Вы можете использовать `NPM_MIRROR` для указания зеркала npm, чтобы ускорить процесс установки.
 
-If your work folder is empty, it will generate a template `slides.md` and other related files under your work folder, and launch the server on port `3030`.
+Если ваша рабочая папка пуста, будет сгенерирован шаблон `slides.md` и другие связанные файлы в вашей рабочей папке, и сервер будет запущен на порту `3030`.
 
-You can access your slides from `http://localhost:3030/`
+Вы можете получить доступ к вашим слайдам по адресу `http://localhost:3030/`
 
-### Build deployable images
+### Создание развертываемых образов
 
-You can create your own slidev project as a docker image with Dockerfile:
+Вы можете создать свой собственный проект slidev в виде docker-образа с помощью Dockerfile:
 
 ```Dockerfile
 FROM tangramor/slidev:latest
@@ -91,33 +91,33 @@ FROM tangramor/slidev:latest
 ADD . /slidev
 ```
 
-Create the docker image: `docker build -t myppt .`
+Создайте docker-образ: `docker build -t myppt .`
 
-And run the container: `docker run --name myslides --rm --user node -p 3030:3030 myppt`
+И запустите контейнер: `docker run --name myslides --rm --user node -p 3030:3030 myppt`
 
-You can visit your slides from `http://localhost:3030/`
+Вы можете посетить ваши слайды по адресу `http://localhost:3030/`
 
-### Build hostable SPA (Single Page Application)
+### Создание SPA который можно хостить
 
-Run `docker exec -i slidev npx slidev build` on the running container `slidev`. It will generate static HTML files under `dist` folder.
+Выполните `docker exec -i slidev npx slidev build` на запущенном контейнере `slidev`. Это сгенерирует статические HTML-файлы в папке `dist`.
 
-#### Host on Github Pages
+#### Размещение на GitHub Pages
 
-You can host `dist` as a static website via services such as [GitHub Pages](https://tangramor.github.io/slidev_docker/) or GitLab Pages.
+Вы можете разместить `dist` как статический веб-сайт с помощью таких сервисов, как [GitHub Pages](https://tangramor.github.io/slidev_docker/) или GitLab Pages.
 
-Since in GitHub Pages the URL may contain subfolders, you may use `--base=/<subfolder>/` option during the build process, such as `docker exec -i slidev npx slidev build --base=/slidev_docker/`.
+Поскольку в GitHub Pages URL может содержать подпапки, вы можете использовать опцию `--base=/<subfolder>/` во время процесса сборки, например, `docker exec -i slidev npx slidev build --base=/slidev_docker/`.
 
-To avoid the Jekyll build process, you'll need to add an empty file `.nojekyll`.
+Чтобы избежать процесса сборки Jekyll, вам нужно добавить пустой файл `.nojekyll`.
 
-#### Host via docker
+#### Размещение через docker
 
-You can also host Slidev yourself via docker:
+Вы также можете самостоятельно разместить Slidev через docker:
 
 ```bash
 docker run --name myslides --rm -p 80:80 -v ${PWD}/dist:/usr/share/nginx/html nginx:alpine
 ```
 
-Or create a static image with following Dockerfile:
+Или создать статический образ с помощью следующего Dockerfile:
 
 ```Dockerfile
 FROM nginx:alpine
@@ -125,17 +125,17 @@ FROM nginx:alpine
 COPY dist /usr/share/nginx/html
 ```
 
-Create the docker image: `docker build -t mystaticppt .`
+Создайте docker-образ: `docker build -t mystaticppt .`
 
-And run the container: `docker run --name myslides --rm -p 80:80 mystaticppt`
+И запустите контейнер: `docker run --name myslides --rm -p 80:80 mystaticppt`
 
-You can visit your slides from http://localhost/
+Вы можете посетить ваши слайды по адресу http://localhost/
 
-Refer to [tangramor/slidev_docker](https://github.com/tangramor/slidev_docker) for more details.
+Обратитесь к [tangramor/slidev_docker](https://github.com/tangramor/slidev_docker) для получения дополнительной информации.
 
-## Command Line Interface (CLI)
+## Интерфейс командной строки (CLI)
 
-`@slidev/cli` exposes a few commands you can use with `npx slidev ...` or by adding scripts in your `package.json`:
+`@slidev/cli` предоставляет несколько команд, которые вы можете использовать с `npx slidev ...` или добавив скрипты в ваш `package.json`:
 
 ```json
 {
@@ -145,14 +145,14 @@ Refer to [tangramor/slidev_docker](https://github.com/tangramor/slidev_docker) f
 }
 ```
 
-In that case you will be able to run `npm run dev`.
+В этом случае вы сможете запустить `npm run dev`.
 
-You can pass options to any commands:
+Вы можете передавать опции любым командам:
 
-- boolean option are `true` if they are present, false otherwise (example: `slidev --open`)
-- some options can have values you can add just after the option or by using the `=` character (example: `slidev --port 8080` or `slidev --port=8080`)
+- булевы опции считаются `true`, если они присутствуют, и `false` в противном случае (пример: `slidev --open`)
+- некоторые опции могут иметь значения, которые вы можете добавить сразу после опции или используя символ `=` (пример: `slidev --port 8080` или `slidev --port=8080`)
 
-If you use npm scripts, don't forget to add `--` after the npm command:
+Если вы используете npm-скрипты, не забудьте добавить `--` после npm-команды:
 
 ```bash
 npm run slidev -- --open
@@ -160,63 +160,63 @@ npm run slidev -- --open
 
 ### `slidev [entry]`
 
-Start a local server for Slidev.
+Запускает локальный сервер для Slidev.
 
-- `[entry]` (`string`, default: `slides.md`): path to the markdown file containing your slides.
+- `[entry]` (`string`, по умолчанию: `slides.md`): путь к markdown-файлу, содержащему ваши слайды.
 
-Options:
+Опции:
 
-- `--port`, `-p` (`number`, default: `3030`): port number.
-- `--open`, `-o` (`boolean`, default: `false`): open in browser.
-- `--remote [password]` (`string`): listen to public host and enable remote control, if a value is passed then the presenter mode is private and only accessible by passing the given password in the URL query `password` parameter.
-- `--bind` (`string`, default: `0.0.0.0`): specify which IP addresses the server should listen on in the remote mode.
-- `--log` (`'error', 'warn', 'info', 'silent'`, default: `'warn'`): Log level.
-- `--force`, `-f` (`boolean`, default: `false`): force the optimizer to ignore the cache and re-bundle.
-- `--theme`, `-t` (`string`): override theme.
+- `--port`, `-p` (`number`, по умолчанию: `3030`): номер порта.
+- `--open`, `-o` (`boolean`, по умолчанию: `false`): открыть в браузере.
+- `--remote [password]` (`string`): слушать публичный хост и включить удаленное управление, если передано значение, то режим презентации является приватным и доступен только при передаче заданного пароля в параметре запроса URL `password`.
+- `--bind` (`string`, по умолчанию: `0.0.0.0`): указать, какие IP-адреса должен прослушивать сервер в удаленном режиме.
+- `--log` (`'error', 'warn', 'info', 'silent'`, по умолчанию: `'warn'`): уровень логирования.
+- `--force`, `-f` (`boolean`, по умолчанию: `false`): заставить оптимизатор игнорировать кэш и пересобрать.
+- `--theme`, `-t` (`string`): переопределить тему.
 
 ### `slidev build [entry]`
 
-Build a hostable SPA.
+Собрать размещаемое SPA.
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown file.
+- `[entry]` (`string`, по умолчанию: `slides.md`): путь к markdown-файлу слайдов.
 
-Options:
+Опции:
 
-- `--out`, `-o` (`string`, default: `dist`): output dir.
-- `--base` (`string`, default: `/`): base URL (see https://cli.vuejs.org/config/#publicpath)
-- `--download` (`boolean`, default: `false`): allow the download of the slides as a PDF inside the SPA.
-- `--theme`, `-t` (`string`): override theme.
+- `--out`, `-o` (`string`, по умолчанию: `dist`): выходная директория.
+- `--base` (`string`, по умолчанию: `/`): базовый URL (см. https://cli.vuejs.org/config/#publicpath)
+- `--download` (`boolean`, по умолчанию: `false`): разрешить загрузку слайдов в формате PDF внутри SPA.
+- `--theme`, `-t` (`string`): переопределить тему.
 
 ### `slidev export [entry]`
 
-Export slides to PDF (or other format). See [Exporting](/guide/exporting.html) for more details.
+Экспортировать слайды в PDF (или другой формат). См. [Экспорт](/guide/exporting.html) для получения дополнительной информации.
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]` (`string`, по умолчанию: `slides.md`): путь к markdown-файлу входных слайдов.
 
-Options:
+Опции:
 
-- `--output` (`string`, default: use `exportFilename` (see https://sli.dev/custom/#frontmatter-configures) or use `[entry]-export`): path to the output.
-- `--format` (`'pdf', 'png', 'pptx', 'md'`, default: `'pdf'`): output format.
-- `--timeout` (`number`, default: `30000`): timeout for rendering the print page (see https://playwright.dev/docs/api/class-page#page-goto).
-- `--range` (`string`): page ranges to export (example: `'1,4-5,6'`).
-- `--dark` (`boolean`, default: `false`): export as dark theme.
-- `--with-clicks`, `-c` (`boolean`, default: `false`): export pages for every clicks (see https://sli.dev/guide/animations.html#click-animations).
-- `--theme`, `-t` (`string`): override theme.
+- `--output` (`string`, по умолчанию: использовать `exportFilename` (см. https://sli.dev/custom/#frontmatter-configures) или использовать `[entry]-export`): путь к выходному файлу.
+- `--format` (`'pdf', 'png', 'pptx', 'md'`, по умолчанию: `'pdf'`): выходной формат.
+- `--timeout` (`number`, по умолчанию: `30000`): таймаут для рендеринга страницы печати (см. https://playwright.dev/docs/api/class-page#page-goto).
+- `--range` (`string`): диапазоны страниц для экспорта (пример: `'1,4-5,6'`).
+- `--dark` (`boolean`, по умолчанию: `false`): экспортировать в темной теме.
+- `--with-clicks`, `-c` (`boolean`, по умолчанию: `false`): экспортировать страницы для каждого клика (см. https://sli.dev/guide/animations.html#click-animations).
+- `--theme`, `-t` (`string`): переопределить тему.
 
 ### `slidev format [entry]`
 
-Format the markdown file.
+Форматировать markdown-файл.
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]` (`string`, по-умолчанию: `slides.md`): путь к входному markdown-файлу со слайдами.
 
 ### `slidev theme [subcommand]`
 
-Theme related operations.
+Операции, связанные с темой.
 
-Subcommands:
+Подкоманды:
 
-- `eject [entry]`: Eject current theme into local file system
-  - `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
-  - Options:
-    - `--dir` (`string`, default: `theme`): output dir.
-    - `--theme`, `-t` (`string`): override theme.
+- `eject [entry]`: Извлечь текущую тему в локальную файловую систему
+  - `[entry]` (`string`, по умолчанию: `slides.md`): путь к markdown-файлу входных слайдов.
+  - Опции:
+    - `--dir` (`string`, по умолчанию: `theme`): выходная директория.
+    - `--theme`, `-t` (`string`): переопределить тему.

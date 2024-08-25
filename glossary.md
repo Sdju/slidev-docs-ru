@@ -43,3 +43,7 @@
 | TwoSlash | TwoSlash | Не переводится |
 | Magic Move | Magic Move | Не переводится |
 | MDC | MDC | Не переводится |
+| Docker | Docker | Не переводится |
+| Dockerfile | Dockerfile | Не переводится |
+| SPA | SPA (одностраничное приложение) | |
+| PPTX | PPTX | Не переводится |
