@@ -42,3 +42,11 @@
 | View Transitions | View Transitions | Не переводится |
 | Vercel | Vercel | Не переводится |
 | Windi CSS | Windi CSS | Не переводится |
+| Highlighters | Инструмент для подсветки | |
+| Global Layers | Глобальные слои | |
+| Syntax Highlighter | Инструмент для подсветки синтаксиса | |
+| Context Menu | Контекстное меню | |
+| Global Context | Глобальный контекст | |
+| Routes | Маршруты | |
+| Clicks | Клики | |
+| Navigation | Навигация | |

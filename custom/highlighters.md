@@ -1,12 +1,12 @@
-# Highlighters
+# Подсветка синтаксиса
 
-Slidev uses [Shiki](https://github.com/shikijs/shiki) as the code highlighter. It's a TextMate grammar-powered syntax highlighter that generates colored tokens, so there is no additional CSS needed. Since it has great grammar support, the generated colors are very accurate, just like what you will see in VS Code. Shiki also comes with [a bunch of built-in themes](https://shiki.style/themes). In Slidev, we also provided the [TwoSlash](#twoslash-integration) support is also built-in.
+Slidev использует [Shiki](https://github.com/shikijs/shiki) в качестве подсветки кода. Это инструмент для подсветки синтаксиса, основанный на грамматике TextMate, который генерирует цветные токены, поэтому дополнительный CSS не требуется. Поскольку он имеет отличную поддержку грамматики, сгенерированные цвета очень точны, как и то, что вы увидите в VS Code. Shiki также поставляется с [множеством встроенных тем](https://shiki.style/themes). В Slidev также предоставлена поддержка [TwoSlash](#twoslash-integration).
 
-## Configure Shiki
+## Настройка Shiki
 
 <Environment type="both" />
 
-Create `./setup/shiki.ts` file with the following content:
+Создайте файл `./setup/shiki.ts` со следующим содержимым:
 
 ```ts
 /* ./setup/shiki.ts */
@@ -25,7 +25,7 @@ export default defineShikiSetup(() => {
 })
 ```
 
-If you want to add custom theme or language (TextMate grammar/themes in JSON), you can import them in the setup file:
+Если вы хотите добавить пользовательскую тему или язык (грамматика/темы TextMate в JSON), вы можете импортировать их в файл настройки:
 
 ```ts
 /* ./setup/shiki.ts */
@@ -53,16 +53,16 @@ export default defineShikiSetup(() => {
 })
 ```
 
-Check [Built-in languages](https://shiki.style/languages) and [Built-in themes](https://shiki.style/themes), and refer to [Shiki's docs](https://shiki.style) for more details.
+Проверьте [встроенные языки](https://shiki.style/languages) и [встроенные темы](https://shiki.style/themes), а также обратитесь к [документации Shiki](https://shiki.style) для получения дополнительных сведений.
 
 :::info
-For now, Shiki Magic Move does not support transformers.
+На данный момент Shiki Magic Move не поддерживает трансформеры.
 :::
 
-## Configure Prism
+## Настройка Prism
 
 :::warning
-Prism support is deprecated and will be removed in the future. Please consider using Shiki instead.
+Поддержка Prism устарела и будет удалена в будущем. Пожалуйста, рассмотрите возможность использования Shiki вместо этого.
 :::
 
-To configure your Prism, you can just import the theme CSS or use [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) to configure themes for both light and dark mode. Refer to its docs for more details.
+Чтобы настроить ваш Prism, вы можете просто импортировать тему CSS или использовать [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) для настройки тем как для светлого, так и для темного режима. Обратитесь к его документации для получения дополнительных сведений.
