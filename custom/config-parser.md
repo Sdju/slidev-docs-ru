@@ -1,26 +1,26 @@
-# Configure and Extend the Parser
+# Настройка и расширение парсера
 
-Slidev parses your presentation file (e.g. `slides.md`) in three steps:
+Slidev разбивает ваш файл презентации (например, `slides.md`) на три этапа:
 
-1. A "preparsing" step is carried out: the file is split into slides using the `---` separator, and considering the possible frontmatter blocks.
-2. Each slide is parsed with an external library.
-3. Slidev resolves the special frontmatter property `src: ....`, which allows to include other md files.
+1. Выполняется этап "предварительной обработки": файл разбивается на слайды с использованием разделителя `---`, учитывая возможные блоки frontmatter.
+2. Каждый слайд обрабатывается с помощью внешней библиотеки.
+3. Slidev разрешает специальное свойство frontmatter `src: ....`, которое позволяет включать другие md файлы.
 
-## Markdown Parser
+## Markdown парсер
 
-Configuring the markdown parser used in step 2 can be done by [configuring Vite internal plugins](/custom/config-vite#configure-internal-plugins).
+Настройка markdown парсера, используемого на этапе 2, может быть выполнена путем [настройки внутренних плагинов Vite](/custom/config-vite#configure-internal-plugins).
 
-## Preparser Extensions
+## Расширения предварительного парсера
 
-> Available since v0.37.0.
+> Доступно с версии v0.37.0.
 
 :::warning
-Important: when modifying the preparser configuration, you need to stop and start slidev again (restart might not be sufficient).
+Важно: при изменении конфигурации предварительного парсера вам необходимо остановить и снова запустить slidev (перезапуск может быть недостаточным).
 :::
 
-The preparser (step 1 above) is highly extensible and allows to implement custom syntaxes for your md files. Extending the preparser is considered **an advanced feature** and is susceptible to break [editor integrations](/guide/editors) due to implicit changes in the syntax.
+Предварительный парсер (этап 1 выше) является высоко расширяемым и позволяет реализовать пользовательские синтаксисы для ваших md файлов. Расширение предварительного парсера считается **продвинутой функцией** и может нарушить [интеграции редакторов](/guide/editors) из-за неявных изменений в синтаксисе.
 
-To customize it, create a `./setup/preparser.ts` file with the following content:
+Чтобы настроить его, создайте файл `./setup/preparser.ts` со следующим содержимым:
 
 ```ts
 import { definePreparserSetup } from '@slidev/types'
@@ -39,7 +39,7 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 })
 ```
 
-This example systematically replaces any `@@@` line by a line with `hello`. It illustrates the structure of a preparser configuration file and some of the main concepts the preparser involves:
+Этот пример систематически заменяет любую строку `@@@` на строку с `hello`. Он иллюстрирует структуру файла конфигурации предварительного парсера и некоторые из основных концепций, с которыми связан предварительный парсер:
 
 - `definePreparserSetup` must be called with a function as parameter.
 - The function receives the file path (of the root presentation file), the headmatter (from the md file) and, since v0.48.0, a mode (dev, build or export). It could use this information (e.g., enable extensions based on the presentation file or whether we are exporting a PDF).
@@ -49,27 +49,27 @@ This example systematically replaces any `@@@` line by a line with `hello`. It i
   - a `transformSlide(content, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide content as a string and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the content string (possibly modified, possibly `undefined` if no modifications have been done).
   - a `name`
 
-## Example Preparser Extensions
+## Примеры расширений предварительного парсера
 
-### Use case 1: compact syntax top-level presentation
+### Случай использования 1: компактный синтаксис верхнего уровня презентации
 
-Imagine a situation where (part of) your presentation is mainly showing cover images and including other md files. You might want a compact notation where for instance (part of) `slides.md` is as follows:
+Представьте ситуацию, когда (часть) вашей презентации в основном показывает обложки изображений и включает другие md файлы. Вы можете захотеть компактной нотации, где, например, (часть) `slides.md` выглядит следующим образом:
 
 <!-- eslint-skip -->
 
 ```md
 @cover: /nice.jpg
-# Welcome
+# Добро пожаловать
 @src: page1.md
 @src: page2.md
 @cover: /break.jpg
 @src: pages3-4.md
 @cover: https://source.unsplash.com/collection/94734566/1920x1080
-# Questions?
-see you next time
+# Вопросы?
+увидимся в следующий раз
 ```
 
-To allow these `@src:` and `@cover:` syntaxes, create a `./setup/preparser.ts` file with the following content:
+Чтобы разрешить эти синтаксисы `@src:` и `@cover:`, создайте файл `./setup/preparser.ts` со следующим содержимым:
 
 ```ts
 import { definePreparserSetup } from '@slidev/types'
@@ -112,12 +112,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+И это всё.
 
-### Use case 2: using custom frontmatter to wrap slides
+### Случай использования 2: использование пользовательского frontmatter для обертывания слайдов
 
-Imagine a case where you often want to scale some of your slides but still want to use a variety of existing layouts so create a new layout would not be suited.
-For instance, you might want to write your `slides.md` as follows:
+Представьте случай, когда вы часто хотите масштабировать некоторые из ваших слайдов, но все же хотите использовать разнообразные существующие макеты, поэтому создание нового макета не будет подходящим.
+Например, вы можете захотеть написать ваш `slides.md` следующим образом:
 
 <!-- eslint-skip -->
 
@@ -127,30 +127,32 @@ layout: quote
 _scale: 0.75
 ---
 
-# Welcome
+# Добро пожаловать
 
-> great!
+> отлично!
 
 ---
 _scale: 4
 ---
-# Break
+
+# Перерыв
 
 ---
 
-# Ok
+# Ок
 
 ---
 layout: center
 _scale: 2.5
 ---
-# Questions?
-see you next time
+
+# Вопросы?
+увидимся в следующий раз
 ```
 
-Here we used an underscore in `_scale` to avoid possible conflicts with existing frontmatter properties (indeed, the case of `scale`, without underscore would cause potential problems).
+Здесь мы использовали подчеркивание в `_scale`, чтобы избежать возможных конфликтов с существующими свойствами frontmatter (действительно, случай `scale`, без подчеркивания, вызвал бы потенциальные проблемы).
 
-To handle this `_scale: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
+Чтобы обработать этот синтаксис `_scale: ...` в frontmatter, создайте файл `./setup/preparser.ts` со следующим содержимым:
 
 ```ts
 import { definePreparserSetup } from '@slidev/types'
@@ -174,4 +176,4 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+И это всё.
