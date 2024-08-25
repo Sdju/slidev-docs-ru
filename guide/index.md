@@ -2,41 +2,41 @@
 outline: deep
 ---
 
-# Getting Started
+# Начало работы
 
-Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> is a web-based slides maker and presenter. It's designed for developers to focus on writing content in Markdown while also having the power of HTML and Vue components to deliver pixel-perfect layouts and designs with embedded interactive demos in your presentations.
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> - это веб-инструмент для создания и презентации слайдов. Он разработан для разработчиков, чтобы они могли сосредоточиться на написании содержимого в Markdown, при этом имея возможность использовать HTML и Vue-компоненты для создания идеальных макетов и дизайнов с встроенными интерактивными демонстрациями в своих презентациях.
 
-It uses a feature-rich markdown file to generate beautiful slides with an instant reloading experience, along with many built-in integrations such as live coding, PDF exporting, presentation recording, and so on. Since it's powered by the web, you can do anything with Slidev - the possibilities are endless.
+Он использует богатый по функционалу Markdown-файл для генерации красивых слайдов с мгновенным обновлением, а также многими встроенными интеграциями, такими как Live Coding, экспорт в PDF, запись презентации и так далее. Поскольку он работает на веб-технологиях, вы можете делать со Slidev что угодно - возможности безграничны.
 
-You can learn more about the rationale behind the project in the [Why Slidev](/guide/why) section.
+Вы можете узнать больше о причинах создания проекта в разделе [Почему Slidev](/guide/why).
 
-## Features
+## Возможности
 
-- 📝 [**Markdown-based**](/guide/syntax.html) - use your favorite editors and workflow
-- 🧑‍💻 [**Developer Friendly**](/guide/syntax.html#code-blocks) - built-in syntax highlighting, live coding, etc.
-- 🎨 [**Themable**](/themes/gallery.html) - theme can be shared and used with npm packages
-- 🌈 [**Stylish**](/guide/syntax.html#embedded-styles) - on-demand utilities via [UnoCSS](https://github.com/unocss/unocss).
-- 🤹 [**Interactive**](/custom/directory-structure.html#components) - embedding Vue components seamlessly
-- 🎙 [**Presenter Mode**](/guide/presenter-mode.html) - use another window, or even your phone to control your slides
-- 🎨 [**Drawing**](/guide/drawing.html) - draw and annotate on your slides
-- 🧮 [**LaTeX**](/guide/syntax.html#latex) - built-in LaTeX math equations support
-- 📰 [**Diagrams**](/guide/syntax.html#diagrams) - creates diagrams with textual descriptions
-- 🌟 [**Icons**](/guide/syntax.html#icons) - Access to icons from any iconset directly
-- 💻 [**Editors**](/guide/editors.html) - integrated editor, or [extension for VS Code](https://github.com/slidevjs/slidev-vscode)
-- 🎥 [**Recording**](/guide/recording.html) - built-in recording and camera view
-- 📤 [**Portable**](/guide/exporting.html) - export into PDF, PNGs, or even a hostable SPA
-- ⚡️ [**Fast**](https://vitejs.dev) - instant reloading powered by [Vite](https://vitejs.dev)
-- 🛠 [**Hackable**](/custom/config-vite.html) - using Vite plugins, Vue components, or any npm packages
+- 📝 [**На основе Markdown**](/guide/syntax.html) - используйте свои любимые редакторы и рабочий процесс
+- 🧑‍💻 [**Дружественный для разработчиков**](/guide/syntax.html#code-blocks) - встроенная подсветка синтаксиса, Live Coding и т.д.
+- 🎨 [**Темизация**](/themes/gallery.html) - темы можно распространять и использовать через npm-пакеты
+- 🌈 [**Стильный**](/guide/syntax.html#embedded-styles) - утилиты по требованию через [UnoCSS](https://github.com/unocss/unocss)
+- 🤹 [**Интерактивный**](/custom/directory-structure.html#components) - бесшовное встраивание Vue-компонентов
+- 🎙 [**Режим докладчика**](/guide/presenter-mode.html) - используйте другое окно или даже свой телефон для управления слайдами
+- 🎨 [**Рисование**](/guide/drawing.html) - рисуйте и делайте аннотации на своих слайдах
+- 🧮 [**LaTeX**](/guide/syntax.html#latex) - встроенная поддержка математических уравнений с LaTeX
+- 📰 [**Диаграммы**](/guide/syntax.html#diagrams) - создавайте диаграммы с текстовыми описаниями
+- 🌟 [**Иконки**](/guide/syntax.html#icons) - прямой доступ к иконкам из любого набора
+- 💻 [**Редакторы**](/guide/editors.html) - встроенный редактор или [расширение для VS Code](https://github.com/slidevjs/slidev-vscode)
+- 🎥 [**Запись**](/guide/recording.html) - встроенная запись и отображение с камеры
+- 📤 [**Портативность**](/guide/exporting.html) - экспорт в PDF, PNG или даже в размещаемое SPA
+- ⚡️ [**Быстрый**](https://vitejs.dev) - мгновенная перезагрузка на основе [Vite](https://vitejs.dev)
+- 🛠 [**Настраиваемый**](/custom/config-vite.html) - использование плагинов Vite, компонентов Vue или любых npm-пакетов
 
-## Scaffolding Your First Presentation
+## Создание вашей первой презентации
 
-### Try it Online
+### Попробуйте онлайн
 
-Start Slidev right in your browser: [sli.dev/new](https://sli.dev/new)
+Начните работу со Slidev прямо в вашем браузере: [sli.dev/new](https://sli.dev/new)
 
 [![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://sli.dev/new)
 
-### Create Locally
+### Создание локально
 
 ::: code-group
 
@@ -54,67 +54,67 @@ pnpm create slidev
 
 :::
 
-Follow the prompts and start making your slides now! For more details about the markdown syntax, read through the [syntax guide](/guide/syntax).
+Следуйте подсказкам и начинайте создавать свои слайды прямо сейчас! Для получения более подробной информации о синтаксисе Markdown, прочитайте [руководство по синтаксису](/guide/syntax).
 
-## Command Line Interface
+## Командная строка
 
-In a project where Slidev is installed, you can use the `slidev` binary in your npm scripts.
+В проекте, инициализированном с помощью `create-slidev`, вы увидите следующий скрипт в вашем `package.json`:
 
 ```json
 {
   "scripts": {
-    "dev": "slidev", // start dev server
-    "build": "slidev build", // build for production SPA
-    "export": "slidev export" // export slides to pdf
+    "dev": "slidev", // запуск сервера разработки
+    "build": "slidev build", // сборка для продакшена SPA
+    "export": "slidev export" // экспорт слайдов в pdf
   }
 }
 ```
 
-Otherwise, you can use it with [`npx`](https://github.com/npm/cli/blob/latest/bin/npx)
+В противном случае вы можете использовать его с [`npx`](https://github.com/npm/cli/blob/latest/bin/npx)
 
 ```bash
 $ npx slidev
 ```
 
-Run `slidev --help` for more options available.
+Запустите `slidev --help` для получения дополнительных доступных опций.
 
-## Markdown Syntax
+## Синтаксис Markdown
 
-Slidev reads your `slides.md` file under your project root and converts them into slides. Whenever you made changes to it, the content of the slides will be updated immediately. For example:
+Slidev читает ваш файл `slides.md` в корне проекта и преобразует его в слайды. Всякий раз, когда вы вносите изменения в него, содержимое слайдов будет обновляться мгновенно. Например:
 
 ````md
 # Slidev
 
-Hello World
+Привет, мир
 
 ---
 
-# Page 2
+# Страница 2
 
-Directly use code blocks for highlighting
+Используйте блоки кода напрямую для подсветки
 
 ```ts
-console.log('Hello, World!')
+console.log('Привет, мир!')
 ```
 
 ---
 
-# Page 3
+# Страница 3
 ````
 
-Read more about the Slidev Markdown syntax in the [syntax guide](/guide/syntax).
+Узнайте больше о синтаксисе Markdown Slidev в [руководстве по синтаксису](/guide/syntax).
 
-## Tech Stack
+## Технологический стек
 
-Slidev is made possible by combining these tools and technologies.
+Slidev стал возможным благодаря сочетанию этих инструментов и технологий.
 
-- [Vite](https://vitejs.dev) - An extremely fast frontend tooling
-- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - Focus on the content while having the power of HTML and Vue components whenever needed
-- [UnoCSS](https://github.com/unocss/unocss) - On-demand utility-first CSS framework, style your slides at ease
-- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - First-class code snippets support with live coding capability
-- [RecordRTC](https://recordrtc.org) - Built-in recording and camera view
-- [VueUse](https://vueuse.org) family - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
-- [Iconify](https://iconify.design/) - Iconsets collection.
-- [Drauu](https://github.com/antfu/drauu) - Drawing and annotations support
-- [KaTeX](https://katex.org/) - LaTeX math rendering.
-- [Mermaid](https://mermaid-js.github.io/mermaid) - Textual Diagrams.
+- [Vite](https://vitejs.dev) - Чрезвычайно быстрый инструментарий для фронтенда
+- [Vue 3](https://v3.vuejs.org/) с поддержкой [Markdown](https://daringfireball.net/projects/markdown/syntax) - Сосредоточьтесь на содержании, имея при этом возможность использовать HTML и компоненты Vue при необходимости
+- [UnoCSS](https://github.com/unocss/unocss) - CSS-фреймворк на основе утилит по требованию, легко стилизуйте свои слайды
+- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - Первоклассная поддержка фрагментов кода с возможностью Live Coding
+- [RecordRTC](https://recordrtc.org) - Встроенная запись и отображение с камеры
+- [VueUse](https://vueuse.org) семейство - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion) и т.д.
+- [Iconify](https://iconify.design/) - Коллекция наборов иконок.
+- [Drauu](https://github.com/antfu/drauu) - Поддержка рисования и аннотаций.
+- [KaTeX](https://katex.org/) - Рендеринг математических формул LaTeX.
+- [Mermaid](https://mermaid-js.github.io/mermaid) - Текстовые диаграммы.
