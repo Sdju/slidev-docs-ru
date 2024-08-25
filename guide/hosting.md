@@ -1,4 +1,4 @@
-# Хостинг статики
+# Static Hosting
 
 ## Создание одностраничных приложений (SPA)
 
@@ -63,9 +63,9 @@ $ slidev build --download
 $ slidev build --out my-build-folder
 ```
 
-### Watch-режим
+### Watch режим
 
-Передав опцию `--watch`, сборка будет работать в watch-режиме и будет пересобираться каждый раз, когда источник изменяется.
+By passing the `--watch` option the build will run in watch mode and will rebuild anytime the source changes.
 
 ```bash
 $ slidev build --watch
