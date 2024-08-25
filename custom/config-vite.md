@@ -1,12 +1,12 @@
-# Configure Vite
+# Настройка Vite
 
 <Environment type="node" />
 
-Slidev is powered by [Vite](https://vitejs.dev/) under the hood. This means you can leverage Vite's great plugin system to customize your slides even further.
+Slidev работает на основе [Vite](https://vitejs.dev/) под капотом. Это означает, что вы можете использовать отличную систему плагинов Vite для дальнейшей настройки ваших слайдов.
 
-The `vite.config.ts` will be respected if you have one.
+Файл `vite.config.ts` будет учитываться, если он у вас есть.
 
-Slidev has the following plugins preconfigured:
+Slidev имеет следующие предустановленные плагины:
 
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
@@ -15,13 +15,13 @@ Slidev has the following plugins preconfigured:
 - [vite-plugin-remote-assets](https://github.com/antfu/vite-plugin-remote-assets)
 - [unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite)
 
-Learn more about the [pre-configurations here](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/plugins/preset.ts).
+Узнайте больше о [предустановках здесь](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/plugins/preset.ts).
 
-## Configure Internal Plugins
+## Настройка встроенных плагинов
 
-> Available since v0.21
+> Доступно с версии v0.21
 
-To configure the built-in plugins list above, create `vite.config.ts` with the following content. Please note Slidev has some preconfigure options for those plugins, this usage will override some of them, which could potentially cause the app to break. Please treat this as **an advanced feature**, make sure you know what you are doing before moving on.
+Чтобы настроить список встроенных плагинов выше, создайте `vite.config.ts` со следующим содержимым. Обратите внимание, что Slidev имеет некоторые предустановленные параметры для этих плагинов, это использование переопределит некоторые из них, что может потенциально привести к сбою приложения. Пожалуйста, относитесь к этому как к **продвинутой функции**, убедитесь, что вы знаете, что делаете, прежде чем продолжить.
 
 ```ts
 import { defineConfig } from 'vite'
@@ -29,18 +29,18 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   slidev: {
     vue: {
-      /* vue options */
+      /* параметры vue */
     },
     markdown: {
-      /* markdown-it options */
+      /* параметры markdown-it */
       markdownItSetup(md) {
-        /* custom markdown-it plugins */
+        /* пользовательские плагины markdown-it */
         md.use(/* ... */)
       },
     },
-    /* options for other plugins */
+    /* параметры для других плагинов */
   },
 })
 ```
 
-See the [type declarations](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/options.ts#L50) for more options.
+Смотрите [объявления типов](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/options.ts#L50) для получения дополнительных параметров.
