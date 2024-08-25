@@ -23,7 +23,7 @@
 | PDF | PDF | Не переводится |
 | PNG | PNG | Не переводится |
 | SPA | SPA (одностраничное приложение) | |
-| CLI | CLI (интерфейс командной строки) | |
+| CLI | CLI (интерфейс команд��ой строки) | |
 | npm | npm | Не переводится |
 | Vite | Vite | Не переводится |
 | Windi CSS | Windi CSS | Не переводится |
@@ -85,14 +85,41 @@
 | Steps | Шаги | |
 | Redirects | Перенаправления | |
 | Rewrites | Перезаписи | |
-| Addon | Аддон | |
-| Capability | Возможности | |
-| Custom Layouts | Пользовательские макеты | |
-| Custom Components | Пользовательские компоненты | |
-| Extend | Расширение | |
-| Configuration | Конфигурация | |
-| Initialization | Инициализация | |
-| Testing | Тестирование | |
-| Publish | Публикация | |
-| Metadata | Метаданные | |
-| Engines | Движки | |
+| Component | Компонент | |
+| Usage | Использование | |
+| Parameters | Параметры | |
+| Layout | Макет | |
+| Built-in | Встроенный | |
+| Custom | Пользовательский | |
+| Cover | Обложка | |
+| Image | Изображение | |
+| Quote | Цитата | |
+| Section | Раздел | |
+| Statement | Утверждение | |
+| Two Columns | Два столбца | |
+| Intro | Введение | |
+| None | Без стиля | |
+| Fact | Факт | |
+| Full | Полный | |
+| Center | Центр | |
+| Image Left | Изображение слева | |
+| Image Right | Изображение справа | |
+| Two-cols-header | Два столбца с заголовком | |
+| Transform | Трансформация | |
+| Arrow | Стрелка | |
+| VDragArrow | Перетаскиваемая стрелка | |
+| AutoFitText | Автоматически подстраиваемый текст | |
+| LightOrDark | Светлая или темная тема | |
+| SlideCurrentNo | Текущий номер слайда | |
+| SlidesTotal | Общее количество слайдов | |
+| Titles | Заголовки | |
+| Toc | Оглавление | |
+| Transform | Преобразование | |
+| Tweet | Твит | |
+| VAfter | VAfter | |
+| VClick | VClick | |
+| VClicks | VClicks | |
+| VSwitch | VSwitch | |
+| VDrag | VDrag | |
+| SlidevVideo | Видео Slidev | |
+| Youtube | YouTube | |
