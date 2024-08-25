@@ -35,3 +35,7 @@
 | Netlify             | Netlify             | Не переводится |
 | Vercel              | Vercel              | Не переводится |
 | GitHub Pages        | GitHub Pages        | Не переводится |
+| Live Coding         | Лайв кодинг         |                |
+| Microsoft PowerPoint| Microsoft PowerPoint| Не переводится |
+| Keynote             | Keynote             | Не переводится |
+| TypeScript          | TypeScript          | Не переводится |
