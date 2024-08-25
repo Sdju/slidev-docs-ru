@@ -1,6 +1,8 @@
 | Английский термин | Русский перевод | Комментарий |
 |-------------------|-----------------|-------------|
 | Advanced | Продвинутое | |
+| Attributify Mode | Режим Attributify | |
+| Background | Фон | |
 | Canvas | Холст | |
 | CI | CI (непрерывная интеграция) | |
 | CLI | CLI (интерфейс командной строки) | |
@@ -13,6 +15,7 @@
 | Integrated Editor | Встроенный редактор | |
 | Keynote | Keynote | Не переводится |
 | LaTeX | LaTeX | Не переводится |
+| Layout | Макет | |
 | Live Coding | Лайв кодинг | |
 | Markdown | Markdown | Не переводится |
 | Markdown File | Файл Markdown | |
