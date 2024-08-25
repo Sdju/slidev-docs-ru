@@ -1,61 +1,61 @@
-# Fonts
+# Шрифты
 
-> Available since v0.20
+> Доступно с версии v0.20
 
-While you can use HTML and CSS to custom the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+Хотя вы можете использовать HTML и CSS для настройки шрифтов и стилей для ваших слайдов по своему усмотрению, Slidev также предоставляет удобный способ использовать их без усилий.
 
-In your frontmatter, configure as following
+В вашем frontmatter настройте следующим образом:
 
 ```yaml
 ---
 fonts:
-  # basically the text
+  # в основном тексте
   sans: Robot
-  # use with `font-serif` css class from UnoCSS
+  # используйте с классом css `font-serif` из UnoCSS
   serif: Robot Slab
-  # for code blocks, inline code, etc.
+  # для блоков кода, встроенного кода и т.д.
   mono: Fira Code
 ---
 ```
 
-And that's all.
+И это всё.
 
-Fonts will be **imported automatically from [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+Шрифты будут **автоматически импортированы из [Google Fonts](https://fonts.google.com/)**. Это означает, что вы можете использовать любые шрифты, доступные на Google Fonts, напрямую.
 
-## Local Fonts
+## Локальные шрифты
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing.
+По умолчанию Slidev предполагает, что все шрифты, указанные через конфигурации `fonts`, поступают из Google Fonts. Если вы хотите использовать локальные шрифты, укажите `fonts.local`, чтобы отказаться от автоматического импорта.
 
 ```yaml
 ---
 fonts:
-  # like font-family in css, you can use `,` to separate multiple fonts for fallback
+  # как и в font-family в css, вы можете использовать `,` для разделения нескольких шрифтов для резервного варианта
   sans: 'Helvetica Neue,Robot'
-  # mark 'Helvetica Neue' as local font
+  # отметьте 'Helvetica Neue' как локальный шрифт
   local: Helvetica Neue
 ---
 ```
 
-## Weights & Italic
+## Жирность и курсив
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+По умолчанию Slidev импортирует три жирности `200`, `400`, `600` для каждого шрифта. Вы можете настроить их следующим образом:
 
 ```yaml
 ---
 fonts:
   sans: Robot
-  # default
+  # по умолчанию
   weights: '200,400,600'
-  # import italic fonts, default `false`
+  # импортировать курсивные шрифты, по умолчанию `false`
   italic: false
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+Эта конфигурация применяется ко всем веб-шрифтам. Для более тонкой настройки веса каждого шрифта вам нужно будет вручную импортировать их с помощью [HTML](/custom/directory-structure.html#index-html) и CSS.
 
-## Fallback Fonts
+## Резервные шрифты
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+В большинстве случаев вам нужно только указать "специальный шрифт", и Slidev добавит резервные шрифты за вас, например:
 
 ```yaml
 ---
@@ -66,9 +66,7 @@ fonts:
 ---
 ```
 
-will result in
-
-<!-- eslint-skip -->
+это приведет к
 
 ```css
 .font-sans {
@@ -82,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as following
+Если вы хотите отключить резервные шрифты, настройте следующим образом:
 
 ```yaml
 ---
@@ -92,12 +90,12 @@ fonts:
 ---
 ```
 
-## Providers
+## Поставщики
 
-- Options: `google` | `none`
-- Default: `google`
+- Опции: `google` | `none`
+- По умолчанию: `google`
 
-Currently, only Google Fonts is supported, we are planned to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts local.
+В настоящее время поддерживается только Google Fonts, в будущем планируется добавить больше поставщиков. Укажите `none`, чтобы полностью отключить функцию автоматического импорта и считать все шрифты локальными.
 
 ```yaml
 ---
