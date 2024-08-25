@@ -61,3 +61,16 @@
 | Project | Проект | |
 | Slide | Слайд | |
 | Markdown File | Файл Markdown | |
+| Grids | Сетки | |
+| Flexbox | Flexbox | Не переводится |
+| Masonry | Masonry | Не переводится |
+| Canvas | Холст | |
+| Font Size | Размер шрифта | |
+| Override | Переопределение | |
+| Local Style | Локальный стиль | |
+| Global Style | Глобальный стиль | |
+| Transform | Трансформация | |
+| Presenter Mode | Режим докладчика | |
+| Remote Access | Удаленный доступ | |
+| Recording | Запись | |
+| Camera View | Отображение камеры | |
