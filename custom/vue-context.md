@@ -1,6 +1,6 @@
 # Глобальный контекст Vue
 
-Slidev внедряет `$slidev` в [глобальный контекст Vue](https://v3.vuejs.org/api/application-config.html#globalproperties) для сложных условий или элементов управления навигацией.
+Slidev injected a [global Vue context](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev` for advanced conditions or navigation controls.
 
 ## Использование
 
