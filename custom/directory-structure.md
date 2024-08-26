@@ -1,30 +1,30 @@
-# Directory Structure
+# Структура каталога
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev использует некоторые соглашения о структуре каталогов, чтобы минимизировать поверхность конфигурации и сделать расширения функциональности гибкими и интуитивно понятными.
 
-The basic structure is as follows:
+Основная структура выглядит следующим образом:
 
 ```bash
 your-slidev/
-  ├── components/       # custom components
-  ├── layouts/          # custom layouts
-  ├── public/           # static assets
-  ├── setup/            # custom setup / hooks
-  ├── styles/           # custom style
-  ├── index.html        # injections to index.html
-  ├── slides.md         # the main slides entry
-  └── vite.config.ts    # extending vite config
+  ├── components/       # пользовательские компоненты
+  ├── layouts/          # пользовательские макеты
+  ├── public/           # статические ресурсы
+  ├── setup/            # пользовательская настройка / хуки
+  ├── styles/           # пользовательские стили
+  ├── index.html        # инъекции в index.html
+  ├── slides.md         # основной вход для слайдов
+  └── vite.config.ts    # расширение конфигурации vite
 ```
 
-All of them are optional.
+Все они являются необязательными.
 
-## Components
+## Компоненты
 
-Conventions: `./components/*.{vue,js,ts,jsx,tsx,md}`
+Соглашения: `./components/*.{vue,js,ts,jsx,tsx,md}`
 
-Components inside this directory can be directly used in the slides Markdown with the same component name as the file name.
+Компоненты внутри этого каталога могут быть использованы непосредственно в Markdown слайдов с тем же именем компонента, что и имя файла.
 
-For example:
+Например:
 
 ```bash
 your-slidev/
@@ -37,24 +37,24 @@ your-slidev/
 ```md
 <!-- slides.md -->
 
-# My Slide
+# Мой слайд
 
 <MyComponent :count="4"/>
 
-<!-- both namings work -->
+<!-- оба названия работают -->
 
 <hello-world foo="bar">
-  Slot
+  Слот
 </hello-world>
 ```
 
-This feature is powered by [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), learn more there.
+Эта функция поддерживается благодаря [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), узнайте больше там.
 
-Slidev also provides some [built-in components](/builtin/components) for you to use.
+Slidev также предоставляет некоторые [встроенные компоненты](/builtin/components) для использования.
 
-## Layouts
+## Макеты
 
-Conventions: `./layouts/*.{vue,js,ts,jsx,tsx}`
+Соглашения: `./layouts/*.{vue,js,ts,jsx,tsx}`
 
 ```
 your-slidev/
@@ -64,7 +64,7 @@ your-slidev/
       └── my-cool-theme.vue
 ```
 
-You can use any filename for your layout. You then reference your layout in you YAML header using the filename.
+Вы можете использовать любое имя файла для вашего макета. Затем вы ссылаетесь на свой макет в заголовке YAML, используя имя файла.
 
 ```yaml
 ---
@@ -72,9 +72,9 @@ layout: my-cool-theme
 ---
 ```
 
-If the layout you provide has the same name as a built-in layout or a theme layout, your custom layout will take precedence over the built-in/theme layout. The priority order is `local > theme > built-in`.
+Если макет, который вы предоставляете, имеет то же имя, что и встроенный макет или макет темы, ваш пользовательский макет будет иметь приоритет над встроенным/тематическим макетом. Порядок приоритета: `локальный > тема > встроенный`.
 
-In the layout component, use `<slot/>` for the slide content. For example:
+В компоненте макета используйте `<slot/>` для контента слайда. Например:
 
 ```html
 <!-- default.vue -->
@@ -87,15 +87,15 @@ In the layout component, use `<slot/>` for the slide content. For example:
 
 ## Public
 
-Conventions: `./public/*`
+Соглашения: `./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Vite's `public` directory](https://vitejs.dev/guide/assets.html#the-public-directory).
+Ресурсы в этом каталоге будут обслуживаться по корневому пути `/` во время разработки и скопированы в корень каталога dist без изменений. Узнайте больше о [каталоге `public` Vite](https://vitejs.dev/guide/assets.html#the-public-directory).
 
 ## Style
 
-Conventions: `./style.css` | `./styles/index.{css,js,ts}`
+Соглашения: `./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple css entries, you can create the following structure and managing the import order yourself.
+Файлы, соответствующие этому соглашению, будут заинъектированы в корень приложения. Если вам нужно импортировать несколько css-файлов, вы можете создать следующую структуру и управлять порядком импорта самостоятельно.
 
 ```bash
 your-slidev/
@@ -115,7 +115,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://unocss.dev/transformers/directives#apply) out-of-box. For example:
+Стили будут обрабатываться [UnoCSS](https://unocss.dev/) и [PostCSS](https://postcss.org/), так что вы можете использовать вложение css и [at-директивы](https://unocss.dev/transformers/directives#apply) из коробки. Например:
 
 <!-- eslint-skip -->
 
@@ -137,15 +137,15 @@ Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://
 }
 ```
 
-[Learn more about the syntax](https://unocss.dev/transformers/directives#apply).
+[Узнайте больше о синтаксисе](https://unocss.dev/transformers/directives#apply).
 
 ## `index.html`
 
-Conventions: `index.html`
+Соглашения: `index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+Файл `index.html` предоставляет возможность инъекции мета-тегов и/или скриптов в основной `index.html`.
 
-For example, for the following custom `index.html`:
+Например, для следующего пользовательского `index.html`:
 
 ```html
 <!-- ./index.html -->
@@ -159,7 +159,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+Финальный размещенный `index.html` будет:
 
 ```html
 <!DOCTYPE html>
@@ -181,8 +181,8 @@ The final hosted `index.html` will be:
 </html>
 ```
 
-## Global Layers
+## Глобальные слои
 
-Conventions: `global-top.vue` | `global-bottom.vue`
+Соглашения: `global-top.vue` | `global-bottom.vue`
 
-Learn more: [Global Layers](/custom/global-layers)
+Узнайте больше: [Глобальные слои](/custom/global-layers)

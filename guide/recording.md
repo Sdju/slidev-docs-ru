@@ -1,17 +1,17 @@
-# Recording
+# Запись
 
-Slidev has a built-in recording feature, as well as a camera view. You can use them to record your presentation easily in one simple tool rather than juggling a bunch of disparate recording options while also giving a talk.
+Slidev имеет встроенную функцию записи, а также отображение с камеры. Вы можете использовать их для легкой записи вашей презентации в одном простом инструменте, вместо того чтобы жонглировать множеством разрозненных вариантов записи во время доклада.
 
-## Camera View
+## Отображение с камеры
 
-Click the <carbon-user-avatar class="inline-icon-btn"/> button in the navigation panel to show your camera view in the presentation. You can drag to move it, and use the handler on the right bottom corner to resize it. The size and position will persist in `localStorage` and will therefore be consistent across multiple refreshes, so no need to worry about that.
+Нажмите кнопку <carbon-user-avatar class="inline-icon-btn"/> на панели навигации, чтобы показать отображение с камеры в презентации. Вы можете перетаскивать его для перемещения и использовать маркер в правом нижнем углу для изменения размера. Размер и положение будут сохранены в `localStorage` и, следовательно, будут консистентны при множественных обновлениях страницы, так что не беспокойтесь об этом.
 
 <TheTweet id="1395006771027120133" />
 
-## Recording
+## Запись
 
-Clicking the <carbon-video class="inline-icon-btn"/> button in the navigation panel will bring up a dialog for you. Here you can choose to either record your camera output embedded in your slides or to separate them into two video files.
+Нажатие кнопки <carbon-video class="inline-icon-btn"/> на панели навигации вызовет диалоговое окно. Здесь вы можете выбрать либо запись вывода камеры, встроенного в ваши слайды, либо разделение их на два видеофайла.
 
-This feature is powered by [RecordRTC](https://github.com/muaz-khan/RecordRTC) and uses the [WebRTC API](https://webrtc.org/).
+Эта функция работает на основе [RecordRTC](https://github.com/muaz-khan/RecordRTC) и использует [WebRTC API](https://webrtc.org/).
 
 ![](/screenshots/recording.png)

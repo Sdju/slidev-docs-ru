@@ -1,61 +1,61 @@
 # FAQ
 
-## Grids
+## Сетки
 
-Since Slidev is based on the Web, you can apply any grid layouts as you want. [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), or even [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/), you get the full controls.
+Поскольку Slidev основан на веб-технологиях, вы можете применять любые макеты по своему усмотрению. [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) или даже [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/), у вас есть полный контроль.
 
-Since [UnoCSS](https://unocss.dev/) is built-in, here's one way that you can reference:
+Поскольку [UnoCSS](https://unocss.dev/) уже встроен, то вот один из способов, как вы можете ссылаться на него:
 
 ```html
 <div class="grid grid-cols-2 gap-4">
 <div>
 
-The first column
+Первый столбец
 
 </div>
 <div>
 
-The second column
+Второй столбец
 
 </div>
 </div>
 ```
 
-Go further, you can customize the size of each column like:
+Далее, вы можете настроить размер каждого столбца следующим образом:
 
 ```html
 <div class="grid grid-cols-[200px_1fr_10%] gap-4">
 <div>
 
-The first column (200px)
+Первый столбец (200px)
 
 </div>
 <div>
 
-The second column (auto fit)
+Второй столбец (авто подгонка)
 
 </div>
 <div>
 
-The third column (10% width to parent container)
+Третий столбец (10% ширины от родительского контейнера)
 
 </div>
 </div>
 ```
 
-## Positioning
+## Позиционирование
 
-Slides are defined in fixed sizes (default `980x552px`) and scale to fit with the user screen. You can safely use absolute position in your slides as they will scale along with the screen.
+Слайды определены в фиксированных размерах (по умолчанию `980x552px`) и масштабируются в соответствии с экраном пользователя. Вы можете безопасно использовать абсолютное позиционирование в ваших слайдах, так как они будут масштабироваться вместе с экраном.
 
-For example:
+Например:
 
 ```html
 <div class="absolute left-30px bottom-30px">
-This is a left-bottom aligned footer
+Это нижний колонтитул, выровненный по левому краю
 </div>
 ```
 
-To change the canvas' actual size, you can pass the `canvasWidth` options in your first frontmatter:
+Чтобы изменить фактический размер холста, вы можете передать опцию `canvasWidth` в вашем первом frontmatter:
 
 ```yaml
 ---
@@ -63,16 +63,16 @@ canvasWidth: 800
 ---
 ```
 
-## Font Size
+## Размер шрифта
 
-If you feel the font size in your slides are too small, you can adjust it in a few ways:
+Если вам кажется, что размер шрифта в ваших слайдах слишком мал, вы можете отрегулировать его несколькими способами:
 
-### Override Local Style
+### Переопределение стиля локально
 
-You can override styles for each slide with the inlined `<style>` tag.
+Вы можете переопределить стили для каждого слайда с помощью встроенного тега `<style>`.
 
 ```md
-# Page 1
+# Страница 1
 
 <style>
 h1 {
@@ -82,16 +82,16 @@ h1 {
 
 ---
 
-# Page 2
+# Страница 2
 
-This will not be affected.
+Это затронуто не будет.
 ```
 
-Learn more: [Embedded Styles](/guide/syntax.html#embedded-styles)
+Узнайте больше: [Встроенные стили](/guide/syntax.html#embedded-styles)
 
-### Override Global Style
+### Переопределение стиля глобально
 
-You can provide custom global styles by creating `./style.css`, for example
+Вы можете использовать свои глобальные стили, создав `./style.css`, например:
 
 ```css
 /* style.css */
@@ -101,29 +101,29 @@ h1 {
 }
 ```
 
-Learn more: [Global Style](/custom/directory-structure.html#style)
+Узнайте больше: [Глобальный стиль](/custom/directory-structure.html#style)
 
-### Scale the Canvas
+### Масштабирование холста
 
-Changing the canvas' actual size will scale all your contents(text, images, components, etc.) and slides
+Изменение фактического размера холста масштабирует все ваши содержимое (текст, изображения, компоненты и т.д.) и слайды.
 
 ```yaml
 ---
-# default: 980
-# since the canvas gets smaller, the visual size will become larger
+# по умолчанию: 980
+# поскольку холст становится меньше, визуальный размер станет больше
 canvasWidth: 800
 ---
 ```
 
-### Use Transform
+### Использование Transform
 
-We provide a built-in component `<Transform />`, which is a thin wrapper of CSS transform property.
+Мы предоставляем встроенный компонент `<Transform />`, который является тонкой оберткой для свойства CSS transform.
 
 ```md
 <Transform :scale="1.4">
 
-- Item 1
-- Item 2
+- Элемент 1
+- Элемент 2
 
 </Transform>
 ```

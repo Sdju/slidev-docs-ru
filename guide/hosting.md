@@ -1,32 +1,32 @@
 # Static Hosting
 
-## Build Single Page Applications (SPA)
+## Создание одностраничных приложений (SPA)
 
-You can build the slides into a self-hostable SPA:
+Вы можете собрать слайды в самодостаточное SPA:
 
 ```bash
 $ slidev build
 ```
 
-The generated application will be available under `dist/`.
+Сгенерированное приложение будет доступно в `dist/`.
 
-You can test the generated build using a web server (Apache, NGINX, Caddy...etc.) or in the project you can directly run: `npx vite preview`.
+Вы можете протестировать сгенерированную сборку, используя веб-сервер (Apache, NGINX, Caddy и т.д.), или в проекте вы можете напрямую запустить: `npx vite preview`.
 
-Then you can host it on [GitHub Pages](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), or whatever other web server or service that you want. Now you can share your slides with the rest of the world with a single link.
+Затем вы можете разместить его на [GitHub Pages](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/) или любом другом веб-сервере или сервисе, который вы хотите. Теперь вы можете поделиться своими слайдами с остальным миром с помощью одной ссылки.
 
-### Base Path
+### Базовый путь
 
-To deploy your slides under sub-routes, you will need to pass the `--base` option. The `--base` path **must begin and end** with a slash `/`; for example:
+Чтобы развернуть ваши слайды под подпутями, вам нужно передать опцию `--base`. Путь `--base` **должен начинаться и заканчиваться** косой чертой `/`; например:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
+Смотрите [документацию Vite](https://vitejs.dev/guide/build.html#public-base-path) для получения дополнительных деталей.
 
-### Provide a Downloadable PDF
+### Предоставление загружаемого PDF
 
-You can provide a downloadable PDF to the viewers of your SPA with the following config:
+Вы можете предоставить загружаемый PDF для зрителей вашего SPA с помощью следующей конфигурации:
 
 ```md
 ---
@@ -34,9 +34,9 @@ download: true
 ---
 ```
 
-Slidev will generate a PDF file along with the build, and a download button will be displayed in the SPA.
+Slidev сгенерирует PDF-файл вместе со сборкой, и кнопка загрузки будет отображаться в SPA.
 
-You can also provide a custom URL for the PDF. In that case, the rendering process will be skipped.
+Вы также можете предоставить пользовательский URL для PDF. В этом случае процесс рендеринга будет пропущен.
 
 ```md
 ---
@@ -44,26 +44,26 @@ download: 'https://myside.com/my-talk.pdf'
 ---
 ```
 
-This can also be done with the CLI option `--download` (`boolean` only).
+Это также можно сделать с помощью опции CLI `--download` (только `boolean`).
 
 ```bash
 $ slidev build --download
 ```
 
-When using the download option, you can also provide the export options:
+При использовании опции загрузки вы также можете предоставить параметры экспорта:
 
-- By using [CLI export options](/guide/exporting.html)
-- Or [frontmatter export options](/custom/#frontmatter-configures)
+- Используя [CLI параметры экспорта](/guide/exporting.html)
+- Или [параметры экспорта frontmatter](/custom/#frontmatter-configures)
 
-### Output directory
+### Выходной каталог
 
-You can change the output directory using `--out`.
+Вы можете изменить выходной каталог, используя `--out`.
 
 ```bash
 $ slidev build --out my-build-folder
 ```
 
-### Watch mode
+### Watch режим
 
 By passing the `--watch` option the build will run in watch mode and will rebuild anytime the source changes.
 
@@ -71,40 +71,40 @@ By passing the `--watch` option the build will run in watch mode and will rebuil
 $ slidev build --watch
 ```
 
-### Multiple entries
+### Несколько входных файлов
 
-You can build multiple slide decks at once.
+Вы можете собрать несколько наборов слайдов одновременно.
 
 ```bash
 $ slidev build slides1.md slides2.md
 ```
 
-Or
+Или
 
 ```bash
 $ slidev build *.md
 ```
 
-In this case, each input file will generate a folder containing the build in the output directory.
+В этом случае каждый входной файл создаст папку, содержащую сборку в выходном каталоге.
 
-## Examples
+## Примеры
 
-Here are a few examples of the exported SPA:
+Вот несколько примеров экспортированных SPA:
 
-- [Starter Template](https://sli.dev/demo/starter)
-- [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
+- [Шаблон-стартер](https://sli.dev/demo/starter)
+- [Composable Vue](https://talks.antfu.me/2021/composable-vue) от [Anthony Fu](https://github.com/antfu)
 
-For more, check out [Showcases](/showcases).
+Для получения дополнительной информации смотрите [Примеры](/showcases).
 
-## Hosting
+## Хостинг
 
-We recommend to use `npm init slidev@latest` to scaffold your project, which contains the necessary configuration files for hosting services out-of-the-box.
+Мы рекомендуем использовать `npm init slidev@latest` для создания вашего проекта, который содержит необходимые конфигурационные файлы для хостинговых сервисов из коробки.
 
 ### Netlify
 
 - [Netlify](https://netlify.com/)
 
-Create `netlify.toml` in your project root with the following content.
+Создайте `netlify.toml` в корне вашего проекта со следующим содержимым.
 
 ```toml
 [build]
@@ -120,13 +120,13 @@ to = '/index.html'
 status = 200
 ```
 
-Then go to your Netlify dashboard and create a new site with the repository.
+Затем перейдите на панель управления Netlify и создайте новый сайт с репозиторием.
 
 ### Vercel
 
 - [Vercel](https://vercel.com/)
 
-Create `vercel.json` in your project root with the following content.
+Создайте `vercel.json` в корне вашего проекта со следующим содержимым.
 
 ```json
 {
@@ -136,16 +136,16 @@ Create `vercel.json` in your project root with the following content.
 }
 ```
 
-Then go to your Vercel dashboard and create a new site with the repository.
+Затем перейдите на панель управления Vercel и создайте новый сайт с репозиторием.
 
 ### GitHub Pages
 
 - [GitHub Pages](https://pages.github.com/)
 
-To deploy your slides on GitHub Pages:
+Чтобы развернуть ваши слайды на GitHub Pages:
 
-- upload all the files of the project in your repo (i.e. named `name_of_repo`)
-- create `.github/workflows/deploy.yml` with the following content to deploy your slides to GitHub Pages via GitHub Actions.
+- загрузите все файлы проекта в ваш репозиторий (т.е. названный `name_of_repo`)
+- создайте `.github/workflows/deploy.yml` со следующим содержимым для развертывания ваших слайдов на GitHub Pages через GitHub Actions.
 
 ```yaml
 name: Deploy pages
@@ -171,7 +171,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
@@ -193,5 +193,5 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-- In your repository, go to Settings>Pages. Under "Build and deployment", select "Github Actions".
-- Finally, after all workflows are executed, a link to the slides should appear under Settings>Pages.
+- В вашем репозитории перейдите в Настройки > Pages. В разделе "Build and deployment" выберите "Github Actions".
+- Наконец, после выполнения всех рабочих процессов ссылка на слайды должна появиться в разделе Settings > Pages.

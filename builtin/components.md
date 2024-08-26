@@ -2,83 +2,83 @@
 outline: [2, 3]
 ---
 
-# Components
+# Компоненты
 
-## Built-in Components
+## Встроенные компоненты
 
 ### `Arrow`
 
-Draw an arrow.
+Рисует стрелку.
 
-#### Usage
+#### Использование
 
 ```md
 <Arrow x1="10" y1="20" x2="100" y2="200" />
 ```
 
-Or:
+Или:
 
 ```md
 <Arrow v-bind="{ x1:10, y1:10, x2:200, y2:200 }" />
 ```
 
-Parameters:
+Параметры:
 
-- `x1` (`string | number`, required): start point x position
-- `y1` (`string | number`, required): start point y position
-- `x2` (`string | number`, required): end point x position
-- `y2` (`string | number`, required): end point x position
-- `width` (`string | number`, default: `2`): line width
-- `color` (`string`, default: `'currentColor'`): line color
-- `two-way` (`boolean`, default: `false`): draw a two-way arrow
+- `x1` (`string | number`, обязательный): начальная позиция x
+- `y1` (`string | number`, обязательный): начальная позиция y
+- `x2` (`string | number`, обязательный): конечная позиция x
+- `y2` (`string | number`, обязательный): конечная позиция y
+- `width` (`string | number`, по умолчанию: `2`): ширина линии
+- `color` (`string`, по умолчанию: `'currentColor'`): цвет линии
+- `two-way` (`boolean`, по умолчанию: `false`): нарисовать двустороннюю стрелку
 
 ### `VDragArrow`
 
-An `Arrow` component that can be dragged.
+Компонент `Arrow`, который можно перетаскивать.
 
-#### Usage
+#### Использование
 
-See https://sli.dev/guide/draggable.html#draggable-arrow
+Смотрите https://sli.dev/guide/draggable.html#draggable-arrow
 
-Parameters not related to position are the same as [the `Arrow` component](#arrow).
+Параметры, не относящиеся к позиции, такие же, как у [компонента `Arrow`](#arrow).
 
 ### `AutoFitText`
 
-> Experimental
+> Экспериментальные
 
-Box inside which the font size will automatically adapt to fit the content. Similar to PowerPoint or Keynote TextBox.
+Область, внутри которой размер шрифта будет автоматически адаптироваться к содержимому. Похоже на текстовое поле PowerPoint или Keynote.
 
-#### Usage
+#### Использование
 
 ```md
-<AutoFitText :max="200" :min="100" modelValue="Some text"/>
+<AutoFitText :max="200" :min="100" modelValue="Некоторый текст"/>
 ```
 
-Parameters:
+Параметры:
 
-- `max` (`string | number`, default `100`): Maximum font size
-- `min` (`string | number`, default `30`): Minimum font size
-- `modelValue` (`string`, default `''`): text content
+- `max` (`string | number`, по умолчанию `100`): максимальный размер шрифта
+- `min` (`string | number`, по умолчанию `30`): минимальный размер шрифта
+- `modelValue` (`string`, по умолчанию `''`): текстовое содержимое
 
 ### `LightOrDark`
 
-Use it to display one thing or another depending on the active light or dark theme.
+Используйте его для отображения одного или другого в зависимости от активной светлой или темной темы.
 
-#### Usage
+#### Использование
 
-Use it with the two named Slots `#dark` and `#light`:
+Используйте его с двумя именованными слотами `#dark` и `#light`:
 
 ```md
 <LightOrDark>
-  <template #dark>Dark mode is on</template>
-  <template #light>Light mode is on</template>
+  <template #dark>Темный режим включен</template>
+  <template #light>Светлый режим включен</template>
 </LightOrDark>
 ```
 
-Provided props on `LightOrDark` component will be available using scoped slot props:
+Предоставленные свойства компонента `LightOrDark` будут доступны с использованием свойств слота:
 
 ```md
-<LightOrDark width="100" alt="some image">
+<LightOrDark width="100" alt="некоторое изображение">
   <template #dark="props">
     <img src="/dark.png" v-bind="props"/>
   </template>
@@ -88,7 +88,7 @@ Provided props on `LightOrDark` component will be available using scoped slot pr
 </LightOrDark>
 ```
 
-You can provide markdown in the slots, but you will need to surround the content with blank lines:
+Вы можете предоставить markdown в слотах, но вам потребуется окружить содержимое пустыми строками:
 
 ```md
 <LightOrDark>
@@ -107,56 +107,56 @@ You can provide markdown in the slots, but you will need to surround the content
 
 ### `Link`
 
-Insert a link you can use to navigate to a given slide.
+Вставьте ссылку, которую вы можете использовать для перехода на указанный слайд.
 
-#### Usage
+#### Использование
 
 ```md
-<Link to="42">Go to slide 42</Link>
-<Link to="42" title="Go to slide 42"/>
-<Link to="solutions" title="Go to solutions"/>
+<Link to="42">Перейти на слайд 42</Link>
+<Link to="42" title="Перейти на слайд 42"/>
+<Link to="solutions" title="Перейти к решениям"/>
 ```
 
-Parameters:
+Параметры:
 
-- `to` (`string | number`): The path of the slide to navigate to (slides starts from `1`)
-- `title` (`string`): The title to display
+- `to` (`string | number`): Путь к слайду, на который нужно перейти (слайды начинаются с `1`)
+- `title` (`string`): Заголовок для отображения
 
-One can use a string as `to`, provided the corresponding route exists, e.g.
+Один может использовать строку в качестве `to`, при условии, что соответствующий маршрут существует, например
 
 ```md
 ---
 routeAlias: solutions
 ---
 
-# Now some solutions!
+# Теперь некоторые решения!
 ```
 
 ### `PoweredBySlidev`
 
-Renders "Powered by Slidev" with a link to the Slidev website.
+Отображает "Powered by Slidev" с ссылкой на сайт Slidev.
 
 ### `RenderWhen`
 
-Render slot only when the context match (for example when we are in presenter view).
+Отображает слот только при совпадении контекста (например, когда мы находимся в режиме презентера).
 
-#### Usage
+#### Использование
 
 ```md
-<RenderWhen context="presenter">This will only be rendered in presenter view.</RenderWhen>
+<RenderWhen context="presenter">Это будет отображаться только в режиме презентера.</RenderWhen>
 ```
 
-Context type: `'main' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
+Тип контекста: `'main' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
 
-Parameters:
+Параметры:
 
-- `context` (`Context | Context[]`): context or array of contexts you want the slot to be rendered
+- `context` (`Context | Context[]`): контекст или массив контекстов, при которых нужно отобразить слот
 
 ### `SlideCurrentNo`
 
-Current slide number.
+Текущий номер слайда.
 
-#### Usage
+#### Использование
 
 ```md
 <SlideCurrentNo />
@@ -164,9 +164,9 @@ Current slide number.
 
 ### `SlidesTotal`
 
-Total number of slides.
+Общее количество слайдов.
 
-#### Usage
+#### Использование
 
 ```md
 <SlidesTotal />
@@ -174,42 +174,42 @@ Total number of slides.
 
 ### `Titles`
 
-Insert the main title from a slide parsed as HTML.
+Вставьте основной заголовок слайда, разобранный как HTML.
 
-Titles and title levels get automatically retrieved from the first title element of each slides.
+Заголовки и уровни заголовков автоматически извлекаются из первого элемента заголовка каждого слайда.
 
-You can override this automatic behaviour for a slide by using the front matter syntax:
+Вы можете переопределить это автоматическое поведение для слайда, используя синтаксис frontmatter:
 
 ```yml
 ---
-title: Amazing slide title
+title: Волшебный заголовок слайда
 level: 2
 ---
 ```
 
-#### Usage
+#### Использование
 
-The `<Titles>` component is a virtual component you can import with:
+Компонент `<Titles>` является виртуальным компонентом, который вы можете импортировать с помощью:
 
 ```js
 import Titles from '/@slidev/titles.md'
 ```
 
-Then you can use it with:
+Затем вы можете использовать его с:
 
 ```md
 <Titles no="42" />
 ```
 
-Parameters:
+Параметры:
 
-- `no` (`string | number`): The number of the slide to display the title from (slides starts from `1`)
+- `no` (`string | number`): номер слайда, заголовок которого нужно отобразить (слайды начинаются с `1`)
 
 ### `Toc`
 
-Insert a Table Of Content.
+Вставьте оглавление.
 
-If you want a slide to not appear in the `<Toc>` component, you can use in the front matter block of the slide:
+Если вы хотите, чтобы слайд не отображался в компоненте `<Toc>`, вы можете использовать это в блоке frontmatter слайда:
 
 ```yml
 ---
@@ -217,30 +217,30 @@ hideInToc: true
 ---
 ```
 
-Titles are displayed using the [`<Titles>` component](#titles)
+Заголовки отображаются с использованием [`<Titles>` компонента](#titles)
 
-#### Usage
+#### Использование
 
 ```md
 <Toc />
 ```
 
-Parameters:
+Параметры:
 
-- `columns` (`string | number`, default: `1`): The number of columns of the display
-- `listClass` (`string | string[]`, default: `''`): Classes to apply to the table of contents list
-- `maxDepth` (`string | number`, default: `Infinity`): The maximum depth level of title to display
-- `minDepth` (`string | number`, default: `1`): The minimum depth level of title to display
-- `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, default: `'all'`):
-  - `'all'`: Display all items
-  - `'onlyCurrentTree'`: Display only items that are in current tree (active item, parents and children of active item)
-  - `'onlySiblings'`: Display only items that are in current tree and their direct siblings
+- `columns` (`string | number`, по умолчанию: `1`): количество столбцов в отображении
+- `listClass` (`string | string[]`, по умолчанию: `''`): классы применяемые к списку оглавления
+- `maxDepth` (`string | number`, по умолчанию: `Infinity`): максимальный уровень заголовка для отображения
+- `minDepth` (`string | number`, по умолчанию: `1`): минимальный уровень заголовка для отображения
+- `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, по умолчанию: `'all'`):
+  - `'all'`: отображать все элементы
+  - `'onlyCurrentTree'`: отображать только элементы, которые находятся в текущем дереве (активный элемент, родительские и дочерние элементы активного элемента)
+  - `'onlySiblings'`: отображать только элементы, которые находятся в текущем дереве и их соседях
 
 ### `Transform`
 
-Apply scaling or transforming to elements.
+Примените масштабирование или трансформацию к элементам.
 
-#### Usage
+#### Использование
 
 ```md
 <Transform :scale="0.5">
@@ -248,114 +248,114 @@ Apply scaling or transforming to elements.
 </Transform>
 ```
 
-Parameters:
+Параметры:
 
-- `scale` (`number | string`, default `1`): transform scale value
-- `origin` (`string`, default `'top left'`): transform origin value
+- `scale` (`number | string`, по умолчанию `1`): значение масштаба трансформации
+- `origin` (`string`, по умолчанию `'top left'`): значение точки происхождения трансформации
 
 ### `Tweet`
 
-Embed a tweet.
+Встраивает твит.
 
-#### Usage
+#### Использование
 
 ```md
 <Tweet id="20" />
 ```
 
-Parameters:
+Параметры:
 
-- `id` (`number | string`, required): id of the tweet
-- `scale` (`number | string`, default `1`): transform scale value
-- `conversation` (`string`, default `'none'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
-- `cards` (`'hidden' | 'visible'`, default `'visible'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `id` (`number | string`, обязательный): идентификатор твита
+- `scale` (`number | string`, по умолчанию `1`): значение масштаба трансформации
+- `conversation` (`string`, по умолчанию `'none'`): [параметр встраивания твита](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `cards` (`'hidden' | 'visible'`, по умолчанию `'visible'`): [параметр встраивания твита](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
 
-### `VAfter`, `VClick` and `VClicks`
+### `VAfter`, `VClick` и `VClicks`
 
-See https://sli.dev/guide/animations.html
+Смотрите https://sli.dev/guide/animations.html
 
 ### `VSwitch`
 
-Switch between multiple slots based on clicks.
+Переключение между несколькими слотами на основе кликов.
 
-See https://sli.dev/guide/animations.html#enter-leave
+Смотрите https://sli.dev/guide/animations.html#enter-leave
 
-- If the `unmount` prop is set to `true`, the previous slot will be unmounted when switching to the next slot. Default is `false`.
-- Use the `tag` and `childTag` props to change the default tag of the component and its children. Default is `div`.
-- Use the `transition` prop to change the transition effect. Default is `false` (disabled).
+- Если свойство `unmount` установлено в `true`, предыдущий слот будет размонтирован при переключении на следующий слот. По умолчанию `false`.
+- Используйте свойства `tag` и `childTag`, чтобы изменить тег по умолчанию компонента и его дочерних элементов. По умолчанию `div`.
+- Используйте свойство `transition`, чтобы изменить эффект перехода. По умолчанию `false` (отключено).
 
 ### `VDrag`
 
-See https://sli.dev/guide/draggable.html
+Смотрите https://sli.dev/guide/draggable.html
 
 ### `SlidevVideo`
 
-Embed a video.
+Встраивайте видео.
 
-#### Usage
+#### Использование
 
 ```md
 <SlidevVideo v-click autoplay controls>
-  <!-- Anything that can go in a HTML video element. -->
+  <!-- Все, что можно вставить в элемент HTML video. -->
   <source src="/myMovie.mp4" type="video/mp4" />
   <source src="/myMovie.webm" type="video/webm" />
   <p>
-    Your browser does not support videos. You may download it
-    <a href="/myMovie.mp4">here</a>.
+    Ваш браузер не поддерживает видео. Вы можете его скачать
+    <a href="/myMovie.mp4">здесь</a>.
   </p>
 </SlidevVideo>
 ```
 
-Check [HTML video element's doc](https://developer.mozilla.org/docs/Web/HTML/Element/Video) to see what can be included in this component's slot.
+Проверьте [документацию элемента HTML video](https://developer.mozilla.org/docs/Web/HTML/Element/Video), чтобы увидеть, что можно включить в слот этого компонента.
 
-Parameters:
+Параметры:
 
-- `controls` (`boolean`, default: `false`): show the video controls
-- `autoplay` (`boolean | 'once'`, default: `false`):
-  - `true` or `'once'`: start the video only once and does not restart it once ended or paused
-  - `false`: never automatically start the video (rely on `controls` instead)
-- `autoreset` (`'slide' | 'click'`, default: `undefined`):
-  - `'slide'`: go back to the start of the video when going back to the slide
-  - `'click'`: go back to the start of the video when going back to the component's click turn
-- `poster` (`string | undefined`, default: `undefined`):
-  - The source of the image to print when the video is not playing.
-- `printPoster` (`string | undefined`, default: `undefined`):
-  - The override for `poster` when printing.
-- `timestamp` (`string | number`, default: `0`):
-  - The starting time of the video in seconds.
-- `printTimestamp` (`string | number | 'last' | undefined`, default: `undefined`):
-  - The override for `timestamp` when printing.
+- `controls` (`boolean`, по умолчанию: `false`): показать элементы управления видео
+- `autoplay` (`boolean | 'once'`, по умолчанию: `false`):
+  - `true` или `'once'`: начать видео только один раз и не перезапускать его после окончания или паузы
+  - `false`: никогда не начинать видео автоматически (полагайтесь на `controls` вместо этого)
+- `autoreset` (`'slide' | 'click'`, по умолчанию: `undefined`):
+  - `'slide'`: вернуться к началу видео при возврате к слайду
+  - `'click'`: вернуться к началу видео при возврате к клику компонента
+- `poster` (`string | undefined`, по умолчанию: `undefined`):
+  - источник изображения, которое будет отображаться, когда видео не воспроизводится.
+- `printPoster` (`string | undefined`, по умолчанию: `undefined`):
+  - переопределение для `poster` при печати.
+- `timestamp` (`string | number`, по умолчанию: `0`):
+  - начальное время видео в секундах.
+- `printTimestamp` (`string | number | 'last' | undefined`, по умолчанию: `undefined`):
+  - переопределение для `timestamp` при печати.
 
 ::: warning
-When exporting, the video may fail to load because Chromium does not support some video formats. In this case, you can specify the executable path of the browser. See [Chromium executable path](/guide/exporting.html#executable-path) for more information.
+При экспорте видео может не загрузиться, так как Chromium не поддерживает некоторые форматы видео. В этом случае вы можете указать путь к исполняемому файлу браузера. Смотрите [путь к исполняемому файлу Chromium](/guide/exporting.html#executable-path) для получения дополнительной информации.
 :::
 
 ### `Youtube`
 
-Embed a youtube video.
+Встраивает видео с YouTube.
 
-#### Usage
+#### Использование
 
 ```md
 <Youtube id="luoMHjh-XcQ" />
 ```
 
-Parameters:
+Параметры:
 
-- `id` (`string`, required): id of the youtube video
-- `width` (`number`): width of the video
-- `height` (`number`): height of the video
+- `id` (`string`, обязательный): идентификатор видео на YouTube
+- `width` (`number`): ширина видео
+- `height` (`number`): высота видео
 
-You can also make the video start at specific time if you add `?start=1234` to the id value (where 1234 are seconds),
+Вы также можете сделать так, чтобы видео начиналось в определенное время, добавив `?start=1234` к значению id (где 1234 — это секунды).
 
-## Custom Components
+## Пользовательские компоненты
 
-Create a directory `components/` under your project root, and simply put your custom Vue components under it, then you can use it with the same name in your markdown file!
+Создайте каталог `components/` в корне вашего проекта и просто поместите свои пользовательские компоненты Vue под него, затем вы можете использовать их с тем же именем в вашем файле markdown!
 
-Read more in the [Customization](/custom/directory-structure#components) section.
+Читать больше в разделе [Настройка](/custom/directory-structure#components).
 
-## Theme-provided Components
+## Компоненты, предоставляемые темами
 
-Themes can provide components as well. Please read their documentations for what they have provided.
+Темы также могут предоставлять компоненты. Пожалуйста, читайте документацию тем, чтобы узнать, что они предоставили.
 
-Check more in the [directory structure](/custom/directory-structure) section.
+Смотрите больше в разделе [структура каталога](/custom/directory-structure).

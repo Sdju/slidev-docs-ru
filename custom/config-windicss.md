@@ -1,46 +1,46 @@
-# Configure Windi CSS
+# Настройка Windi CSS
 
 <Environment type="node" />
 
 ::: warning
-Since Slidev v0.47.0, we no longer support Windi CSS. Please migrate to [UnoCSS](/custom/config-unocss).
+С версии Slidev v0.47.0 мы больше не поддерживаем Windi CSS. Пожалуйста, мигрируйте на [UnoCSS](/custom/config-unocss).
 :::
 
-Markdown naturally supports embedded HTML markups. You can therefore style your content the way you want.
+Markdown естественным образом поддерживает встроенную HTML-разметку. Вы можете стилизовать свой контент так, как вам нужно.
 
-For example:
+Например:
 
 ```html
 <div class="grid pt-4 gap-4 grid-cols-[100px,1fr]">
 
-### Name
+### Имя
 
-- Item 1
-- Item 2
+- Элемент 1
+- Элемент 2
 
 </div>
 ```
 
-The [Attributify Mode](https://windicss.org/posts/v30.html#attributify-mode) in [Windi CSS v3.0](https://windicss.org/posts/v30.html) is enabled by default.
+Режим [Attributify](https://windicss.org/posts/v30.html#attributify-mode) в [Windi CSS v3.0](https://windicss.org/posts/v30.html) включен по умолчанию.
 
-## Configurations
+## Конфигурация
 
-To configure Windi CSS, create `setup/windicss.ts` with the following content to extend the builtin configurations
+Чтобы настроить Windi CSS, создайте `setup/windicss.ts` со следующим содержимым для расширения встроенной конфигурации:
 
 ```ts
 // setup/windicss.ts
 
 import { defineWindiSetup } from '@slidev/types'
 
-// extending the builtin windicss configurations
+// расширение встроенной конфигурации windicss
 export default defineWindiSetup(() => ({
   shortcuts: {
-    // custom the default background
+    // пользовательский фон по умолчанию
     'bg-main': 'bg-white text-[#181818] dark:(bg-[#121212] text-[#ddd])',
   },
   theme: {
     extend: {
-      // fonts can be replaced here, remember to update the web font links in `index.html`
+      // шрифты могут быть заменены здесь, не забудьте обновить ссылки на веб-шрифты в `index.html`
       fontFamily: {
         sans: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
         mono: '"Fira Code", monospace',
@@ -50,4 +50,4 @@ export default defineWindiSetup(() => ({
 }))
 ```
 
-Learn more about [Windi CSS configurations](https://windicss.org/guide/configuration.html)
+Узнайте больше о [конфигурации Windi CSS](https://windicss.org/guide/configuration.html).

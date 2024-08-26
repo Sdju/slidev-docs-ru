@@ -1,8 +1,8 @@
-# Configure Mermaid
+# Настройка Mermaid
 
 <Environment type="client" />
 
-Create `./setup/mermaid.ts` with the following content:
+Создайте `./setup/mermaid.ts` со следующим содержимым:
 
 ```ts
 import { defineMermaidSetup } from '@slidev/types'
@@ -14,11 +14,11 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-With the setup, you can provide a custom default setting for [Mermaid](https://mermaid-js.github.io/). Refer to the type definitions and its documentation for more details.
+С помощью этой настройки вы можете предоставить пользовательские параметры по умолчанию для [Mermaid](https://mermaid-js.github.io/). Обратитесь к определениям типов и их документации для получения дополнительных сведений.
 
-## Custom theme/styles
+## Пользовательская тема/стили
 
-In case you want to create your custom Mermaid themes or styles, you can do this by defining `themeVariables` like in the following example:
+Если вы хотите создать свои пользовательские темы или стили для Mermaid, вы можете сделать это, определив `themeVariables`, как в следующем примере:
 
 ```ts
 import { defineMermaidSetup } from '@slidev/types'
@@ -27,12 +27,12 @@ export default defineMermaidSetup(() => {
   return {
     theme: 'base',
     themeVariables: {
-      // General theme variables
+      // Общие переменные темы
       noteBkgColor: '#181d29',
       noteTextColor: '#F3EFF5cc',
       noteBorderColor: '#404551',
 
-      // Sequence diagram variables
+      // Переменные диаграммы последовательностей
       actorBkg: '#0E131F',
       actorBorder: '#44FFD2',
       actorTextColor: '#F3EFF5',
@@ -44,4 +44,4 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-You can find all theme variables on the [Mermaid Theme Configuration](https://mermaid.js.org/config/theming.html) page.
+Вы можете найти все переменные темы на странице [Конфигурация тем Mermaid](https://mermaid.js.org/config/theming.html).

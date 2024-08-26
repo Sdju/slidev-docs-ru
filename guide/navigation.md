@@ -1,33 +1,33 @@
-# Navigation
+# Навигация
 
-## Navigation Bar
+## Панель навигации
 
-Move your mouse to the bottom left corner of Slidev page to make the navigation bar appear.
+Переместите курсор мыши в нижний левый угол страницы Slidev, чтобы появилась панель навигации.
 
 ![](/screenshots/navbar.png)
 
-| Shortcuts                           | Button                                                                                | Description                                                                                |
-| ----------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| <kbd>f</kbd>                        | <carbon-maximize class="inline-icon-btn"/> <carbon-minimize class="inline-icon-btn"/> | toggle fullscreen                                                                          |
-| <kbd>right</kbd> / <kbd>space</kbd> | <carbon-arrow-right class="inline-icon-btn"/>                                         | next animation or slide                                                                    |
-| <kbd>left</kbd>                     | <carbon-arrow-left class="inline-icon-btn"/>                                          | previous animation or slide                                                                |
-| <kbd>up</kbd>                       | -                                                                                     | previous slide                                                                             |
-| <kbd>down</kbd>                     | -                                                                                     | next slide                                                                                 |
-| <kbd>o</kbd>                        | <carbon-apps class="inline-icon-btn"/>                                                | toggle [slides overview](#slides-overview)                                                 |
-| <kbd>d</kbd>                        | <carbon-sun class="inline-icon-btn"/> <carbon-moon class="inline-icon-btn"/>          | toggle dark mode                                                                           |
-| -                                   | <carbon-user-avatar class="inline-icon-btn"/>                                         | toggle [camera view](/guide/recording#camera-view)                                         |
-| -                                   | <carbon-video class="inline-icon-btn"/>                                               | [recording](/guide/recording#camera-view)                                                  |
-| -                                   | <carbon-user-speaker class="inline-icon-btn"/>                                        | enter [presenter mode](/guide/presenter-mode)                                              |
-| -                                   | <carbon-edit class="inline-icon-btn"/>                                                | toggle [integrated editor](/guide/editors#integrated-editor)                               |
-| -                                   | <carbon-download class="inline-icon-btn"/>                                            | download slides (only appear in [SPA build](/guide/exporting#single-page-application-spa)) |
-| -                                   | <carbon-information class="inline-icon-btn"/>                                         | show information about the slides                                                          |
-| -                                   | <carbon-settings-adjust class="inline-icon-btn"/>                                     | show settings menu                                                                         |
-| <kbd>g</kbd>                        | -                                                                                     | show goto...                                                                               |
+| Сочетания клавиш                    | Кнопка                                                                                | Описание                                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <kbd>f</kbd>                        | <carbon-maximize class="inline-icon-btn"/> <carbon-minimize class="inline-icon-btn"/> | переключение полноэкранного режима                                                        |
+| <kbd>вправо</kbd> / <kbd>пробел</kbd> | <carbon-arrow-right class="inline-icon-btn"/>                                         | следующая анимация или слайд                                                              |
+| <kbd>влево</kbd>                    | <carbon-arrow-left class="inline-icon-btn"/>                                          | предыдущая анимация или слайд                                                             |
+| <kbd>вверх</kbd>                    | -                                                                                     | предыдущий слайд                                                                          |
+| <kbd>вниз</kbd>                     | -                                                                                     | следующий слайд                                                                           |
+| <kbd>o</kbd>                        | <carbon-apps class="inline-icon-btn"/>                                                | переключение [обзора слайдов](#обзор-слайдов)                                             |
+| <kbd>d</kbd>                        | <carbon-sun class="inline-icon-btn"/> <carbon-moon class="inline-icon-btn"/>          | переключение темного режима                                                               |
+| -                                   | <carbon-user-avatar class="inline-icon-btn"/>                                         | переключение [вида камеры](/guide/recording#вид-камеры)                                   |
+| -                                   | <carbon-video class="inline-icon-btn"/>                                               | [запись](/guide/recording#вид-камеры)                                                     |
+| -                                   | <carbon-user-speaker class="inline-icon-btn"/>                                        | вход в [режим докладчика](/guide/presenter-mode)                                          |
+| -                                   | <carbon-edit class="inline-icon-btn"/>                                                | переключение [встроенного редактора](/guide/editors#встроенный-редактор)                  |
+| -                                   | <carbon-download class="inline-icon-btn"/>                                            | скачать слайды (появляется только в [SPA сборке](/guide/exporting#одностраничное-приложение-spa)) |
+| -                                   | <carbon-information class="inline-icon-btn"/>                                         | показать информацию о слайдах                                                             |
+| -                                   | <carbon-settings-adjust class="inline-icon-btn"/>                                     | показать меню настроек                                                                    |
+| <kbd>g</kbd>                        | -                                                                                     | показать "перейти к..."                                                                   |
 
 <br>
 
-## Slides Overview
+## Обзор слайдов
 
-By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily.
+Нажав <kbd>o</kbd> или кнопку <carbon-apps class="inline-icon-btn"/> на панели навигации, вы можете получить обзор ваших слайдов, чтобы легко перемещаться между ними.
 
 ![](/screenshots/slides-overview.png)

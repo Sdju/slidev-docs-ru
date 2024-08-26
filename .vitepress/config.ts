@@ -6,230 +6,230 @@ const CURRENT_VERSION = '0.48.0-beta.22'
 
 const Guide: DefaultTheme.NavItemWithLink[] = [
   {
-    text: 'Why Slidev',
+    text: 'Почему Slidev',
     link: '/guide/why',
   },
   {
-    text: 'Getting Started',
+    text: 'Начало работы',
     link: '/guide/',
   },
   {
-    text: 'Installation',
+    text: 'Установка',
     link: '/guide/install',
   },
   {
-    text: 'Markdown Syntax',
+    text: 'Синтаксис Markdown',
     link: '/guide/syntax',
   },
   {
-    text: 'Navigation',
+    text: 'Навигация',
     link: '/guide/navigation',
   },
   {
-    text: 'Animations',
+    text: 'Анимации',
     link: '/guide/animations',
   },
   {
-    text: 'Draggable Elements',
+    text: 'Перетаскиваемые элементы',
     link: '/guide/draggable',
   },
   {
-    text: 'Presenter Mode',
+    text: 'Режим докладчика',
     link: '/guide/presenter-mode',
   },
   {
-    text: 'Slides Overview',
+    text: 'Обзор слайдов',
     link: '/guide/overview',
   },
   {
-    text: 'Drawing & Annotations',
+    text: 'Рисование и аннотации',
     link: '/guide/drawing',
   },
   {
-    text: 'Static Hosting',
+    text: 'Хостинг статики',
     link: '/guide/hosting',
   },
   {
-    text: 'Record Presentation',
+    text: 'Запись презентации',
     link: '/guide/recording',
   },
   {
-    text: 'Presenter Mode',
+    text: 'Режим докладчика',
     link: '/guide/presenter-mode',
   },
   {
-    text: 'Drawing & Annotations',
+    text: 'Рисование и аннотации',
     link: '/guide/drawing',
   },
   {
-    text: 'Editor Integrations',
+    text: 'Интеграции с редакторами',
     link: '/guide/editors',
   },
   {
-    text: 'FAQ',
+    text: 'Часто задаваемые вопросы',
     link: '/guide/faq',
   },
 ]
 
 const BuiltIn: DefaultTheme.NavItemWithLink[] = [
   {
-    text: 'Components',
+    text: 'Компоненты',
     link: '/builtin/components',
   },
   {
-    text: 'Layouts',
+    text: 'Макеты',
     link: '/builtin/layouts',
   },
 ]
 
 const Theme: (DefaultTheme.NavItemWithLink | DefaultTheme.NavItemChildren)[] = [
   {
-    text: 'Use Theme',
+    text: 'Использовать тему',
     link: '/themes/use',
   },
   {
-    text: 'Theme Gallery',
+    text: 'Галерея тем',
     link: '/themes/gallery',
   },
   {
-    text: 'Write a Theme',
+    text: 'Написать тему',
     link: '/themes/write-a-theme',
   },
 ]
 
 const Addon: DefaultTheme.NavItemWithLink[] = [
   {
-    text: 'Use Addon',
+    text: 'Использовать аддон',
     link: '/addons/use',
   },
   {
-    text: 'Write an Addon',
+    text: 'Написать аддон',
     link: '/addons/write-an-addon',
   },
 ]
 
 const Customizations: (DefaultTheme.NavItemWithLink | DefaultTheme.NavItemChildren)[] = [
   {
-    text: 'Customizations',
+    text: 'Настройки',
     link: '/custom/',
   },
   {
-    text: 'Directory Structure',
+    text: 'Структура каталога',
     link: '/custom/directory-structure',
   },
   {
-    text: 'Fonts',
+    text: 'Шрифты',
     link: '/custom/fonts',
   },
   {
-    text: 'Highlighters',
+    text: 'Подсветка синтаксиса',
     link: '/custom/highlighters',
   },
   {
-    text: 'Configure Vue',
+    text: 'Настройка Vue',
     link: '/custom/config-vue',
   },
   {
-    text: 'Configure Vite',
+    text: 'Настройка Vite',
     link: '/custom/config-vite',
   },
   {
-    text: 'Configure UnoCSS',
+    text: 'Настройка UnoCSS',
     link: '/custom/config-unocss',
   },
   {
-    text: 'Configure Monaco',
+    text: 'Настройка Monaco',
     link: '/custom/config-monaco',
   },
   {
-    text: 'Configure KaTeX',
+    text: 'Настройка KaTeX',
     link: '/custom/config-katex',
   },
   {
-    text: 'Configure Mermaid',
+    text: 'Настройка Mermaid',
     link: '/custom/config-mermaid',
   },
   {
-    text: 'Configure Parser',
+    text: 'Настройка парсера',
     link: '/custom/config-parser',
   },
   {
-    text: 'Configure Routes',
+    text: 'Настройка маршрутов',
     link: '/custom/config-routes',
   },
   {
-    text: 'Configure Shortcuts',
+    text: 'Настройка сочетаний клавиш',
     link: '/custom/config-shortcuts',
   },
   {
-    text: 'Configure Code Runners',
+    text: 'Настройка исполнителей кода',
     link: '/custom/config-code-runners',
   },
   {
-    text: 'Configure Context Menu',
+    text: 'Настройка контекстного меню',
     link: '/custom/config-context-menu',
   },
   {
-    text: 'Vue Global Context',
+    text: 'Глобальный контекст Vue',
     link: '/custom/vue-context',
   },
   {
-    text: 'Global Layers',
+    text: 'Глобальные слои',
     link: '/custom/global-layers',
   },
 ]
 
 const Resources: DefaultTheme.NavItemWithLink[] = [
   {
-    text: 'Showcases',
+    text: 'Примеры',
     link: '/showcases',
   },
   {
-    text: 'Learning Resources',
+    text: 'Учебные ресурсы',
     link: '/resources/learning',
   },
   {
-    text: 'Curated Covers',
+    text: 'Галлерея обложек',
     link: '/resources/covers',
   },
 ]
 
 const slidebars: DefaultTheme.SidebarItem[] = [
   {
-    text: 'Guide',
+    text: 'Руководство',
     items: Guide,
   },
   {
-    text: 'Themes',
+    text: 'Темы',
     items: Theme,
   },
   {
-    text: 'Addons',
+    text: 'Аддоны',
     items: Addon,
   },
   {
-    text: 'Customizations',
+    text: 'Настройки',
     items: Customizations,
   },
   {
-    text: 'Built-in',
+    text: 'Встроенное',
     items: BuiltIn,
   },
   {
-    text: 'Resources',
+    text: 'Ресурсы',
     items: Resources,
   },
 ]
 
 export default defineConfig({
   title: 'Slidev',
-  description: 'Presentation slides for developers',
+  description: 'Презентационные слайды для разработчиков',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:title', content: 'Slidev' }],
     ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
-    ['meta', { property: 'og:description', content: 'Presentation slides for developers' }],
+    ['meta', { property: 'og:description', content: 'Презентационные слайды для разработчиков' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
     ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
@@ -259,7 +259,7 @@ export default defineConfig({
     logo: '/logo.svg',
     editLink: {
       pattern: 'https://github.com/slidevjs/slidev/edit/main/docs/:path',
-      text: 'Suggest changes to this page',
+      text: 'Предложить изменения на этой странице',
     },
 
     search: {
@@ -268,37 +268,37 @@ export default defineConfig({
 
     nav: [
       {
-        text: 'Guide',
+        text: 'Руководство',
         items: Guide,
       },
       {
-        text: 'Theme',
+        text: 'Тема',
         items: [
           ...Theme,
           {
-            text: 'Built-in',
+            text: 'Встроенные',
             items: BuiltIn,
           },
         ],
       },
       {
-        text: 'Customize',
+        text: 'Настройка',
         items: [
           ...Customizations,
           {
-            text: 'Addon',
+            text: 'Аддон',
             items: Addon,
           },
         ],
       },
       {
-        text: 'Resources',
+        text: 'Ресурсы',
         items: Resources,
       },
       {
         text: `v${CURRENT_VERSION}`,
         items: [
-          { text: 'Release Notes', link: 'https://github.com/slidevjs/slidev/releases' },
+          { text: 'Примечания к релизу', link: 'https://github.com/slidevjs/slidev/releases' },
         ],
       },
     ],
@@ -320,7 +320,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Выпущено под лицензией MIT.',
       copyright: 'Copyright © 2020 Anthony Fu.',
     },
   },

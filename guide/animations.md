@@ -2,176 +2,176 @@
 outline: deep
 ---
 
-# Animations
+# Анимации
 
-## Click Animations
+## Анимации по клику
 
 > [!NOTE]
-> Since v0.48.0, we are rewritten the click animations system with much more consistent behaviors. It might change the behaviors of your existing slides in edge cases. While this page is showing the new click system, you can find more details about the refactor in [#1279](https://github.com/slidevjs/slidev/pull/1279).
+> Начиная с версии v0.48.0, мы переписали систему анимаций по клику, сделав ее поведение более последовательным. Это может изменить поведение ваших существующих слайдов в некоторых случаях. Хотя на этой странице показана новая система кликов, более подробную информацию о рефакторинге можно найти в [#1279](https://github.com/slidevjs/slidev/pull/1279).
 
 ### `v-click`
 
-To apply "click animations" for elements, you can use the `v-click` directive or `<v-click>` components
+Для применения "анимаций по клику" к элементам вы можете использовать директиву `v-click` или компоненты `<v-click>`
 
 ```md
-<!-- Component usage:
-     this will be invisible until you press "next" -->
+<!-- Использование компонента:
+     это будет невидимо, пока вы не нажмете "далее" -->
 
-<v-click> Hello **World** </v-click>
+<v-click> Привет **Мир** </v-click>
 
-<!-- Directive usage:
-     this will be invisible until you press "next" the second time -->
-<div v-click class="text-xl"> Hey! </div>
+<!-- Использование директивы:
+     это будет невидимо, пока вы не нажмете "далее" второй раз -->
+<div v-click class="text-xl"> Хэй! </div>
 ```
 
 ### `v-after`
 
-`v-after` is only provided as a directive. It will turn the element visible when the previous `v-click` is triggered.
+`v-after` предоставляется только как директива. Она сделает элемент видимым, когда будет активирован предыдущий `v-click`.
 
 ```md
-<div v-click> Hello </div>
-<div v-after> World </div>
+<div v-click> Привет </div>
+<div v-after> Мир </div>
 ```
 
-When you press "next", both `Hello` and `World` will show up together.
+Когда вы нажмете "далее", оба элемента "Привет" и "Мир" появятся вместе.
 
-### Hide after clicking
+### Скрытие после клика
 
-Add a `.hide` modifier to `v-click` or `v-after` to make the element invisible after clicking, instead of showing up.
+Добавьте модификатор `.hide` к `v-click` или `v-after`, чтобы сделать элемент невидимым после клика, вместо того чтобы показывать его.
 
 ```md
-<div v-click> Visible after 1 click </div>
-<div v-click.hide> Hidden after 2 click </div>
-<div v-after.hide> Hidden after 2 click </div>
+<div v-click> Видимый после 1 клика </div>
+<div v-click.hide> Скрытый после 2 клика </div>
+<div v-after.hide> Скрытый после 2 клика </div>
 ```
 
-For `v-click` component, you can use the `hide` prop to achieve the same effect:
+Для компонента `v-click` вы можете использовать свойство `hide` для достижения того же эффекта:
 
 ```md
-<v-click> Visible after 1 click </v-click>
-<v-click hide> Hidden after 2 click </v-click>
+<v-click> Видимый после 1 клика </v-click>
+<v-click hide> Скрытый после 2 клика </v-click>
 ```
 
 ### `v-clicks`
 
-`v-clicks` is only provided as a component. It's a shorthand to apply the `v-click` directive to all its child elements. It is especially useful when working with lists and tables.
+`v-clicks` предоставляется только как компонент. Это сокращение для применения директивы `v-click` ко всем дочерним элементам. Это особенно полезно при работе со списками и таблицами.
 
 ```md
 <v-clicks>
 
-- Item 1
-- Item 2
-- Item 3
+- Пункт 1
+- Пункт 2
+- Пункт 3
 
 </v-clicks>
 ```
 
-An item will become visible each time you click "next".
-It accepts a `depth` prop for nested list:
+Пункт будет становиться видимым каждый раз, когда вы нажимаете "далее".
+Он принимает свойство `depth` для вложенных списков:
 
 ```md
 <v-clicks depth="2">
 
-- Item 1
-  - Item 1.1
-  - Item 1.2
-- Item 2
-  - Item 2.1
-  - Item 2.2
+- Пункт 1
+  - Пункт 1.1
+  - Пункт 1.2
+- Пункт 2
+  - Пункт 2.1
+  - Пункт 2.2
 
 </v-clicks>
 ```
 
-Also, you can use the `every` prop to specify the number of items to show after each click:
+Также вы можете использовать свойство `every` для указания количества элементов, которые нужно показывать после каждого клика:
 
 ```md
 <v-clicks every="2">
 
-- Item 1 (part 1)
-- Item 1 (part 2)
-- Item 2 (part 1)
-- Item 2 (part 2)
+- Пункт 1 (часть 1)
+- Пункт 1 (часть 2)
+- Пункт 2 (часть 1)
+- Пункт 2 (часть 2)
 
 </v-clicks>
 ```
 
-### Positioning
+### Позиционирование
 
-By default, the clicking animations take place one by one. You can customize the animation position of elements by using the `at` prop or the `v-click` directive with value.
+По умолчанию анимации по клику происходят одна за другой. Вы можете настроить позицию анимации элементов, используя свойство `at` или директиву `v-click` со значением.
 
-Like the CSS layout system, click-animated elements can be "relative" or "absolute":
+Как и в системе макетов CSS, элементы с анимацией по клику могут быть "относительными" или "абсолютными":
 
-#### Relative Position
+#### Относительная позиция
 
-This actual position of relative elements are calculated based on the previous relative elements:
+Фактическая позиция относительных элементов рассчитывается на основе предыдущих элементов с относительной позицией:
 
 ````md
-<div v-click> visible after 1 click </div>
-<v-click at="+2"><div> visible after 3 clicks </div></v-click>
-<div v-click.hide="'-1'"> hidden after 2 clicks </div>
+<div v-click> видимый после 1 клика </div>
+<v-click at="+2"><div> видимый после 3 кликов </div></v-click>
+<div v-click.hide="'-1'"> скрытый после 2 кликов </div>
 
 ```js {none|1|2}{at:'+5'}
-1  // highlighted after 7 clicks
-2  // highlighted after 8 clicks
+1  // подсвечено после 7 кликов
+2  // подсвечено после 8 кликов
 ```
 ````
 
 > [!NOTE]
-> The default value of `v-click` is `'+1'` when you don't specify it.
+> Значение по умолчанию для `v-click` - `'+1'`, если вы не указали его.
 
-In fact, `v-after` are just shortcuts for `v-click` with `at` prop:
+На самом деле, `v-after` - это просто сокращение для `v-click` со свойством `at`:
 
 ```md
-<!-- The following 2 usages are equivalent -->
+<!-- Следующие 2 использования эквивалентны -->
 <img v-after />
 <img v-click="'+0'" />
 
-<!-- The following 3 usages are equivalent -->
+<!-- Следующие 3 использования эквивалентны -->
 <img v-click />
 <img v-click="'+1'" />
 <v-click-gap size="1" /><img v-after />
 ```
 
 :::info
-Only string values start with `'+'` or `'-'` like `'+1'` are treated as relative positions:
+Только строковые значения, начинающиеся с `'+'` или `'-'`, такие как `'+1'`, рассматриваются как относительные позиции:
 
-| Value          | Kind     |
-| -------------- | -------- |
-| `'-1'`, `'+1'` | Relative |
-| `+1` === `1`   | Absolute |
-| `'1'`          | Absolute |
+| Значение       | Тип       |
+| -------------- | --------- |
+| `'-1'`, `'+1'` | Относительное |
+| `+1` === `1`   | Абсолютное |
+| `'1'`          | Абсолютное |
 
-So don't forget the single quotes for the relative values.
+Поэтому не забудьте одинарные кавычки для относительных значений.
 :::
 
-#### Absolute Position
+#### Абсолютная позиция
 
-The given value is the exact click count to show the element:
+Заданное значение - это точное количество кликов для показа элемента:
 
 ````md
-<div v-click="3"> visible after 3 clicks </div>
-<v-click at="2"><div> visible after 2 clicks </div></v-click>
-<div v-click.hide="1"> hidden after 1 click </div>
+<div v-click="3"> видимый после 3 кликов </div>
+<v-click at="2"><div> видимый после 2 кликов </div></v-click>
+<div v-click.hide="1"> скрытый после 1 клика </div>
 
 ```js {none|1|2}{at:3}
-1  // highlighted after 3 clicks
-2  // highlighted after 4 clicks
+1  // подсвечено после 3 кликов
+2  // подсвечено после 4 кликов
 ```
 ````
 
-#### Mixed Case
+#### Смешанный случай
 
-You can mix the absolute and relative positions:
+Вы можете смешивать абсолютные и относительные позиции:
 
 ```md
-<div v-click> visible after 1 click </div>
-<div v-click="3"> visible after 3 clicks </div>
-<div v-click> visible after 2 click </div>
-<div v-click="'-1'"> visible after 1 click </div>
-<div v-click="4"> visible after 4 clicks </div>
+<div v-click> видимый после 1 клика </div>
+<div v-click="3"> видимый после 3 кликов </div>
+<div v-click> видимый после 2 клика </div>
+<div v-click="'-1'"> видимый после 1 клика </div>
+<div v-click="4"> видимый после 4 кликов </div>
 ```
 
-The following example synchronizes the highlighting of the two code blocks:
+Следующий пример синхронизирует подсветку двух блоков кода:
 
 ````md
 ```js {1|2}{at:1}
@@ -185,61 +185,61 @@ The following example synchronizes the highlighting of the two code blocks:
 ```
 ````
 
-### Enter & Leave
+### Вход и выход
 
-You can also specify the enter and leave index for the `v-click` directive by passing an array. The end index is exclusive.
+Вы также можете указать индексы входа и выхода для директивы `v-click`, передав массив. Конечный индекс является исключающим.
 
 ```md
 <div v-click.hide="[2, 4]">
-  This will be hidden at click 2 and 3.
+  Это будет скрыто на кликах 2 и 3.
 </div>
 <div v-click />
 <div v-click="'[+1, +1]'">
-  This will be shown at click 3, and hidden since click 4.
+  Это будет показано на клике 3 и скрыто начиная с клика 4.
 </div>
 ```
 
-You can also use `v-switch` to achieve the same effect:
+Вы также можете использовать `v-switch` для достижения того же эффекта:
 
 ```md
 <v-switch>
-  <template #1> show at click 1, hide at click 2. </template>
-  <template #2> show at click 2, hide at click 5. </template>
-  <template #5-7> show at click 5, hide at click 7. </template>
+  <template #1> показать на клике 1, скрыть на клике 2. </template>
+  <template #2> показать на клике 2, скрыть на клике 5. </template>
+  <template #5-7> показать на клике 5, скрыть на клике 7. </template>
 </v-switch>
 ```
 
-See [`VSwitch` Component](/builtin/components#vswitch) for more details.
+Подробнее см. [Компонент `VSwitch`](/builtin/components#vswitch).
 
-### Custom Total Clicks Count
+### Пользовательское общее количество кликов
 
-By default, Slidev counts how many steps are needed before going to the next slide. You can override this setting by passing the `clicks` frontmatter option:
+По умолчанию Slidev подсчитывает, сколько шагов необходимо сделать перед переходом к следующему слайду. Вы можете переопределить этот параметр, передав опцию `clicks` во frontmatter:
 
 ```yaml
 ---
-# 10 clicks in this slide, before going to the next
+# 10 кликов на этом слайде, прежде чем перейти к следующему
 clicks: 10
 ---
 ```
 
-### Element Transitions
+### Переходы элементов
 
-When you apply the `v-click` directive to your elements, it will attach the class name `slidev-vclick-target` to it. When the elements are hidden, the class name `slidev-vclick-hidden` will also be attached. For example:
-
-```html
-<div class="slidev-vclick-target slidev-vclick-hidden">Text</div>
-```
-
-After a click, it will become
+Когда вы применяете директиву `v-click` к вашим элементам, она присоединяет к ним имя класса `slidev-vclick-target`. Когда элементы скрыты, также присоединяется имя класса `slidev-vclick-hidden`. Например:
 
 ```html
-<div class="slidev-vclick-target">Text</div>
+<div class="slidev-vclick-target slidev-vclick-hidden">Текст</div>
 ```
 
-By default, a subtle opacity transition is applied to those classes:
+После клика это станет
+
+```html
+<div class="slidev-vclick-target">Текст</div>
+```
+
+По умолчанию к этим классам применяется анимирование прозрачности:
 
 ```css
-// the default
+// по умолчанию
 
 .slidev-vclick-target {
   transition: opacity 100ms ease;
@@ -251,9 +251,9 @@ By default, a subtle opacity transition is applied to those classes:
 }
 ```
 
-You can override them to customize the transition effects in your custom stylesheets.
+Вы можете переопределить их для настройки эффектов перехода в ваших пользовательских таблицах стилей.
 
-For example, you can achieve the scaling up transitions by:
+Например, вы можете достичь эффекта увеличения масштаба следующим образом:
 
 ```css
 /* styles.css */
@@ -267,7 +267,7 @@ For example, you can achieve the scaling up transitions by:
 }
 ```
 
-To specify animations for only certain slide or layout
+Чтобы указать анимации только для определенного слайда или макета
 
 ```scss
 .slidev-page-7,
@@ -282,47 +282,47 @@ To specify animations for only certain slide or layout
 }
 ```
 
-Learn more about [customizing styles](/custom/directory-structure#style).
+Узнайте больше о [настройке стилей](/custom/directory-structure#style).
 
 ## Rough Markers
 
-> Available since v0.48.0
+> Доступно с версии v0.48.0
 
-Slidev integrates [Rough Notation](https://github.com/linkstrifer/react-rough-notation) to allow marking or highlighting elements in your slides.
+Slidev интегрирует [Rough Notation](https://github.com/linkstrifer/react-rough-notation) для возможности маркировки или выделения элементов на ваших слайдах.
 
 ### `v-mark`
 
-Rough Notation integrates comes with the `v-mark` directive.
+Rough Notation интегрируется с директивой `v-mark`.
 
-#### Type
+#### Тип
 
-`v-mark.underline` for Underline mark, `v-mark.circle` for Circle mark, etc. Default to `underline`
+`v-mark.underline` для подчеркивания, `v-mark.circle` для обведения кругом и т.д. По умолчанию `underline`
 
-#### Color
+#### Цвет
 
-`v-mark.red` make the notation `red`. Supported builtin color themes from UnoCSS. For custom colors, use object syntax `v-mark="{ color: '#234' }"`
+`v-mark.red` делает обозначение `красным`. Поддерживаются встроенные цветовые темы из UnoCSS. Для пользовательских цветов используйте синтаксис объекта `v-mark="{ color: '#234' }"`
 
-#### Clicks
+#### Клики
 
-`v-mark` works like `v-click` and will trigger after a click. Same as `v-click`, it allows you to pass a custom click value, like `v-mark="5"` or `v-mark="'+1'"`.
+`v-mark` работает как `v-click` и будет срабатывать после клика. Как и `v-click`, он позволяет вам передать пользовательское значение клика, например `v-mark="5"` или `v-mark="'+1'"`.
 
-#### Options
+#### Опции
 
-Optionally you can pass an object to `v-mark` to specify the options, for example:
+При желании вы можете передать объект в `v-mark` для указания опций, например:
 
 ```vue
 <span v-mark="{ at: 5, color: '#234', type: 'circle' }">
-Important text
+Важный текст
 </span>
 ```
 
-#### Preview
+#### Предпросмотр
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/c840340c-0aa1-4cde-b228-e6c67e5f6879" rounded-lg shadow controls></video>
 
 ## Motion
 
-Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use the `v-motion` directive to any elements to make apply motion on them. For example
+Slidev имеет встроенный [@vueuse/motion](https://motion.vueuse.org/). Вы можете использовать директиву `v-motion` для любых элементов, чтобы применить к ним движение. Например
 
 ```html
 <div
@@ -333,9 +333,9 @@ Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use th
 </div>
 ```
 
-The text `Slidev` will move from `-80px` to its original position on initialization.
+Текст `Slidev` будет двигаться от `-80px` до своей исходной позиции при инициализации.
 
-> Note: Slidev preloads the next slide for performance, which means the animations might start before you navigate to the page. To get it works properly, you can disable the preloading for the particular slide
+> Примечание: Slidev предзагружает следующий слайд для повышения производительности, что означает, что анимации могут начаться до того, как вы перейдете на страницу. Чтобы это работало правильно, вы можете отключить предзагрузку для конкретного слайда
 >
 > ```md
 > ---
@@ -343,7 +343,7 @@ The text `Slidev` will move from `-80px` to its original position on initializat
 > ---
 > ```
 >
-> Or control the element life-cycle with `v-if` to have fine-grained controls
+> Или управляйте жизненным циклом элемента с помощью `v-if` для более точного контроля
 >
 > ```html
 > <div
@@ -355,15 +355,15 @@ The text `Slidev` will move from `-80px` to its original position on initializat
 > </div>
 > ```
 
-Learn mode: [Demo](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [Presets](https://motion.vueuse.org/features/presets)
+Узнайте больше: [Демо](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [Пресеты](https://motion.vueuse.org/features/presets)
 
-## Slide Transitions
+## Переходы между слайдами
 
 <div id="pages-transitions" />
 
-> Available since v0.39.0
+> Доступно с версии v0.39.0
 
-Slidev supports slide transitions out of the box. You can enable it by setting the `transition` frontmatter option:
+Slidev поддерживает переходы между слайдами из коробки. Вы можете включить их, установив опцию `transition` во frontmatter:
 
 ```md
 ---
@@ -371,31 +371,31 @@ transition: slide-left
 ---
 ```
 
-This will give you a nice sliding effects on slide switching. Setting it in the frontmatter will apply to all slides. You can also set different transition per slide.
+Это даст вам красивый эффект скольжения при переключении слайдов. Установка этого параметра во frontmatter применит его ко всем слайдам. Вы также можете установить разные переходы для каждого слайда.
 
-### Builtin Transitions
+### Встроенные переходы
 
-- `fade` - Crossfade in/out
-- `fade-out` - Fade out and then fade in
-- `slide-left` - Slides to the left (slide to right when going backward)
-- `slide-right` - Slides to the right (slide to left when going backward)
-- `slide-up` - Slides to the top (slide to bottom when going backward)
-- `slide-down` - Slides to the bottom (slide to top when going backward)
-- `view-transition` - Slides with the view transitions API
+- `fade` - Переход с исчезновением и появлением
+- `fade-out` - Исчезает, а затем появляется
+- `slide-left` - Смещается влево (смещается вправо при движении назад)
+- `slide-right` - Смещается вправо (смещается влево при движении назад)
+- `slide-up` - Смещается вверх (смещается вниз при движении назад)
+- `slide-down` - Смещается вниз (смещается вверх при движении назад)
+- `view-transition` - Смещается с помощью API переходов представлений
 
 ### View Transitions
 
-> Available since v0.43.0
+> Доступно с версии v0.43.0
 
-The **View Transitions API** provides a mechanism for easily creating animated transitions between different DOM states. Learn more how it works in [View Transitions API - MDN Web Docs - Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
+**View Transitions API** предоставляет механизм для легкого создания анимированных переходов между разными состояниями DOM. Узнайте больше о том, как это работает в [View Transitions API - MDN Web Docs - Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
 
 :::warning
-Experimental: This is not supported by all browsers. Check the [Browser compatibility table](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility) carefully before using this.
+Экспериментально: Это не поддерживается всеми браузерами. Тщательно проверьте [таблицу совместимости с браузерами](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility) перед использованием.
 :::
 
-You can use the `view-transition-name` CSS property to name view transitions, which creates connections between different page elements and smooth transitions when switching slides.
+Вы можете использовать свойство CSS `view-transition-name` для именования View Transitions, что создает связи между разными элементами страницы и плавные переходы при переключении слайдов.
 
-You can enable [MDC (Markdown Component) Syntax](/guide/syntax#mdc-syntax) support to conveniently name view-transitions:
+Вы можете включить поддержку [синтаксиса MDC (Markdown Component)](/guide/syntax#mdc-syntax) для удобного именования View Transitions:
 
 ```md
 ---
@@ -410,9 +410,9 @@ mdc: true
 # View Transition {.inline-block.view-transition-title}
 ```
 
-### Custom Transitions
+### Пользовательские переходы
 
-Slidev's slide transitions are powered by [Vue Transition](https://vuejs.org/guide/built-ins/transition.html). You can provide your custom transitions by:
+Переходы слайдов Slidev реализованы с использованием [Vue Transition](https://vuejs.org/guide/built-ins/transition.html). Вы можете предоставить свои пользовательские переходы, указав:
 
 ```md
 ---
@@ -420,7 +420,7 @@ transition: my-transition
 ---
 ```
 
-and then in your custom stylesheets:
+а затем в ваших пользовательских таблицах стилей:
 
 ```css
 .my-transition-enter-active,
@@ -434,11 +434,11 @@ and then in your custom stylesheets:
 }
 ```
 
-Learn more how it works in [Vue Transition](https://vuejs.org/guide/built-ins/transition.html).
+Узнайте больше о том, как это работает в [Vue Transition](https://vuejs.org/guide/built-ins/transition.html).
 
-### Forward & Backward Transitions
+### Переходы вперед и назад
 
-You can specify different transitions for forward and backward navigation using `|` as a separator in the transition name:
+Вы можете указать разные переходы для прямого и обратного навигации, используя `|` в качестве разделителя в имени перехода:
 
 ```md
 ---
@@ -446,11 +446,11 @@ transition: go-forward | go-backward
 ---
 ```
 
-With this, when you go from slide 1 to slide 2, the `go-forward` transition will be applied. When you go from slide 2 to slide 1, the `go-backward` transition will be applied.
+С этим, когда вы переходите со слайда 1 на слайд 2, будет применено перехода `go-forward`. Когда вы переходите со слайда 2 на слайд 1, будет применено перехода `go-backward`.
 
-### Advanced Usage
+### Продвинутое использование
 
-The `transition` field accepts an option that will passed to the [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) component. For example:
+Поле `transition` принимает опцию, которая будет передана компоненту [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition). Например:
 
 ```md
 ---

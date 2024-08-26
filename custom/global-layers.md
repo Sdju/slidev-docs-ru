@@ -1,77 +1,77 @@
-# Global Layers
+# Глобальные слои
 
-Global layers allow you to have custom components that **persist** across slides. This could be useful for having footers, cross-slide animations, global effects, etc.
+Глобальные слои позволяют вам иметь пользовательские компоненты, которые **сохраняются** на всех слайдах. Это может быть полезно для добавления нижних колонтитулов, анимаций между слайдами, глобальных эффектов и т.д.
 
-Slidev provides three layers for this usage, create `global-top.vue`, `global-bottom.vue` or `custom-nav-controls.vue` under your project root and it will pick up automatically.
+Slidev предоставляет три слоя для этого использования: создайте `global-top.vue`, `global-bottom.vue` или `custom-nav-controls.vue` в корне вашего проекта, и они будут автоматически подхвачены.
 
-There are also layers for **each** slide: `layouts/slide-top.vue` and `layouts/slide-bottom.vue`. The usage is similar to the global layers, but they are applied to every slide, so there may be more than one instance of them.
+Также есть слои для **каждого** слайда: `layouts/slide-top.vue` и `layouts/slide-bottom.vue`. Использование аналогично глобальным слоям, но они применяются к каждому слайду, поэтому может быть несколько экземпляров.
 
 ::: tip
-When exporting, the `--per-slide` option should be used to ensure the global layers are applied to each slide correctly.
+При экспорте следует использовать опцию `--per-slide`, чтобы гарантировать, что глобальные слои правильно применяются к каждому слайду.
 :::
 
-## Layers relationship
+## Отношение слоев
 
-At z-axis, from top to bottom:
+По оси z, сверху вниз:
 
 - NavControls
-  - Customized Navigation Controls (`custom-nav-controls.vue`)
-- Global Top (`global-top.vue`) - single instance
-- Slide Top (`slide-top.vue`) - instance per slide
-- Slide Content
-- Slide Bottom (`slide-bottom.vue`) - instance per slide
-- Global Bottom (`global-bottom.vue`) - single instance
+  - Настраиваемые элементы управления навигацией (`custom-nav-controls.vue`)
+- Глобальный верх (`global-top.vue`) - единственный экземпляр
+- Верх слайда (`slide-top.vue`) - экземпляр на каждый слайд
+- Содержимое слайда
+- Нижний колонтитул слайда (`slide-bottom.vue`) - экземпляр на каждый слайд
+- Глобальный низ (`global-bottom.vue`) - единственный экземпляр
 
-## Example
+## Пример
 
 ```html
 <!-- global-bottom.vue -->
 <template>
-  <footer class="absolute bottom-0 left-0 right-0 p-2">Your Name</footer>
+  <footer class="absolute bottom-0 left-0 right-0 p-2">Ваше имя</footer>
 </template>
 ```
 
-The text `Your Name` will appear to all your slides.
+Текст `Ваше имя` будет отображаться на всех ваших слайдах.
 
 ```html
 <!-- custom-nav-controls -->
 <template>
-  <button class="icon-btn" title="Next" @click="$nav.next">
+  <button class="icon-btn" title="Следующий" @click="$nav.next">
     <carbon:arrow-right />
   </button>
 </template>
 ```
 
-The button `Next` will appear in NavControls.
+Кнопка `Следующий` появится в элементах управления навигацией.
 
-To enable it conditionally, you can apply it with the [Vue Global Context](/custom/vue-context).
+Чтобы включать её по условию, вы можете применить её с помощью [Vue Global Context](/custom/vue-context).
 
 ```html
-<!-- hide the footer from Page 4 -->
+<!-- скрыть нижний колонтитул на странице 4 -->
 <template>
   <footer
     v-if="$nav.currentPage !== 4"
     class="absolute bottom-0 left-0 right-0 p-2"
   >
-    Your Name
+    Ваше имя
   </footer>
 </template>
 ```
 
 ```html
-<!-- hide the footer from "cover" layout -->
+<!-- скрыть нижний колонтитул для макета "cover" -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
     class="absolute bottom-0 left-0 right-0 p-2"
   >
-    Your Name
+    Ваше имя
   </footer>
 </template>
 ```
 
 ```html
-<!-- an example footer for pages -->
+<!-- пример нижнего колонтитула для страниц -->
 <template>
   <footer
     v-if="$nav.currentLayout !== 'cover'"
@@ -84,9 +84,9 @@ To enable it conditionally, you can apply it with the [Vue Global Context](/cust
 
 ```html
 <!-- custom-nav-controls -->
-<!-- hide the button in Presenter model -->
+<!-- скрыть кнопку в режиме докладчика -->
 <template>
-  <button v-if="!$nav.isPresenter" class="icon-btn" title="Next" @click="$nav.next">
+  <button v-if="!$nav.isPresenter" class="icon-btn" title="Следующий" @click="$nav.next">
     <carbon:arrow-right />
   </button>
 </template>

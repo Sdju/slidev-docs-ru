@@ -1,19 +1,19 @@
-# Use Addon
+# Использование аддонов
 
-Addons are sets of additional components, layouts, styles, configuration...etc. that you can use in your presentation.
+Аддоны — это наборы дополнительных компонентов, макетов, стилей, конфигураций и т.д., которые вы можете использовать в своей презентации.
 
-They are quite similar to [themes](/themes/use), but in general:
+Они довольно похожи на [темы](/themes/use), но в общем:
 
-- they don't affect the global styles of your slides
-- you can use multiple addons in one presentation
+- они не влияют на глобальные стили ваших слайдов
+- вы можете использовать несколько аддонов в одной презентации
 
-To use addons, you have to install them manually via:
+Чтобы использовать аддоны, вам нужно установить их вручную через:
 
 ```bash
 $ npm install [slidev-addon-package1] [slidev-addon-package2]
 ```
 
-And then declare the addons either in your frontmatter:
+А затем объявить аддоны либо в вашем frontmatter:
 
 ```yaml
 ---
@@ -23,7 +23,7 @@ addons:
 ---
 ```
 
-Or in your `package.json` file:
+Или в вашем файле `package.json`:
 
 ```json
 // package.json
@@ -37,8 +37,8 @@ Or in your `package.json` file:
 }
 ```
 
-## Examples
+## Примеры
 
-- [slidev-addon-qrcode](https://github.com/kravetsone/slidev-addon-qrcode) is an addon that allows you to embed QR codes in your slides.
+- [slidev-addon-qrcode](https://github.com/kravetsone/slidev-addon-qrcode) — это аддон, который позволяет вам встраивать QR-коды в ваши слайды.
 
-- [slidev-addon-remoji](https://github.com/twitwi/slidev-addon-remoji) is an addon that replaces emoji with icons in your slides for consistency / printing purposes.
+- [slidev-addon-remoji](https://github.com/twitwi/slidev-addon-remoji) — это аддон, который заменяет эмодзи на иконки в ваших слайдах для консистентности / печатных целей.
