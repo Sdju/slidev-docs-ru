@@ -1,28 +1,28 @@
 # [sli.dev](https://sli.dev)
 
 > [!IMPORTANT]
-> This repository is a mirror of the `docs/` directory in [slidevjs/slidev](https://github.com/slidevjs/slidev/tree/main/docs). Mainly for other translations repositories to sync.
+> Этот репозиторий является зеркалом директории `docs/` в [slidevjs/slidev](https://github.com/slidevjs/slidev/tree/main/docs). В основном для синхронизации других репозиториев переводов.
 >
-> **‼️ Please DO NOT submit pull requests here ‼️**. Instead, send them to the [main repository](https://github.com/slidevjs/slidev), and they will be synced here automatically.
+> **‼️ Пожалуйста, НЕ отправляйте запросы на слияние сюда ‼️**. Вместо этого отправьте их в [основной репозиторий](https://github.com/slidevjs/slidev), и они будут автоматически синхронизированы здесь.
 
-Mirrored documentation site for [Slidev](https://github.com/slidevjs/slidev)
+Сайт-зеркало документации для [Slidev](https://github.com/slidevjs/slidev)
 
-## Translations
+## Переводы
 
-|                | Repo                                           |                             Site | Maintainers                                                           |
-| -------------- | ---------------------------------------------- | -------------------------------: | --------------------------------------------------------------------- |
-| English        | [docs](https://github.com/slidevjs/slidev/tree/main/docs)       |       [sli.dev](https://sli.dev) | [@antfu](https://github.com/antfu)                                    |
+|                | Репозиторий                                   |                             Сайт | Сопровождающие                                                       |
+| -------------- | ---------------------------------------------- | -------------------------------: | ------------------------------------------------------------------- |
+| English     | [docs](https://github.com/slidevjs/slidev/tree/main/docs)       |       [sli.dev](https://sli.dev) | [@antfu](https://github.com/antfu)                                  |
 | 简体中文       | [docs-cn](https://github.com/slidevjs/docs-cn) | [cn.sli.dev](https://cn.sli.dev) | [@QC-L](https://github.com/QC-L) [@Ivocin](https://github.com/Ivocin) |
-| Français       | [docs-fr](https://github.com/slidevjs/docs-fr) | [fr.sli.dev](https://fr.sli.dev) | [@ArthurDanjou](https://github.com/ArthurDanjou)                      |
-| Español        | [docs-es](https://github.com/slidevjs/docs-es) | [es.sli.dev](https://es.sli.dev) | [@owlnai](https://github.com/owlnai)                                  |
-| Русский        | [docs-ru](https://github.com/slidevjs/docs-ru) | [ru.sli.dev](https://ru.sli.dev) | [@xesjkeee](https://github.com/xesjkeee)                              |
-| Việt Nam       | [docs-vn](https://github.com/slidevjs/docs-vn) | [vn.sli.dev](https://vn.sli.dev) | [@bongudth](https://github.com/bongudth)                              |
-| Deutsch        | [docs-de](https://github.com/slidevjs/docs-de) | [de.sli.dev](https://de.sli.dev) | [@fabiankachlock](https://github.com/fabiankachlock)                  |
-| Português (BR) | [docs-br](https://github.com/slidevjs/docs-br) | [br.sli.dev](https://br.sli.dev) | [@luisfelipesdn12](https://github.com/luisfelipesdn12)                |
-| Ελληνικά       | [docs-el](https://github.com/slidevjs/docs-el) | [el.sli.dev](https://el.sli.dev) | [@GeopJr](https://github.com/GeopJr)                                  |
-| 日本語         | [docs-ja](https://github.com/slidevjs/docs-el) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                    |
+| Français       | [docs-fr](https://github.com/slidevjs/docs-fr) | [fr.sli.dev](https://fr.sli.dev) | [@ArthurDanjou](https://github.com/ArthurDanjou)                    |
+| Español        | [docs-es](https://github.com/slidevjs/docs-es) | [es.sli.dev](https://es.sli.dev) | [@owlnai](https://github.com/owlnai)                                |
+| Русский        | [docs-ru](https://github.com/slidevjs/docs-ru) | [ru.sli.dev](https://ru.sli.dev) | [@xesjkeee](https://github.com/xesjkeee)                            |
+| Việt Nam       | [docs-vn](https://github.com/slidevjs/docs-vn) | [vn.sli.dev](https://vn.sli.dev) | [@bongudth](https://github.com/bongudth)                            |
+| Deutsch        | [docs-de](https://github.com/slidevjs/docs-de) | [de.sli.dev](https://de.sli.dev) | [@fabiankachlock](https://github.com/fabiankachlock)                |
+| Português (BR) | [docs-br](https://github.com/slidevjs/docs-br) | [br.sli.dev](https://br.sli.dev) | [@luisfelipesdn12](https://github.com/luisfelipesdn12)              |
+| Ελληνικά       | [docs-el](https://github.com/slidevjs/docs-el) | [el.sli.dev](https://el.sli.dev) | [@GeopJr](https://github.com/GeopJr)                                |
+| 日本語         | [docs-ja](https://github.com/slidevjs/docs-el) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                  |
 
-## Start Server Locally
+## Запуск сервера локально
 
 ```
 npm i -g pnpm
@@ -31,10 +31,10 @@ pnpm i
 pnpm run dev
 ```
 
-And then visit `http://localhost:3000`
+Затем посетите `http://localhost:3000`
 
-Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
+Или установите [расширение Vite для VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite), чтобы редактировать side-by-side.
 
-## Help on Translating
+## Помощь с переводом
 
-See [TRANSLATIONS.md](/TRANSLATIONS.md)
+Смотрите [TRANSLATIONS.md](/TRANSLATIONS.md)
