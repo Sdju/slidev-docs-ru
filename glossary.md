@@ -50,3 +50,8 @@
 | Routes | Маршруты | |
 | Clicks | Клики | |
 | Navigation | Навигация | |
+| Covers | Обложки | |
+| Learning Resources | Ресурсы для изучения | |
+| Theme Metadata | Метаданные темы | |
+| Color Schema | Цветовая схема | |
+| Default Configurations | Конфигурации по умолчанию | |

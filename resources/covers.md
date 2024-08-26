@@ -1,14 +1,14 @@
-# Curated Covers
+# Подборка обложек
 
-We curated a few cover images to demonstrate our starter template.
+Мы подобрали несколько изображений обложек, чтобы продемонстрировать наш стартовый шаблон.
 
 ![](/screenshots/covers.png)
 
 ```yaml
 ---
-# random image from the curated collection
+# случайное изображение из подобранной коллекции
 background: https://source.unsplash.com/collection/94734566/1920x1080
 ---
 ```
 
-If you enjoy any of them, check out our [Unsplash collection](https://unsplash.com/collections/94734566/slidev) and find out their authors.
+Если вам понравилось какое-либо из них, ознакомьтесь с нашей [коллекцией Unsplash](https://unsplash.com/collections/94734566/slidev) и узнайте их авторов.
